@@ -47,6 +47,6 @@
     ]
   },
   "devDependencies": {
-    "@mate-academy/eslint-config-react-typescript": "*"
+    "@mate-academy/eslint-config-react-typescript": "^1.0.11"
   }
 }
