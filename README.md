@@ -75,3 +75,11 @@ npm i typescript
 npm install --save gh-pages
 git branch -M main
 git push -u origin main
+npm i eslint
+npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+npm install --save-dev @mate-academy/eslint-config-react-typescript
+./node_modules/.bin/eslint --init
+
+
+
+npm install @mate-academy/students-ts-config ???
