@@ -11,7 +11,6 @@
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.10",
-    "eslint": "^8.31.0",
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -27,14 +26,17 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src/ --ignore-path .gitignore",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src/ --ignore-path .eslintignore",
     "format": "prettier --write . --ignore-path .gitignore",
     "fix-style": "npm run format && npm run lint -- --fix",
+    "stylelint": "stylelint \"**/*.scss\"",
+    "stylelint-fix": "stylelint \"**/*.scss\" --fix",
     "prepare": "husky install"
   },
   "lint-staged": {
     "*.tsx": "npm run lint",
-    "*.ts": "npm run lint"
+    "*.ts": "npm run lint",
+    "*.scss": "npm run stylelint"
   },
   "eslintConfig": {
     "extends": [
@@ -56,9 +58,16 @@
   },
   "devDependencies": {
     "@mate-academy/eslint-config-react-typescript": "^1.0.11",
+    "@mate-academy/students-ts-config": "*",
+    "@mate-academy/stylelint-config": "0.0.9",
+    "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
-    "prettier": "2.8.1"
+    "prettier": "2.8.1",
+    "stylelint": "^14.16.1",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-recommended-scss": "^8.0.0",
+    "stylelint-scss": "^4.3.0"
   }
 }
