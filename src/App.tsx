@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
-import { RoutesList } from './components/RoutesList';
 import { Footer } from './components/Footer';
+import { RoutesList } from './components/RoutesList';
 
 export function App() {
   return (
@@ -12,3 +12,5 @@ export function App() {
     </div>
   );
 }
+
+export default App;

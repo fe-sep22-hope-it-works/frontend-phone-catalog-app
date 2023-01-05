@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from '../Header';
+import { Header } from '../Header/Header';
 import '../../styles/page-title.scss';
 
 export const HomePage = () => {
