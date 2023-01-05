@@ -1,0 +1,60 @@
+.footer {
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @media (min-width: 640px) {
+    padding: 32px 24px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 32px 152px;
+  }
+
+  &__topscroll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    font-weight: 700;
+    color: #89939a;
+    font-size: 12px;
+
+    &__button {
+      width: 32px;
+      height: 32px;
+
+      border-radius: 48px;
+      border: 1px solid #b4bdc4;
+
+      background-color: white;
+      background-image: url("../img/topArrow.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    font-size: 12px;
+
+    @media (min-width: 640px) {
+      flex-direction: row;
+    }
+
+    &__link {
+      color: #89939a;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+}

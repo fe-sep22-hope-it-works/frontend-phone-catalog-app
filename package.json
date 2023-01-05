@@ -31,7 +31,7 @@
     "eject": "react-scripts eject",
     "lint-js": "eslint --ext .js,.jsx,.ts,.tsx ./src/ --ignore-path .eslintignore",
     "format": "prettier --write . --ignore-path .gitignore",
-    "fix-style": "npm run format && npm run lint -- --fix",
+    "fix-style": "npm run format && npm run lint && npm run stylelint -- --fix",
     "stylelint": "stylelint \"**/*.scss\"",
     "stylelint-fix": "stylelint \"**/*.scss\" --fix",
     "lint": "eslint . --ignore-path .eslintignore",
@@ -40,7 +40,7 @@
   "lint-staged": {
     "*.tsx": "npm run lint",
     "*.ts": "npm run lint",
-    "*.scss": "npm run stylelint"
+    "*.js": "npm run lint"
   },
   "eslintConfig": {
     "extends": [
@@ -69,9 +69,8 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "prettier": "2.8.1",
-    "stylelint": "^14.16.1",
-    "stylelint-config-prettier": "^9.0.4",
-    "stylelint-config-recommended-scss": "^8.0.0",
-    "stylelint-scss": "^4.3.0"
+    "stylelint": "^13.5.0",
+    "stylelint-config-recommended-scss": "^3.3.0",
+    "stylelint-scss": "^3.17.2"
   }
 }

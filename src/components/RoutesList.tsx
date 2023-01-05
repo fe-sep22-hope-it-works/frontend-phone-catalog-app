@@ -1,15 +1,15 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { AccessoriesPage } from './pages/AccessoriesPage';
-import { ContactsPage } from './pages/ContactsPage';
-import { FavouritesPage } from './pages/FavouritesPage';
-import { GitHubPage } from './pages/GitHubPage';
-import { HomePage } from './pages/HomePage';
-import { NotFoundPage } from './pages/NotFoundPage';
-import { PhonesPage } from './pages/PhonesPage';
-import { PurchasesPage } from './pages/PurchasesPage';
-import { RightsPage } from './pages/RightsPage';
-import { TabletsPage } from './pages/TabletsPage';
+import { AccessoriesPage } from './Pages/AccessoriesPage';
+import { ContactsPage } from './Pages/ContactsPage';
+import { FavouritesPage } from './Pages/FavouritesPage';
+import { GitHubPage } from './Pages/GitHubPage';
+import { HomePage } from './Pages/HomePage';
+import { NotFoundPage } from './Pages/NotFoundPage';
+import { PhonesPage } from './Pages/PhonesPage';
+import { PurchasesPage } from './Pages/PurchasesPage';
+import { RightsPage } from './Pages/RightsPage';
+import { TabletsPage } from './Pages/TabletsPage';
 
 export const RoutesList = () => (
   <Routes>
