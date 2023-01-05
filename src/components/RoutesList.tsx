@@ -1,3 +1,4 @@
+import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { AccessoriesPage } from './pages/AccessoriesPage';
 import { ContactsPage } from './pages/ContactsPage';
