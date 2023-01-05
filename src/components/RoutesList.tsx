@@ -26,6 +26,10 @@ export const RoutesList = () => (
       element={<PhonesPage />}
     />
     <Route
+      path="phones/:phoneId"
+      element={<PhonesPage />}
+    />
+    <Route
       path="tablets"
       element={<TabletsPage />}
     />
