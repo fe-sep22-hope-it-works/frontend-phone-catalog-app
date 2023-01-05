@@ -1,9 +1,15 @@
+import React from 'react';
 import './App.scss';
 import { Footer } from './components/Footer';
+import { RoutesList } from './components/RoutesList';
 
-function App() {
+export function App() {
   return (
-    <Footer />
+    <div className="app">
+      <RoutesList />
+
+      <Footer />
+    </div>
   );
 }
 
