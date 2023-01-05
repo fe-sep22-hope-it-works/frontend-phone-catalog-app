@@ -26,11 +26,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src/ --ignore-path .eslintignore",
+    "lint-js": "eslint --ext .js,.jsx,.ts,.tsx ./src/ --ignore-path .eslintignore",
     "format": "prettier --write . --ignore-path .gitignore",
     "fix-style": "npm run format && npm run lint -- --fix",
     "stylelint": "stylelint \"**/*.scss\"",
     "stylelint-fix": "stylelint \"**/*.scss\" --fix",
+    "lint": "eslint . --ignore-path .eslintignore",
     "prepare": "husky install"
   },
   "lint-staged": {
