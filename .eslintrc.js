@@ -8,6 +8,7 @@ module.exports = {
     'airbnb-typescript',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    'prettier'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -15,7 +16,8 @@ module.exports = {
       jsx: true,
     },
     ecmaVersion: 12,
-    project: './tsconfig.json',
+    project: 'tsconfig.json',
+    tsconfigRootDir: __dirname,
     sourceType: 'module',
   },
   plugins: [

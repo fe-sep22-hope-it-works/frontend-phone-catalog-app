@@ -27,7 +27,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint-js": "eslint --ext .js,.jsx,.ts,.tsx ./src/"
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src/ --ignore-path .gitignore",
+    "format": "prettier --write . --ignore-path .gitignore",
+    "fix-style": "npm run format && npm run lint -- --fix",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.tsx": "npm run lint",
+    "*.ts": "npm run lint"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +55,10 @@
     ]
   },
   "devDependencies": {
-    "@mate-academy/eslint-config-react-typescript": "^1.0.11"
+    "@mate-academy/eslint-config-react-typescript": "^1.0.11",
+    "eslint-config-prettier": "^8.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "prettier": "2.8.1"
   }
 }
