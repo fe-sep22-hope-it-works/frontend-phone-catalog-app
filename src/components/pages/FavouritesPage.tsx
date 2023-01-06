@@ -6,6 +6,5 @@ export const FavouritesPage = () => (
   <>
     <Header />
     <h1 className="page-title">Favourites Page</h1>
-    <h1 className="page">Beautiful Page</h1>
   </>
 );
