@@ -1,20 +1,24 @@
 {
   "files": {
-    "main.css": "/frontend-phone-catalog-app/static/css/main.8949bba6.css",
-    "main.js": "/frontend-phone-catalog-app/static/js/main.e7a80757.js",
-    "static/media/image.svg": "/frontend-phone-catalog-app/static/media/image.49c410d8b19002168562f5cae5a26233.svg",
+    "main.css": "/frontend-phone-catalog-app/static/css/main.ce04d2de.css",
+    "main.js": "/frontend-phone-catalog-app/static/js/main.0d413f2c.js",
+    "static/media/iphone.svg": "/frontend-phone-catalog-app/static/media/iphone.c72c04617bbed43aed095cd9fe30a77a.svg",
+    "static/media/Mont-Regular.otf": "/frontend-phone-catalog-app/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
+    "static/media/Mont-SemiBold.otf": "/frontend-phone-catalog-app/static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
+    "static/media/Mont-Bold.otf": "/frontend-phone-catalog-app/static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
     "static/media/logo.png": "/frontend-phone-catalog-app/static/media/logo.fdd6d566aee8105d491b.png",
     "static/media/purchases.svg": "/frontend-phone-catalog-app/static/media/purchases.fdbfe01add8add2cf050.svg",
     "static/media/favourites.svg": "/frontend-phone-catalog-app/static/media/favourites.12c132c09ca4cbb24783.svg",
     "static/media/Vector.svg": "/frontend-phone-catalog-app/static/media/Vector.71ec4de7b3140bbf8f5f300bc488d048.svg",
+    "static/media/favouriteHeart.svg": "/frontend-phone-catalog-app/static/media/favouriteHeart.3438fbc65f52c97d2fb207f06ec4e916.svg",
     "index.html": "/frontend-phone-catalog-app/index.html",
     "static/media/menu.svg": "/frontend-phone-catalog-app/static/media/menu.73ddde2c093f9fb313b9.svg",
     "static/media/topArrow.svg": "/frontend-phone-catalog-app/static/media/topArrow.20cd6d35f6999bab1a8b.svg",
-    "main.8949bba6.css.map": "/frontend-phone-catalog-app/static/css/main.8949bba6.css.map",
-    "main.e7a80757.js.map": "/frontend-phone-catalog-app/static/js/main.e7a80757.js.map"
+    "main.ce04d2de.css.map": "/frontend-phone-catalog-app/static/css/main.ce04d2de.css.map",
+    "main.0d413f2c.js.map": "/frontend-phone-catalog-app/static/js/main.0d413f2c.js.map"
   },
   "entrypoints": [
-    "static/css/main.8949bba6.css",
-    "static/js/main.e7a80757.js"
+    "static/css/main.ce04d2de.css",
+    "static/js/main.0d413f2c.js"
   ]
 }
