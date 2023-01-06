@@ -24,11 +24,13 @@ jobs:
     - run: |
         npm install
 
-    - name: Config
-      run: |
-        git config user.name "fe-sep22-hope-it-works"
-        
     - name: Deploy
+      env:
+          MY_EMAIL: vadym.baranov@hotmail.com
+          MY_NAME: vadym.baranov
       run: |
+        git config --global user.email $MY_EMAIL
+        git config --global user.name $MY_NAME
+        git remote set-url origin https://$MY_NAME$:${{ secrets.GH_ACCESS_TOKEN }}@github.com/fe-sep22-hope-it-works/frontend-phone-catalog-app.git
         npm run deploy
 
