@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+  box-shadow: 0px -1px 0px #E2E6E9;
+  background-color: #FFFFFF;
 
   @media (min-width: 640px) {
     padding: 32px 24px;
