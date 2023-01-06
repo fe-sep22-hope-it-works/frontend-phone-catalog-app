@@ -10,7 +10,7 @@ export function App() {
     <div className="app">
       <RoutesList />
       <Card />
-      
+
       <ProductsList />
 
       <Footer />
