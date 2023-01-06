@@ -30,5 +30,7 @@ jobs:
         
     - name: Deploy
       run: |
+        git config user.email "hope-it-works@hope-it-works.com"
+        git config user.name "HopeItWorks"
         npm run deploy
 
