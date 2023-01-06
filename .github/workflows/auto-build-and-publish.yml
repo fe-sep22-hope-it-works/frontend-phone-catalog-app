@@ -30,7 +30,5 @@ jobs:
         
     - name: Deploy
       run: |
-        git config user.email "vadym.baranov@hotmail.com"
-        git config user.name "vadymbaranov"
         npm run deploy
 
