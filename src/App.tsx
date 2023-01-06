@@ -1,9 +1,14 @@
 import './App.scss';
 import { Footer } from './components/Footer';
+import { ProductsList } from './components/ProductsList';
 
 function App() {
   return (
-    <Footer />
+    <>
+      <ProductsList />
+
+      <Footer />
+    </>
   );
 }
 
