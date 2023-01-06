@@ -26,7 +26,7 @@ jobs:
 
     - name: Config
       run: |
-        git config user.name: "fe-sep22-hope-it-works"
+        git config user.name "fe-sep22-hope-it-works"
         
     - name: Deploy
       run: |
