@@ -1,0 +1,133 @@
+@import './utils/vars';
+@import './utils/mixins';
+
+.header {
+  height: $heightHeaderDesk;
+  background: #FFFFFF;
+  box-shadow: 0px 1px 0px #E2E6E9;
+
+  @media (max-width: 1199px) {
+    height: $heightHeaderTab;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+  }
+}
+
+.nav {
+  margin-left: 48px;
+  display: flex;
+  gap: $heightHeaderDesk - $paddingForNavItem * 2;
+
+  @media (max-width: 1199px) {
+    gap: $heightHeaderTab - $paddingForNavItem * 2;
+  }
+
+  &__link {
+    display: inline-block;
+    height: $heightHeaderDesk;
+    line-height: $heightHeaderDesk;
+    padding: 0 $paddingForNavItem;
+    text-decoration: none;
+
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 12px;
+
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #89939A;
+
+    @media (max-width: 1199px) {
+      height: $heightHeaderTab;
+      line-height: $heightHeaderTab;
+    }
+
+    &--active {
+      position: relative;
+      color: #0F0F11;
+
+      &::after {
+        position: absolute;
+        width: calc(100% - 30px);
+        content: "";
+        display: block;
+        height: 3px;
+        background-color: #0F0F11;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+.my-puchases {
+  &__nav {
+    display: flex;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    width: $heightHeaderDesk;
+    height: $heightHeaderDesk;
+    box-shadow: -1px 0px 0px #E2E6E9;
+    border-right: 1px solid #E2E6E9;
+
+    @media (max-width: 1199px) {
+      height: $heightHeaderTab;
+      width: $heightHeaderTab;
+      line-height: $heightHeaderTab;
+    }
+  }
+
+  &__img {
+    width: $heightHeaderDesk;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &--favourites {
+      background-image: url("../img//favourites.svg");
+    }
+
+    &--purchases {
+      background-image: url("../img//purchases.svg");
+    }
+
+    &--menu {
+      background-image: url("../img/menu.svg");
+    }
+
+    &--active {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        width: $heightHeaderDesk;
+        content: "";
+        display: block;
+        height: 3px;
+        background-color: #0F0F11;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @media (max-width: 1199px) {
+          width: $heightHeaderTab;
+        }
+      }
+    }
+  }
+}
