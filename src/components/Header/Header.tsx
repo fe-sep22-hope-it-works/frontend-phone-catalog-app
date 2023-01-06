@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useEffect, useState } from 'react';
@@ -10,18 +11,21 @@ export const Header = () => {
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
   // const [menuIsOpen, setMenuIsOpen] = useState(false);
 
-  const resize = () => {
-    setInnerWidth(window.innerWidth);
-  };
-
   useEffect(() => {
-    window.addEventListener('resize', resize.bind(this));
-    // setInnerWidth(window.innerWidth);
-  }, []);
+    window.addEventListener('resize', () => {
+      setInnerWidth(window.innerWidth);
+    });
+
+    return () => {
+      window.removeEventListener('resize', () => {
+        setInnerWidth(window.innerWidth);
+      });
+    };
+  }, [innerWidth]);
 
   return (
     <header className="header">
-      {innerWidth > 639
+      {innerWidth > 640
         ? (
           <div className="header__container">
             <div className="header__nav">
@@ -60,12 +64,12 @@ export const Header = () => {
           </div>
         )
         : (
-          <div className="header__container">
+          <div className="header__container header__container--mob">
             <Link to="/">
               <Logo />
             </Link>
 
-            <div className="my-puchases__icon">
+            <div className="my-puchases__icon my-puchases__icon--menu">
               <button className="my-puchases__img my-puchases__img--menu" />
             </div>
           </div>
