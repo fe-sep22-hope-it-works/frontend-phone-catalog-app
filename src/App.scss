@@ -1,8 +1,13 @@
 @import "./styles/Footer.scss";
 @import "./styles/Logo.scss";
 
-@import "./styles/Pagination.scss"
+@import "./styles/Pagination.scss";
 @import "./styles/Grid.scss";
 @import "./styles/Card.scss";
+@import "./styles/Cart.scss";
 
 @import "./styles/utils/mixins";
+
+p {
+  margin: 0;
+}

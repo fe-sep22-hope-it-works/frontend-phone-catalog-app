@@ -1,0 +1,152 @@
+.cart {
+  padding: 26px 16px 56px;
+
+  &__items {
+    margin-bottom: 32px;
+  }
+
+  &__title {
+    font-weight: 800;
+    font-size: 32px;
+    color: #0F0F11;
+    margin-bottom: 32px;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+    padding: 16px;
+
+    border: 1px solid #E2E6E9;
+    border-radius: 16px;
+
+    @media (min-width: 640px) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &__title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 23px;
+
+      @media (min-width: 640px) {
+        margin-bottom: 0;
+      }
+
+      &__image {
+        height: 66px;
+        width: 66px;
+      }
+
+      &__button {
+        margin-right: 23px;
+        height: 16px;
+        width: 16px;
+        border: none;
+        background-image: url(../img/cross.svg);
+        background-position: center;
+        background-color: #FFFFFF;
+        cursor: pointer;
+      }
+
+      &__text {
+        font-weight: 600;
+        font-size: 14px;
+        color: #0F0F11;
+      }
+    }
+
+    &__price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__text {
+        font-weight: 800;
+        font-size: 22px;
+        color: #0F0F11;
+      }
+
+      &__quantity {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 96px;
+
+        @media (min-width: 640px) {
+          margin-right: 53px;
+        }
+
+        &__button {
+          height: 32px;
+          width: 32px;
+          border-radius: 48px;
+          background-color: white;
+          cursor: pointer;
+          border: 1px solid;
+
+          &__increase {
+            border-color: #B4BDC4;
+          }
+
+          &__decrease {
+            border-color: #E2E6E9;
+            color: #B4BDC4;
+          }
+        }
+      }
+    }
+  }
+
+  &__back {
+    display: flex;
+    gap: 10px;
+
+    margin-bottom: 24px;
+
+    &__button {
+      cursor: pointer;
+      background-image: url('../img/leftArrow.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      border: none;
+      background-color: #FFFFFF;
+    }
+
+    &__text {
+      cursor: pointer;
+      color: #89939A;
+      font-weight: 700;
+      font-size: 12px;
+    }
+  }
+
+  &__total {
+    padding: 24px;
+
+    &__price {
+      height: 41px;
+      text-align: center;
+      color: #0F0F11;
+      font-weight: 800;
+      font-size: 32px;
+    }
+
+    &__text {
+      height: 21px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 14px;
+      color: #89939A;
+    }
+
+    &__button {
+      height: 48px;
+      width: 100%;
+    }
+  }
+}
