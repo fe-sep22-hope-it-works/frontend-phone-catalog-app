@@ -1,0 +1,47 @@
+.not-found__container {
+  box-sizing: border-box;
+  display: flex;
+  height: 100vh;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../public/404-image.jpg);
+
+  &__message {
+    background: transparent;
+  }
+
+  &__copyright {
+    display: flex;
+    justify-content: center;
+
+    margin: 0 auto;
+  }
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-size: 30px;
+  font-weight: 400;
+  background: transparent;
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__copyright {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    text-decoration: none;
+    font-size: 12px;
+  }
+}
