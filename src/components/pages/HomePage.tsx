@@ -1,12 +1,12 @@
 import React from 'react';
-import { Header } from '../Header/Header';
 import '../../styles/page-title.scss';
+import { Card } from '../Card';
 
 export const HomePage = () => {
   return (
     <div className="home-page">
-      <Header />
       <h1 className="page-title">Welcome to Nice Gadgets store!</h1>
+      <Card />
     </div>
   );
 };

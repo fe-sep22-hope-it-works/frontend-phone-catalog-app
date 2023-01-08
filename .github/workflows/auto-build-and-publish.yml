@@ -1,22 +1,36 @@
+name: Auto deploy
+
 on:
-  pull_request:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
-      - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v1.0.7
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: |
+        npm install
 
-      - name: Deploy GitHub Pages site
-        uses: actions/deploy-pages@v1.2.3
+    - name: Deploy
+      env:
+          MY_EMAIL: vadym.baranov@hotmail.com
+          MY_NAME: vadym.baranov
+      run: |
+        git config --global user.email $MY_EMAIL
+        git config --global user.name $MY_NAME
+        git remote set-url origin https://$MY_NAME$:${{ secrets.GH_ACCESS_TOKEN }}@github.com/fe-sep22-hope-it-works/frontend-phone-catalog-app.git
+        npm run deploy
+
