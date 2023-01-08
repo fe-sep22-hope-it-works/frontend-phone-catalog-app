@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/frontend-phone-catalog-app/static/css/main.508a4bc7.css",
-    "main.js": "/frontend-phone-catalog-app/static/js/main.2103d59a.js",
+    "main.css": "/frontend-phone-catalog-app/static/css/main.b3cff3d9.css",
+    "main.js": "/frontend-phone-catalog-app/static/js/main.f379bd9a.js",
     "static/media/image.svg": "/frontend-phone-catalog-app/static/media/image.49c410d8b19002168562f5cae5a26233.svg",
+    "static/media/404-image.jpg": "/frontend-phone-catalog-app/static/media/404-image.860b94ea26e80d11d2b4.jpg",
     "static/media/Mont-Regular.otf": "/frontend-phone-catalog-app/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
     "static/media/Mont-SemiBold.otf": "/frontend-phone-catalog-app/static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
     "static/media/Mont-Bold.otf": "/frontend-phone-catalog-app/static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
@@ -13,11 +14,11 @@
     "index.html": "/frontend-phone-catalog-app/index.html",
     "static/media/menu.svg": "/frontend-phone-catalog-app/static/media/menu.73ddde2c093f9fb313b9.svg",
     "static/media/topArrow.svg": "/frontend-phone-catalog-app/static/media/topArrow.20cd6d35f6999bab1a8b.svg",
-    "main.508a4bc7.css.map": "/frontend-phone-catalog-app/static/css/main.508a4bc7.css.map",
-    "main.2103d59a.js.map": "/frontend-phone-catalog-app/static/js/main.2103d59a.js.map"
+    "main.b3cff3d9.css.map": "/frontend-phone-catalog-app/static/css/main.b3cff3d9.css.map",
+    "main.f379bd9a.js.map": "/frontend-phone-catalog-app/static/js/main.f379bd9a.js.map"
   },
   "entrypoints": [
-    "static/css/main.508a4bc7.css",
-    "static/js/main.2103d59a.js"
+    "static/css/main.b3cff3d9.css",
+    "static/js/main.f379bd9a.js"
   ]
 }
