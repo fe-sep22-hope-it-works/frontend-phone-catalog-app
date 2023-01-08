@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.scss';
 import { getAllPhones } from './components/api/phones';
-import { Card } from './components/Card';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header/Header';
 import { RoutesList } from './components/RoutesList';
