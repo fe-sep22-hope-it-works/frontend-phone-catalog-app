@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone } from '../../types/phones';
+import { Phone } from '../../types/Phone';
 // import { AuthForm } from './AuthForm';
 
 type Props = {

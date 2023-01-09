@@ -7,7 +7,7 @@ import '../../App.scss';
 import img from '../../img/card-images/iphone.svg';
 import heart from '../../img/card-images/Vector.svg';
 import likeHeart from '../../img/card-images/favouriteHeart.svg';
-import { Phone } from '../../types/phones';
+import { Phone } from '../../types/Phone';
 import { PhoneContext } from '../PhoneContext/PhoneContext';
 
 type Props = {
