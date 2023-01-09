@@ -76,7 +76,11 @@ export const CartItem: React.FC<Props> = ({
 
         <div className="cart__item__price__text">
           $
-          {product.price}
+          {product.quantity ? (
+            product.price * product.quantity
+          ) : (
+            product.price
+          )}
         </div>
       </div>
     </>
