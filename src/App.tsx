@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import './App.scss';
-import { Card } from './components/Card';
+// import { Card } from './components/Card';
 import { getPhoneImage } from './components/api/phones';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header/Header';
 import { RoutesList } from './components/RoutesList';
-import { ProductsList } from './components/ProductsList';
 // import { SortBy } from './types/SortBy';
 
 export function App() {
@@ -23,8 +22,6 @@ export function App() {
     <div className="app">
       <Header />
       <RoutesList />
-      <Card />
-      <ProductsList />
       <Footer />
     </div>
   );
