@@ -19,7 +19,7 @@ const navigationLinks = [
   { to: '/', text: 'Home' },
   { to: '/phones', text: 'Phones' },
   { to: '/tablets', text: 'Tablets' },
-  { to: '/Accessories', text: 'Accessories' },
+  { to: '/accessories', text: 'Accessories' },
 ];
 
 export const Header: React.FC<Props> = ({
