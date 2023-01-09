@@ -1,9 +1,18 @@
-import React from 'react';
+/* eslint-disable max-len */
+import React, { useState } from 'react';
+import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 import '../../App.scss';
-import img from '../../img/card-images/image.svg';
+import img from '../../img/card-images/iphone.svg';
 import heart from '../../img/card-images/Vector.svg';
+import likeHeart from '../../img/card-images/favouriteHeart.svg';
 
 export const Card: React.FC = () => {
+  const [isActiveToCard, setIsActiveToCard] = useState(false);
+  const handleCardButton = () => setIsActiveToCard(!isActiveToCard);
+  const [isFavorite, setIsFavorite] = useState(false);
+  const handleFavButton = () => setIsFavorite(!isFavorite);
+
   return (
     <section className="card">
       <img
@@ -12,13 +21,16 @@ export const Card: React.FC = () => {
         className="card__img"
       />
 
-      <a href="/" className="card__name">
-        Apple iPhone 11 Pro Max 512GB Midnight Green (iMT9G2FS/A)
-      </a>
+      <Link
+        to="/phones"
+        className="card__name"
+      >
+        Apple iPhone Xs 64GB Silver (iMT9G2FS/A)
+      </Link>
 
       <div className="card__price">
-        <p className="card__price--new">$849</p>
-        <p className="card__price--old">$1199</p>
+        <p className="card__price--new">$799</p>
+        <p className="card__price--old">$899</p>
       </div>
 
       <div className="card__separator" />
@@ -26,11 +38,11 @@ export const Card: React.FC = () => {
       <div className="card__params">
         <div className="card__params--container">
           <p className="card__params--text">Screen</p>
-          <p className="card__params--val">6.5” OLED</p>
+          <p className="card__params--val">5.8” OLED</p>
         </div>
         <div className="card__params--container">
           <p className="card__params--text">Capacity</p>
-          <p className="card__params--val">512 GB</p>
+          <p className="card__params--val">64 GB</p>
         </div>
         <div className="card__params--container">
           <p className="card__params--text">RAM</p>
@@ -39,15 +51,29 @@ export const Card: React.FC = () => {
       </div>
 
       <div className="card__buy">
-        <a href="/" className="card__buy--add">
-          {' '}
-          Add to cart
-          {' '}
-        </a>
+        <Link
+          to="/purchases"
+          className={classNames('card__buy--add', {
+            'card__buy--add-active': isActiveToCard,
+          })}
+          onClick={handleCardButton}
+        >
+          {!isActiveToCard ? 'Add to cart' : 'Added'}
+        </Link>
 
-        <a href="/" className="card__buy--heart">
-          <img src={heart} alt="heart_icon" className="card__icon" />
-        </a>
+        <Link
+          to="/favourites"
+          className={classNames('card__buy--heart', {
+            'card__buy--heart-active': isFavorite,
+          })}
+          onClick={handleFavButton}
+        >
+          <img
+            src={!isFavorite ? heart : likeHeart}
+            alt="Phone logo"
+            className="heart"
+          />
+        </Link>
       </div>
     </section>
   );

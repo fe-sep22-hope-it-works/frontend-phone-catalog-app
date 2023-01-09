@@ -8,7 +8,7 @@ import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { PhoneItemPage } from './pages/PhoneItemPage';
 import { PhonesPage } from './pages/PhonesPage';
-import { PurchasesPage } from './pages/PurchasesPage';
+import { CartPage } from './pages/CartPage';
 import { RightsPage } from './pages/RightsPage';
 import { TabletsPage } from './pages/TabletsPage';
 
@@ -55,8 +55,8 @@ export const RoutesList = () => (
       element={<FavouritesPage />}
     />
     <Route
-      path="purchases"
-      element={<PurchasesPage />}
+      path="cart"
+      element={<CartPage />}
     />
     <Route
       path="*"
