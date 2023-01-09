@@ -7,26 +7,26 @@ type Props = {
 };
 
 interface PhoneContextInterface {
-  cartPhoneIds: number[],
-  setCartPhoneIds: React.Dispatch<React.SetStateAction<number[]>>,
+  cartPhones: Phone[],
+  setCartPhones: React.Dispatch<React.SetStateAction<Phone[]>>,
   phones: Phone[],
   setPhones: React.Dispatch<React.SetStateAction<Phone[]>>,
 }
 
 export const PhoneContext = React.createContext<PhoneContextInterface>({
-  cartPhoneIds: [],
-  setCartPhoneIds: () => {},
+  cartPhones: [],
+  setCartPhones: () => {},
   phones: [],
   setPhones: () => {},
 });
 
 export const PhoneProvider: React.FC<Props> = ({ children }) => {
-  const [cartPhoneIds, setCartPhoneIds] = useState<number[]>([5, 10]);
+  const [cartPhones, setCartPhones] = useState<Phone[]>([]);
   const [phones, setPhones] = useState<Phone[]>([]);
 
   const contextValue = {
-    cartPhoneIds,
-    setCartPhoneIds,
+    cartPhones,
+    setCartPhones,
     phones,
     setPhones,
   };
