@@ -6,6 +6,7 @@ import { FavouritesPage } from './pages/FavouritesPage';
 import { GitHubPage } from './pages/GitHubPage';
 import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { PhoneItemPage } from './pages/PhoneItemPage';
 import { PhonesPage } from './pages/PhonesPage';
 import { PurchasesPage } from './pages/PurchasesPage';
 import { RightsPage } from './pages/RightsPage';
@@ -27,7 +28,7 @@ export const RoutesList = () => (
     />
     <Route
       path="phones/:phoneId"
-      element={<PhonesPage />}
+      element={<PhoneItemPage />}
     />
     <Route
       path="tablets"
