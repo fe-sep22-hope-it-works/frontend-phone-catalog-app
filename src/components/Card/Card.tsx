@@ -79,7 +79,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
           className={classNames('card__buy--add', {
             'card__buy--add-active': isActiveToCard,
           })}
-          onClick={handleCardButton}
+          onClick={() => handleCardButton(id)}
         >
           {!isActiveToCard ? 'Add to cart' : 'Added'}
         </button>
