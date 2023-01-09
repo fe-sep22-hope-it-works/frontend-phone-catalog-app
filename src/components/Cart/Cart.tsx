@@ -36,7 +36,7 @@ export const Cart: React.FC = () => {
     .map(product => product.price * (product.quantity || 1))
     .reduce((currentTotal: number, price: number) => currentTotal + price, 0),
   [cartPhones]);
-  
+ 
   return (
     <div className="cart__container">
       <div className="cart">
