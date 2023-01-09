@@ -16,6 +16,7 @@
   position: fixed;
   left: 0;
   right: 0;
+  bottom: 0;
 
   transform: translateX(-100%);
 
@@ -27,6 +28,10 @@
 
   @include onTablet {
     display: none;
+  }
+
+  body {
+    overflow: hidden;
   }
 
   &__nav {
@@ -81,6 +86,7 @@
       width: 50%;
       cursor: pointer;
       box-shadow: -1px 0px 0px #e2e6e9;
+      border: none;
       border-top: 1px solid #e2e6e9;
     }
 
@@ -102,4 +108,5 @@
       top: 45px;
     }
   }
+ }
 }

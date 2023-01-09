@@ -1,9 +1,13 @@
 @import "./styles/utils/mixins";
 @import "./styles/utils/normalize";
+@import "./styles/HomePage.scss";
+@import "./styles/page-title.scss";
 @import "./styles/Header.scss";
 @import "./styles/Footer.scss";
 @import "./styles/Logo.scss";
 @import "./styles/Pagination.scss";
 @import "./styles/Grid.scss";
 @import "./styles/Card.scss";
-@import "./styles/Welcome.scss";
+@import "./styles/Cart.scss";
+@import "./styles/Slider.scss";
+@import "./styles/NotFoundPage.scss";
