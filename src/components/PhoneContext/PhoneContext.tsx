@@ -1,34 +1,48 @@
 import React, { useState } from 'react';
 import { Phone } from '../../types/Phone';
-// import { AuthForm } from './AuthForm';
 
 type Props = {
   children: React.ReactNode;
 };
 
 interface PhoneContextInterface {
-  cartPhoneIds: number[],
-  setCartPhoneIds: React.Dispatch<React.SetStateAction<number[]>>,
+  cartPhones: string[],
+  setCartPhones: React.Dispatch<React.SetStateAction<string[]>>,
   phones: Phone[],
   setPhones: React.Dispatch<React.SetStateAction<Phone[]>>,
+  saveCartPhones: (value: string) => void,
 }
 
 export const PhoneContext = React.createContext<PhoneContextInterface>({
-  cartPhoneIds: [],
-  setCartPhoneIds: () => {},
+  cartPhones: [],
+  setCartPhones: () => { },
   phones: [],
-  setPhones: () => {},
+  setPhones: () => { },
+  saveCartPhones: () => { },
 });
 
 export const PhoneProvider: React.FC<Props> = ({ children }) => {
-  const [cartPhoneIds, setCartPhoneIds] = useState<number[]>([5, 10]);
+  const [cartPhones, setCartPhones] = useState<string[]>(
+    JSON.parse(localStorage.getItem('cartPhones') || ''),
+  );
   const [phones, setPhones] = useState<Phone[]>([]);
 
+  const saveCartPhones = (value: string) => {
+    const idToCheck = cartPhones.find(cart => cart === value)
+      ? cartPhones.filter(cart => cart !== value)
+      : [...cartPhones, value];
+
+    setCartPhones(idToCheck);
+
+    localStorage.setItem('cartPhones', JSON.stringify(idToCheck));
+  };
+
   const contextValue = {
-    cartPhoneIds,
-    setCartPhoneIds,
+    cartPhones,
+    setCartPhones,
     phones,
     setPhones,
+    saveCartPhones,
   };
 
   return (
