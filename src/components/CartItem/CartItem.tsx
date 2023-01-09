@@ -1,14 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import img from '../../img/card-images/iphone.svg';
+import { Phone } from '../../types/phones';
 
-export const CartItem: React.FC = () => {
+interface Props {
+  product: Phone,
+  changeProductQuantity: (productToChange: Phone, newQuantity: number) => void;
+  removeItem: (idToRemove: number) => void;
+}
+
+export const CartItem: React.FC<Props> = ({
+  product, changeProductQuantity, removeItem,
+}) => {
+  const [
+    productQuantity, setProductQuantity,
+  ] = useState(product.quantity ? product.quantity : 1);
+
+  useEffect(() => {
+    changeProductQuantity(product, productQuantity);
+  }, [productQuantity]);
+
+  // eslint-disable-next-line no-console
+  console.log(product);
+
   return (
-    <div className="cart__item">
+    <>
       <div className="cart__item__title">
         <button
           type="button"
           className="cart__item__title__button"
           aria-label="Save"
+          onClick={() => removeItem(product.id)}
         />
 
         <img
@@ -31,11 +52,17 @@ export const CartItem: React.FC = () => {
               cart__item__price__quantity__button
               cart__item__price__quantity__button__decrease
             "
+            onClick={() => setProductQuantity(prevQty => prevQty - 1)}
+            disabled={productQuantity === 1}
           >
             -
           </button>
 
-          <div className="cart__item__price__quantity__text">1</div>
+          <div
+            className="cart__item__price__quantity__text"
+          >
+            {productQuantity}
+          </div>
 
           <button
             type="button"
@@ -44,15 +71,19 @@ export const CartItem: React.FC = () => {
               cart__item__price__quantity__button
               cart__item__price__quantity__button__increase
             "
+            onClick={() => setProductQuantity(
+              (prevQty: number) => prevQty + 1,
+            )}
           >
             +
           </button>
         </div>
 
         <div className="cart__item__price__text">
-          $999
+          $
+          {product.price}
         </div>
       </div>
-    </div>
+    </>
   );
 };
