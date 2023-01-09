@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.scss';
-// import { Card } from './components/Card';
 // import { getPhoneImage, getAllPhones } from './components/api/phones';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header/Header';
