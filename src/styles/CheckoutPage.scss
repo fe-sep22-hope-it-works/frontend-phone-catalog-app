@@ -1,1 +1,28 @@
-.checkout
+.checkout {
+  box-sizing: border-box;
+  display: flex;
+
+  &__container {
+    border: 2px solid #000;
+  }
+
+  &__message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+
+  }
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__main {
+    border: 2px solid #000;
+  }
+}
