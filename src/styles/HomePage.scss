@@ -1,0 +1,22 @@
+.home-page {
+  &__container {
+    margin: 0 auto;
+    max-width: 1136px;
+
+    @media (max-width: 640px) {
+      max-width: 640px;
+    }
+  }
+
+  &__title {
+    margin: 56px auto;
+
+    @media (max-width: 1200px) {
+      margin: 32px 24px;
+    }
+
+    @media (max-width: 640px) {
+      margin: 24px 16px;
+    }
+  }
+}

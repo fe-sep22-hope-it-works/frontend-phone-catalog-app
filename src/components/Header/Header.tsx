@@ -43,20 +43,20 @@ export const Header = () => {
                 <NavItem path="/accessories" text="Accessories" />
               </nav>
             </div>
-            <div className="my-puchases">
-              <nav className="my-puchases__nav">
-                <div className="my-puchases__icon">
+            <div className="my-purchases">
+              <nav className="my-purchases__nav">
+                <div className="my-purchases__icon">
                   <NavItem
                     path="/favourites"
                     text=""
-                    classname="my-puchases__img my-puchases__img--favourites"
+                    classname="my-purchases__img my-purchases__img--favourites"
                   />
                 </div>
-                <div className="my-puchases__icon">
+                <div className="my-purchases__icon">
                   <NavItem
-                    path="/purchases"
+                    path="/cart"
                     text=""
-                    classname="my-puchases__img my-puchases__img--purchases"
+                    classname="my-purchases__img my-purchases__img--cart"
                   />
                 </div>
               </nav>
@@ -69,8 +69,8 @@ export const Header = () => {
               <Logo />
             </Link>
 
-            <div className="my-puchases__icon my-puchases__icon--menu">
-              <button className="my-puchases__img my-puchases__img--menu" />
+            <div className="my-purchases__icon my-purchases__icon--menu">
+              <button className="my-purchases__img my-purchases__img--menu" />
             </div>
           </div>
         )}
