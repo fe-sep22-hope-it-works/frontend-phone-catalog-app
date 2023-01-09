@@ -1,14 +1,14 @@
 import classNames from 'classnames';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { headerNavLinks } from '../../types/HeaderNavLinks';
+import { HeaderNavLinks } from '../../types/HeaderNavLinks';
 import './BurgerMenu.scss';
 
 import heartIcon from '../../img/header/favourites.svg';
 import shopIcon from '../../img/header/purchases.svg';
 
 interface Props {
-  navLinks: headerNavLinks[];
+  navLinks: HeaderNavLinks[];
   burgerMenu: boolean;
   isBurgerMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }

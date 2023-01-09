@@ -1,4 +1,4 @@
-export interface headerNavLinks {
+export interface HeaderNavLinks {
   to: string;
   text: string;
 }
