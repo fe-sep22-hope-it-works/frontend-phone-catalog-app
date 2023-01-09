@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/indent */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CartItem } from '../CartItem';
@@ -34,9 +35,11 @@ export const Cart: React.FC = () => {
             <p className="cart__total__text">Total for 2 items</p>
             <div className="cart__total__line" />
 
-            <button type="button" className="cart__total__button">
-              Checkout
-            </button>
+            <Link to="/checkout">
+              <button type="button" className="cart__total__button">
+                Checkout
+              </button>
+            </Link>
           </div>
         </div>
       </div>
