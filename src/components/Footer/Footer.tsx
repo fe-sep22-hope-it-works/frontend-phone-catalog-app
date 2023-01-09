@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Logo } from '../Logo';
 
 export const Footer: React.FC = () => {
   return (
     <footer className="footer">
-      <Logo />
+      <Link to="/">
+        <Logo />
+      </Link>
 
       <div className="footer__nav">
         <a
