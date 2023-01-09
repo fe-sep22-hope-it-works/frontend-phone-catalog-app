@@ -14,7 +14,7 @@ export const NavItem: React.FC<Props> = ({ path, text, classname }) => (
     className={({ isActive }) => classNames(classname, {
       nav__link: !classname,
       'nav__link--active': isActive && !classname,
-      'my-puchases__img--active': isActive && classname,
+      'my-purchases__img--active': isActive && classname,
     })}
     to={path}
   >
