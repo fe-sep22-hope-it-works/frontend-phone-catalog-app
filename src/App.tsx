@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.scss';
 import { Card } from './components/Card';
 import { getPhoneImage } from './components/api/phones';
@@ -9,6 +9,10 @@ import { ProductsList } from './components/ProductsList';
 // import { SortBy } from './types/SortBy';
 
 export function App() {
+  const [burgerMenuStatus, isBurgerMenu] = useState(false);
+
+  const getPhonesFromServer = async () => {
+    const phonesFromServer = await getAllPhones(SortBy.ALPHABETCALLY);
   const getImageFromServer = async () => {
     const imageFromServer = await getPhoneImage(34, 2);
 
@@ -21,7 +25,10 @@ export function App() {
 
   return (
     <div className="app">
-      <Header />
+      <Header
+        burgerMenu={burgerMenuStatus}
+        isBurgerMenu={isBurgerMenu}
+      />
       <RoutesList />
       <Card />
       <ProductsList />
