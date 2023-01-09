@@ -1,23 +1,48 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable max-len */
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import '../../App.scss';
 import img from '../../img/card-images/iphone.svg';
 import heart from '../../img/card-images/Vector.svg';
 import likeHeart from '../../img/card-images/favouriteHeart.svg';
+import { Phone } from '../../types/Phone';
+import { PhoneContext } from '../PhoneContext/PhoneContext';
 
-export const Card: React.FC = () => {
+type Props = {
+  phone: Phone,
+};
+
+export const Card: React.FC<Props> = ({ phone }) => {
   const [isActiveToCard, setIsActiveToCard] = useState(false);
-  const handleCardButton = () => setIsActiveToCard(!isActiveToCard);
   const [isFavorite, setIsFavorite] = useState(false);
+
+  const { setCartPhoneIds } = useContext(PhoneContext);
+
+  const handleCardButton = (id: number) => {
+    setIsActiveToCard(!isActiveToCard);
+
+    setCartPhoneIds((prevIds) => [...prevIds, id]);
+  };
+
   const handleFavButton = () => setIsFavorite(!isFavorite);
 
+  const {
+    id,
+    name,
+    fullPrice,
+    price,
+    screen,
+    capacity,
+    ram,
+  } = phone;
+
   return (
-    <section className="card">
+    <section className="card grid__item-tablet-1-4">
       <img
         src={img}
-        alt="iPhone 11 Pro Max"
+        alt={name}
         className="card__img"
       />
 
@@ -25,12 +50,12 @@ export const Card: React.FC = () => {
         to="/phones"
         className="card__name"
       >
-        Apple iPhone Xs 64GB Silver (iMT9G2FS/A)
+        {name}
       </Link>
 
       <div className="card__price">
-        <p className="card__price--new">$799</p>
-        <p className="card__price--old">$899</p>
+        <p className="card__price--new">{price}</p>
+        <p className="card__price--old">{fullPrice}</p>
       </div>
 
       <div className="card__separator" />
@@ -38,28 +63,27 @@ export const Card: React.FC = () => {
       <div className="card__params">
         <div className="card__params--container">
           <p className="card__params--text">Screen</p>
-          <p className="card__params--val">5.8” OLED</p>
+          <p className="card__params--val">{screen}</p>
         </div>
         <div className="card__params--container">
           <p className="card__params--text">Capacity</p>
-          <p className="card__params--val">64 GB</p>
+          <p className="card__params--val">{capacity}</p>
         </div>
         <div className="card__params--container">
           <p className="card__params--text">RAM</p>
-          <p className="card__params--val">4 GB</p>
+          <p className="card__params--val">{ram}</p>
         </div>
       </div>
 
       <div className="card__buy">
-        <Link
-          to="/purchases"
+        <button
           className={classNames('card__buy--add', {
             'card__buy--add-active': isActiveToCard,
           })}
-          onClick={handleCardButton}
+          onClick={() => handleCardButton(id)}
         >
           {!isActiveToCard ? 'Add to cart' : 'Added'}
-        </Link>
+        </button>
 
         <Link
           to="/favourites"

@@ -2,7 +2,7 @@ import { Phone } from '../../types/Phone';
 import { SortBy } from '../../types/SortBy';
 import { getImages, getPhones } from '../../utils/fetch';
 
-export const getAllPhones = (sortBy: SortBy) => {
+export const getAllPhones = (sortBy: SortBy = SortBy.ALPHABETCALLY) => {
   return getPhones<Phone[]>(`/phones?sortedby=${sortBy}&page=1&phonesQuantity=71`);
 };
 
