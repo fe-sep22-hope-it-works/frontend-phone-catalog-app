@@ -1,10 +1,10 @@
 import classNames from 'classnames';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { HeaderNavLinks } from '../../types/HeaderNavLinks';
+import { NavLinks } from '../../types/NavLinks';
 
 interface Props {
-  navigationLinks: HeaderNavLinks[];
+  navigationLinks: NavLinks[];
   burgerMenuOpen: boolean;
   isBurgerMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
