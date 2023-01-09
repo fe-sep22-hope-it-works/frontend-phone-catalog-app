@@ -1,8 +1,9 @@
 /* eslint-disable consistent-return */
 import React, { useState, useEffect } from 'react';
-import { redirect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const Checkout: React.FC = () => {
+  const navigate = useNavigate();
   const [seconds, setSeconds] = useState(10);
 
   useEffect(() => {
@@ -29,7 +30,7 @@ export const Checkout: React.FC = () => {
               email.
             </h2>
             {seconds === 0 ? (
-              redirect('/home')
+              navigate('/')
             ) : (
               <h3 className="redirect">
                 You will be redirected to Home page in &nbsp;
