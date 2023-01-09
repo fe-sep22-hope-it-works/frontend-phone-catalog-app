@@ -1,32 +1,36 @@
+@import './fonts/fonts.scss';
+
 .card {
   display: flex;
   justify-content: center;
   flex-direction: column;
   box-sizing: border-box;
-  background-color: #ffffff;
+  width: 272px;
+  // height: 500px;
+  padding: 32px;
   border: 1px solid #E2E6E9;
   border-radius: 8px;
+
+  background-color: #ffffff;
   border-color: #E2E6E9;
 
-  width: 272px;
-  height: 500px;
-
-  padding: 32px;
+  font-family: 'Mont', Helvetica, sans-serif;
 
   &__img {
     display: block;
-    object-fit: scale-down;
     height: 175px;
     width: 208px;
     margin-bottom: 24px;
   }
 
   &__name {
+    margin-bottom: 8px;
+
+    color: #0F0F11;
+
+    line-height: 21px;
     font-size: 14px;
     font-weight: 600;
-    color: #0F0F11;
-    line-height: 21px;
-    margin-bottom: 8px;
     text-decoration: none;
 
     &:hover {
@@ -36,18 +40,22 @@
 
   &__price {
     display: flex;
+    margin-bottom: 8px;
+
     color: #0F0F11;
+
+    line-height: 18px;
     font-size: 22px;
     font-weight: 800;
 
     &--old {
-      color: #89939A;
-      text-decoration: line-through;
       margin-left: 8px;
-    }
 
-    line-height: 18px;
-    margin-bottom: 8px;
+      color: #89939A;
+
+      text-decoration: line-through;
+      font-weight: 500;
+    }
   }
 
   &__separator {
@@ -59,80 +67,87 @@
   &__params {
     display: flex;
     flex-direction: column;
+    padding: 8px 0;
+    margin-bottom: 8px;
 
     &--container {
       display: flex;
       justify-content: space-between;
-      padding: 0;
+      margin-bottom: 8px;
+      
       line-height: 100%;
       font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 8px;
     }
 
     &--text {
+      font-weight: 600;
       color: #89939A;
     }
 
     &--val {
+      font-weight: 700;
       color: #0F0F11;
     }
-
-    padding: 8px 0;
-    margin-bottom: 8px;
   }
 
   &__buy {
-    height: 40px;
     display: flex;
+    height: 40px;
+
     font-size: 14px;
     font-weight: 700;
 
     &--add {
-      height: 40px;
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 40px;
       box-sizing: border-box;
       border-radius: 8px;
 
+      color: #FFFFFF;
       background-color: #216CFF;
       width: 100%;
-
+    
+      font-weight: 700;
       line-height: 21px;
       text-decoration: none;
-      color: #FFFFFF;
 
       transition: all 0.5s;
 
       &:hover {
-        text-shadow: 1px 1px 2px #000000;
+        box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
+      }
+
+      &-active {
+        border: 1px solid #e2e6e9;
+        box-shadow: none;
+
+        color: #216CFF;
+        background: #ffffff;
       }
     }
 
     &--heart {
-      height: 40px;
-      width: 40px;
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 40px;
+      width: 40px;
       padding: 20px;
       box-sizing: border-box;
       border-radius: 48px;
       border: 1px solid #B4BDC4;
-
-      text-decoration: none;
-      background-color: #ffffff;
       margin-left: 8px;
-    }
-  }
 
-  &__icon {
-    transition: all 0.5s;
+      background-color: #ffffff;
+      text-decoration: none;
+
+      transition: all 0.5s;
 
       &:hover {
-        border-radius: 5px;
-        background-color: #EB5757;
+        box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
       }
+    }
   }
 }
