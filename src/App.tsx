@@ -6,7 +6,6 @@ import { Footer } from './components/Footer';
 import { Header } from './components/Header/Header';
 import { ProductsList } from './components/ProductsList';
 import { RoutesList } from './components/RoutesList';
-// import { SortBy } from './types/SortBy';
 
 export function App() {
   const getImageFromServer = async () => {
