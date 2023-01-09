@@ -77,7 +77,7 @@
   }
 }
 
-.my-puchases {
+.my-purchases {
   &__nav {
     display: flex;
   }
@@ -106,7 +106,7 @@
       background-image: url("../img//header/favourites.svg");
     }
 
-    &--purchases {
+    &--cart {
       background-image: url("../img//header/purchases.svg");
     }
 
