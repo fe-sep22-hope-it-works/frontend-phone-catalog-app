@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../../img/card-images/image.svg';
+import img from '../../img/card-images/iphone.svg';
 
 export const CartItem: React.FC = () => {
   return (

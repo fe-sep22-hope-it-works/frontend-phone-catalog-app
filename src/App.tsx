@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.scss';
-import { Card } from './components/Card';
+// import { Card } from './components/Card';
 import { getPhoneImage } from './components/api/phones';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header/Header';
@@ -30,8 +30,6 @@ export function App() {
         isBurgerMenu={isBurgerMenu}
       />
       <RoutesList />
-      <Card />
-      <ProductsList />
       <Footer />
     </div>
   );
