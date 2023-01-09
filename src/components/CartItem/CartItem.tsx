@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import img from '../../img/card-images/iphone.svg';
-import { Phone } from '../../types/phones';
+import { Phone } from '../../types/Phone';
 
 interface Props {
   product: Phone,
@@ -39,7 +39,7 @@ export const CartItem: React.FC<Props> = ({
         />
 
         <div className="cart__item__title__text">
-          Title
+          {product.name}
         </div>
       </div>
 
@@ -57,13 +57,11 @@ export const CartItem: React.FC<Props> = ({
           >
             -
           </button>
-
           <div
             className="cart__item__price__quantity__text"
           >
             {productQuantity}
           </div>
-
           <button
             type="button"
             aria-label="Save"

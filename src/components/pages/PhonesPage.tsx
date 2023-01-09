@@ -4,7 +4,9 @@ import { ProductsList } from '../ProductsList';
 
 export const PhonesPage = () => (
   <>
-    <h1 className="page-title">Phones Page</h1>
-    <ProductsList />
+    <div className="phones-page">
+      <h1 className="page-title">Phones Page</h1>
+      <ProductsList />
+    </div>
   </>
 );

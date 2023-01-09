@@ -28,6 +28,7 @@ export function getImages(url: string): Promise<string | ArrayBuffer | null> {
     .then(blob => new Promise(callback => {
       const reader = new FileReader();
 
+      // eslint-disable-next-line func-names
       reader.onload = function () {
         callback(this.result);
       };

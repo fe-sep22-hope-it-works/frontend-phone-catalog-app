@@ -1,30 +1,30 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { CartItem } from '../CartItem';
-import { Phone } from '../../types/phones';
+import { Phone } from '../../types/Phone';
+import { PhoneContext } from '../PhoneContext/PhoneContext';
 
 export const Cart: React.FC = () => {
-  const [currentCartProducts, setCurrentCartProducts] = useState<any>([]);
+  // const [currentCartProducts, setCurrentCartProducts] = useState<any>([]);
+  const { cartPhones, setCartPhones } = useContext(PhoneContext);
 
   // temp array
-  const cartProducts = [
-    {
-      id: 1,
-      price: 999,
-      quantity: 1,
-    },
-    {
-      id: 2,
-      price: 900,
-      quantity: 1,
-    },
-  ];
+  // const cartProducts = [
+  //   {
+  //     id: 1,
+  //     price: 999,
+  //     quantity: 1,
+  //   },
+  //   {
+  //     id: 2,
+  //     price: 900,
+  //     quantity: 1,
+  //   },
+  // ];
   // temp array
-
-  useEffect(() => setCurrentCartProducts(cartProducts), []);
 
   const ChangeProductQuantity = (productToChange: Phone, newQuantity = 1) => {
-    const newCartProducts = currentCartProducts.map((product: any) => {
+    const newCartProducts = cartPhones.map(product => {
       if (product.id === productToChange.id) {
         const changedProduct = {
           ...productToChange,
@@ -40,18 +40,18 @@ export const Cart: React.FC = () => {
       };
     });
 
-    setCurrentCartProducts(newCartProducts);
+    setCartPhones(newCartProducts);
   };
 
   const removeItem = (id: number) => {
-    setCurrentCartProducts(currentCartProducts
-      .filter((product: any) => product.id !== id));
+    setCartPhones(cartPhones
+      .filter(product => product.id !== id));
   };
 
-  const totalPrice = useMemo(() => currentCartProducts
-    .map((product: any) => product.price * product.quantity)
+  const totalPrice = useMemo(() => cartPhones
+    .map(product => product.price * (product.quantity || 1))
     .reduce((currentTotal: number, price: number) => currentTotal + price, 0),
-  [currentCartProducts]);
+  [cartPhones]);
 
   return (
     <div className="cart__container">
@@ -75,7 +75,7 @@ export const Cart: React.FC = () => {
 
         <div className="cart__content">
           <div className="cart__items">
-            {currentCartProducts.map((product: any) => (
+            {cartPhones.map(product => (
               <div key={product.id} className="cart__item">
                 <CartItem
                   removeItem={removeItem}
@@ -89,7 +89,7 @@ export const Cart: React.FC = () => {
           <div className="cart__total">
             <p className="cart__total__price">{totalPrice}</p>
             <p className="cart__total__text">
-              {`Total for ${currentCartProducts.length} items`}
+              {`Total for ${cartPhones.length} items`}
             </p>
             <div className="cart__total__line" />
 
