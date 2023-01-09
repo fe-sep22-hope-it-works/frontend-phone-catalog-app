@@ -95,10 +95,6 @@
       width: $heightHeaderTab;
       line-height: $heightHeaderTab;
     }
-
-    &--menu {
-      background-color: #E2E6E9;
-    }
   }
 
   &__img {
@@ -115,9 +111,16 @@
     }
 
     &--menu {
-      background-image: url("../img/header/menu.svg");
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      box-shadow: -1px 0px 0px #e2e6e9;
       border: none;
-      background-color: #fff;
+      cursor: pointer;
+
+      height: 48px;
+      width: 48px;
     }
 
     &--active {

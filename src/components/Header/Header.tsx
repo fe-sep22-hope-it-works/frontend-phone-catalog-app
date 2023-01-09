@@ -6,10 +6,33 @@ import { Link } from 'react-router-dom';
 import { Logo } from '../Logo';
 import { NavItem } from './NavItem';
 import '../../styles/Header.scss';
+import burgerOpenIcon from '../../img/header/menu.svg';
+import burgerCloseIcon from '../../img/header/close.svg';
+import { BurgerMenu } from '../BurgerMenu';
 
-export const Header = () => {
+interface Props {
+  burgerMenu: boolean;
+  isBurgerMenu: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const navigationLinks = [
+  { to: '/', text: 'Home' },
+  { to: '/phones', text: 'Phones' },
+  { to: '/tablets', text: 'Tablets' },
+  { to: '/Accessories', text: 'Accessories' },
+];
+
+export const Header: React.FC<Props> = ({
+  burgerMenu,
+  isBurgerMenu,
+}) => {
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
-  // const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+  if (burgerMenu) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
 
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -29,7 +52,10 @@ export const Header = () => {
         ? (
           <div className="header__container">
             <div className="header__nav">
-              <Link to="/">
+              <Link
+                to="/"
+                onClick={() => isBurgerMenu(false)}
+              >
                 <Logo />
               </Link>
               <nav
@@ -69,9 +95,27 @@ export const Header = () => {
               <Logo />
             </Link>
 
-            <div className="my-puchases__icon my-puchases__icon--menu">
-              <button className="my-puchases__img my-puchases__img--menu" />
-            </div>
+            {burgerMenu ? (
+              <button
+                className="my-puchases__img my-puchases__img--menu"
+                onClick={() => isBurgerMenu(false)}
+              >
+                <img src={burgerCloseIcon} alt="Menu" />
+              </button>
+            ) : (
+              <button
+                className="my-puchases__img my-puchases__img--menu"
+                onClick={() => isBurgerMenu(true)}
+              >
+                <img src={burgerOpenIcon} alt="Menu" />
+              </button>
+            )}
+
+            <BurgerMenu
+              navLinks={navigationLinks}
+              burgerMenu={burgerMenu}
+              isBurgerMenu={isBurgerMenu}
+            />
           </div>
         )}
     </header>
