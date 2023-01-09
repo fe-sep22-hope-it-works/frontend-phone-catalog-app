@@ -1,0 +1,59 @@
+.checkout {
+  box-sizing: border-box;
+  height: 100vh;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 50px auto;
+    height: 500px;
+    width: 500px;
+    box-shadow: 15px 10px 10px 10px #E2E6E9;
+    padding: 10px;
+  }
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+  padding: 20px;
+
+  &__img {
+    background-image: url(../img/circle-check-solid.svg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 100px;
+  }
+
+  &__main {
+    padding: 20px;
+
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+  }
+
+  &__confirmation {
+    text-align: center;
+  }
+}
+
+.confirmation {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.redirect {
+  padding: 30px;
+
+  font-size: 12px;
+  font-weight: 400;
+}

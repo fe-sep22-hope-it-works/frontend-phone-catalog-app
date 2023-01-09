@@ -77,9 +77,11 @@ export const Cart: React.FC = () => {
             </p>
             <div className="cart__total__line" />
 
-            <button type="button" className="cart__total__button">
-              Checkout
-            </button>
+            <Link to="/checkout">
+              <button type="button" className="cart__total__button">
+                Checkout
+              </button>
+            </Link>
           </div>
         </div>
       </div>
