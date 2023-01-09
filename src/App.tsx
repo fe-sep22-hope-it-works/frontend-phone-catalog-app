@@ -8,7 +8,6 @@ import { RoutesList } from './components/RoutesList';
 export function App() {
   // const getPhonesFromServer = async () => {
   //   const phonesFromServer = await getAllPhones(SortBy.ALPHABETCALLY);
-  const [burgerMenuStatus, isBurgerMenu] = useState(false);
 
   //   const getImageFromServer = async () => {
   //     const imageFromServer = await getPhoneImage(34, 2);
