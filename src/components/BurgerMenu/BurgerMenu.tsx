@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { HeaderNavLinks } from '../../types/HeaderNavLinks';
+import { HeaderNavLinks } from '../../types/headerNavLinks';
 import './BurgerMenu.scss';
 
 import heartIcon from '../../img/header/favourites.svg';

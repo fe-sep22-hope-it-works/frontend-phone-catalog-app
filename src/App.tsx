@@ -5,14 +5,13 @@ import { getPhoneImage } from './components/api/phones';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header/Header';
 import { RoutesList } from './components/RoutesList';
-import { ProductsList } from './components/ProductsList';
+// import { ProductsList } from './components/ProductsList';
 // import { SortBy } from './types/SortBy';
+// import { PhoneProvider } from './components/PhoneContext/PhoneContext';
 
 export function App() {
   const [burgerMenuStatus, isBurgerMenu] = useState(false);
 
-  const getPhonesFromServer = async () => {
-    const phonesFromServer = await getAllPhones(SortBy.ALPHABETCALLY);
   const getImageFromServer = async () => {
     const imageFromServer = await getPhoneImage(34, 2);
 
@@ -34,5 +33,3 @@ export function App() {
     </div>
   );
 }
-
-export default App;
