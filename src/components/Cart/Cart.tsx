@@ -5,23 +5,7 @@ import { Phone } from '../../types/Phone';
 import { PhoneContext } from '../PhoneContext/PhoneContext';
 
 export const Cart: React.FC = () => {
-  // const [currentCartProducts, setCurrentCartProducts] = useState<any>([]);
   const { cartPhones, setCartPhones } = useContext(PhoneContext);
-
-  // temp array
-  // const cartProducts = [
-  //   {
-  //     id: 1,
-  //     price: 999,
-  //     quantity: 1,
-  //   },
-  //   {
-  //     id: 2,
-  //     price: 900,
-  //     quantity: 1,
-  //   },
-  // ];
-  // temp array
 
   const ChangeProductQuantity = (productToChange: Phone, newQuantity = 1) => {
     const newCartProducts = cartPhones.map(product => {

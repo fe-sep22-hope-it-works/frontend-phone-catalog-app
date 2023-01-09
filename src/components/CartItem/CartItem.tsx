@@ -19,9 +19,6 @@ export const CartItem: React.FC<Props> = ({
     changeProductQuantity(product, productQuantity);
   }, [productQuantity]);
 
-  // eslint-disable-next-line no-console
-  console.log(product);
-
   return (
     <>
       <div className="cart__item__title">
