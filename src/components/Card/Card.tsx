@@ -18,18 +18,17 @@ export const Card: React.FC<Props> = ({ phone }) => {
   const [isActiveToCard, setIsActiveToCard] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
 
-  const { setCartPhoneIds } = useContext(PhoneContext);
+  const { setCartPhones } = useContext(PhoneContext);
 
-  const handleCardButton = (id: number) => {
+  const handleCardButton = () => {
     setIsActiveToCard(!isActiveToCard);
 
-    setCartPhoneIds((prevIds) => [...prevIds, id]);
+    setCartPhones(prevPhones => [...prevPhones, phone]);
   };
 
   const handleFavButton = () => setIsFavorite(!isFavorite);
 
   const {
-    id,
     name,
     fullPrice,
     price,
@@ -80,7 +79,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
           className={classNames('card__buy--add', {
             'card__buy--add-active': isActiveToCard,
           })}
-          onClick={() => handleCardButton(id)}
+          onClick={handleCardButton}
         >
           {!isActiveToCard ? 'Add to cart' : 'Added'}
         </button>
