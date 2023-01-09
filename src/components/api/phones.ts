@@ -1,4 +1,4 @@
-import { Phone } from '../../types/phones';
+import { Phone } from '../../types/Phone';
 import { SortBy } from '../../types/SortBy';
 import { getImages, getPhones } from '../../utils/fetch';
 
