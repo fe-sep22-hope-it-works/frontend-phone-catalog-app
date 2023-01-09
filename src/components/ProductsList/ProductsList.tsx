@@ -24,9 +24,6 @@ export const ProductsList: React.FC = () => {
     setPhones(phonesFromServer);
   };
 
-  // eslint-disable-next-line no-console
-  console.log(phones);
-
   useEffect(() => {
     getPhonesFromServer();
   }, []);
