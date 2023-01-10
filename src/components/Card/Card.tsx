@@ -15,8 +15,21 @@ type Props = {
 };
 
 export const Card: React.FC<Props> = ({ phone }) => {
+
+  const [isActiveToCard, setIsActiveToCard] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const { setCartPhones } = useContext(PhoneContext);
+
+  const handleCardButton = () => {
+    setIsActiveToCard(!isActiveToCard);
+
+    setCartPhones(prevPhones => [...prevPhones, phone]);
+  };
+
+  const handleFavButton = () => setIsFavorite(!isFavorite);
+
   const {
-    id,
     name,
     fullPrice,
     price,

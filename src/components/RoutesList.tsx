@@ -11,6 +11,7 @@ import { PhonesPage } from './pages/PhonesPage';
 import { CartPage } from './pages/CartPage';
 import { RightsPage } from './pages/RightsPage';
 import { TabletsPage } from './pages/TabletsPage';
+import { CheckoutPage } from './pages/CheckoutPage';
 
 export const RoutesList = () => (
   <Routes>
@@ -57,6 +58,10 @@ export const RoutesList = () => (
     <Route
       path="cart"
       element={<CartPage />}
+    />
+    <Route
+      path="checkout"
+      element={<CheckoutPage />}
     />
     <Route
       path="*"

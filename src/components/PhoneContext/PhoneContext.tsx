@@ -15,7 +15,7 @@ interface PhoneContextInterface {
 
 export const PhoneContext = React.createContext<PhoneContextInterface>({
   cartPhones: [],
-  setCartPhones: () => { },
+  setCartPhones: () => {},
   phones: [],
   setPhones: () => { },
   saveCartPhones: () => { },
@@ -25,6 +25,7 @@ export const PhoneProvider: React.FC<Props> = ({ children }) => {
   const [cartPhones, setCartPhones] = useState<string[]>(
     JSON.parse(localStorage.getItem('cartPhones') || ''),
   );
+
   const [phones, setPhones] = useState<Phone[]>([]);
 
   const saveCartPhones = (value: string) => {
