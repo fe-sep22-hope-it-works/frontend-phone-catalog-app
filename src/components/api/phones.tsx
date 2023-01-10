@@ -13,3 +13,7 @@ export const getPhoneById = (id: number) => {
 export const getPhoneImage = (id: number, numberOfImage: number) => {
   return getImages(`/public/${id}/0${numberOfImage}`);
 };
+
+export const getHotPricesPhones = () => {
+  return getPhones<Phone[]>('/phones/discount');
+};

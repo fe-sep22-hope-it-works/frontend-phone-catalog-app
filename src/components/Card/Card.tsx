@@ -29,10 +29,10 @@ export const Card: React.FC<Props> = ({ phone }) => {
 
   const { saveCartPhones, cartPhones } = useContext(PhoneContext);
 
-  const isAdded = cartPhones.find(cart => cart === id);
+  const isAdded = cartPhones.find(cart => cart.id === id);
 
   const handleCardButton = (phoneTo: Phone) => {
-    saveCartPhones(phoneTo.id);
+    saveCartPhones(phoneTo);
   };
 
   const handleFavButton = () => setIsFavorite(!isFavorite);

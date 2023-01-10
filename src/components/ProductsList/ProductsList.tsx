@@ -8,9 +8,6 @@ export const ProductsList: React.FC = () => {
   const [perPage, setPerPage] = useState(20);
   const [currentPage, setCurrentPage] = useState(1);
 
-  // const products: number[] // type will be changed after getting products
-  //   = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]; // it`s a temp array, must be changed
-
   const {
     // cartPhoneIds,
     // setCartPhoneIds,

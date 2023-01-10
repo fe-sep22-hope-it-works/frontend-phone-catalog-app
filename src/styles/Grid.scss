@@ -6,7 +6,7 @@
   gap: 16px;
 
   @include onTablet {
-    grid-template-columns: repeat(2, 1fr)
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @include onDesktop {
