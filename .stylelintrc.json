@@ -3,6 +3,20 @@
     "stylelint-config-recommended-scss",
     "@mate-academy/stylelint-config"
   ],
-  "plugins": ["stylelint-scss"],
-  "rules": {}
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never",
+        "js": "never",
+        "jsx": "never",
+        "mjs": "never"
+      }
+    ]
+  }
 }

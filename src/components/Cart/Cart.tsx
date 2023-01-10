@@ -39,6 +39,13 @@ export const Cart: React.FC = () => {
     .reduce((currentTotal: number, price: number) => currentTotal + price, 0),
   [cartPhones]);
 
+  const totalQuantity = useMemo(() => cartPhones
+    .map(product => product.quantity || 0)
+    .reduce(
+      (currentTotal: number, quantity: number) => currentTotal + quantity, 0,
+    ),
+  [cartPhones]);
+
   return (
     <div className="cart__container">
       <div className="cart">
@@ -73,9 +80,9 @@ export const Cart: React.FC = () => {
           </div>
 
           <div className="cart__total">
-            <p className="cart__total__price">{totalPrice}</p>
+            <p className="cart__total__price">{`$${totalPrice}`}</p>
             <p className="cart__total__text">
-              {`Total for ${cartPhones.length} items`}
+              {`Total for ${totalQuantity} items`}
             </p>
             <div className="cart__total__line" />
 
