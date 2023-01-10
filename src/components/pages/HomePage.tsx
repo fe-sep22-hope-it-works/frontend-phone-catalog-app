@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../styles/page-title.scss';
-import { HotPrices } from '../HotPrices';
 import { NewPhones } from '../NewPhones';
+import { HotPrices } from '../HotPrices';
 import { Slider } from '../Slider/Slider';
 
 export const HomePage = () => {
