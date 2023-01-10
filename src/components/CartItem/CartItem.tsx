@@ -5,7 +5,7 @@ import { Phone } from '../../types/Phone';
 interface Props {
   product: Phone,
   changeProductQuantity: (productToChange: Phone, newQuantity: number) => void;
-  removeItem: (idToRemove: number) => void;
+  removeItem: (idToRemove: string) => void;
 }
 
 export const CartItem: React.FC<Props> = ({
