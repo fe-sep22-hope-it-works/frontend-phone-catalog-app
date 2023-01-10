@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../styles/page-title.scss';
+import { HotPrices } from '../HotPrices';
 import { Slider } from '../Slider/Slider';
 
 export const HomePage = () => {
@@ -10,6 +11,8 @@ export const HomePage = () => {
           Welcome to Nice Gadgets store!
         </h1>
         <Slider />
+
+        <HotPrices />
       </div>
     </div>
   );
