@@ -23,7 +23,7 @@ export const PhoneContext = React.createContext<PhoneContextInterface>({
 
 export const PhoneProvider: React.FC<Props> = ({ children }) => {
   const [cartPhones, setCartPhones] = useState<string[]>(
-    JSON.parse(localStorage.getItem('cartPhones') || ''),
+    JSON.parse((localStorage.getItem('cartPhones') || '[]')),
   );
   const [phones, setPhones] = useState<Phone[]>([]);
 
