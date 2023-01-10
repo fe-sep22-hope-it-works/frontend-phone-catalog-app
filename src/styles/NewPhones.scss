@@ -20,12 +20,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-weight: 800;
-    color: #0F0F11;
-    font-size: 32px;
 
-    &__text {
-
+    &-text {
+      font-weight: 800;
+      color: #0F0F11;
+      font-size: 32px;
     }
 
     &__buttons {
