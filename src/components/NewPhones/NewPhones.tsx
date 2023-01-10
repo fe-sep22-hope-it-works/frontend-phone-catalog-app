@@ -109,63 +109,6 @@ export const NewPhones: React.FC = () => {
         </div>
       </div>
     </section>
-=======
-  const visiblePhones = phones.slice(0, 4);
-=======
-  // const visiblePhonesLength = 4;
-  // const visiblePhones = phones.slice(0, 4);
-
-  // useEffect(() => {
-  //   window.addEventListener('resize', () => {
-  //     setInnerWidth(window.innerWidth);
-  //   });
-
-  //   return () => {
-  //     window.removeEventListener('resize', () => {
-  //       setInnerWidth(window.innerWidth);
-  //     });
-  //   };
-  // }, [innerWidth]);
-
-  // const visiblePhones = phones.slice(
-  //   visiblePhones,
-  //   visiblePhones + visiblePhonesLength,
-  // );
-
-  // const firstPart = visiblePhones < visiblePhonesLength;
-  // const lastPart = visiblePhones + visiblePhonesLength >= phones.length;
-
-  // const rightClick = () => {
-  //   if (visiblePhones < phones.length - 1) {
-  //     setVisiblePhones((prevPart) => prevPart + 1);
-  //   }
-  // };
-
-  // const leftClick = () => {
-  //   if (visiblePhones > 1) {
-  //     setVisiblePhones((prevPart) => prevPart - 1);
-  //   }
-  // };
-
-  // const handleTouchStart = (event: React.TouchEvent<HTMLImageElement>) => {
-  //   setTouchEnd(0);
-  //   setTouchStart(event.targetTouches[0].clientX);
-  // };
-
-  // const handleTouchMove = (event: React.TouchEvent<HTMLImageElement>) => {
-  //   setTouchEnd(event.targetTouches[0].clientX);
-  // };
-
-  // const handleTouchEnd = () => {
-  //   if (touchStart - touchEnd > 100 && touchEnd !== 0) {
-  //     rightClick();
-  //   }
-
-  //   if (touchStart - touchEnd < -100 && touchEnd !== 0) {
-  //     leftClick();
-  //   }
-  // };
->>>>>>> 32e33c8 (Phones loaded, started working on styles and carousel)
 
   return (
     <section className="new-phones">
@@ -197,5 +140,14 @@ export const NewPhones: React.FC = () => {
       </div>
     </section>
 >>>>>>> 32e33c8 (Phones loaded, started working on styles and carousel)
+=======
+import React from 'react';
+
+export const NewPhones: React.FC = () => {
+  return (
+    <div className="new-phones__container">
+      New phones container
+    </div>
+>>>>>>> fdfc906 (Initial setup)
   );
 };
