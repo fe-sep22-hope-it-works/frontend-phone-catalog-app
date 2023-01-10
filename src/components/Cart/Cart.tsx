@@ -5,7 +5,9 @@ import { Phone } from '../../types/Phone';
 import { PhoneContext } from '../PhoneContext/PhoneContext';
 
 export const Cart: React.FC = () => {
-  const { cartPhones, setCartPhones } = useContext(PhoneContext);
+  const {
+    cartPhones, setCartPhones, saveCartPhones,
+  } = useContext(PhoneContext);
 
   const ChangeProductQuantity = (productToChange: Phone, newQuantity = 1) => {
     const newCartProducts = cartPhones.map(product => {
@@ -25,11 +27,12 @@ export const Cart: React.FC = () => {
     });
 
     setCartPhones(newCartProducts);
+
+    localStorage.setItem('cartPhones', JSON.stringify(newCartProducts));
   };
 
-  const removeItem = (id: number) => {
-    setCartPhones(cartPhones
-      .filter(product => product.id !== id));
+  const removeItem = (product: Phone) => {
+    saveCartPhones(product);
   };
 
   const totalPrice = useMemo(() => cartPhones
