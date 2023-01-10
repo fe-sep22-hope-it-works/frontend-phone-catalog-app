@@ -113,7 +113,7 @@ export const NewPhones: React.FC = () => {
   return (
     <section className="new-phones">
       <div className="new-phones__title">
-        <h2>Brand new models</h2>
+        <h2 className="new-phones__title-text">Brand new models</h2>
 
         <button type="button" className="new-phones__button">
           {'<'}
