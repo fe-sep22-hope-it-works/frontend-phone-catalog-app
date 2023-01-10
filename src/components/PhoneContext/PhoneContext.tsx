@@ -15,10 +15,10 @@ interface PhoneContextInterface {
 
 export const PhoneContext = React.createContext<PhoneContextInterface>({
   cartPhones: [],
-  setCartPhones: () => { },
+  setCartPhones: () => {},
   phones: [],
-  setPhones: () => { },
-  saveCartPhones: () => { },
+  setPhones: () => {},
+  saveCartPhones: () => {},
 });
 
 export const PhoneProvider: React.FC<Props> = ({ children }) => {
@@ -27,14 +27,14 @@ export const PhoneProvider: React.FC<Props> = ({ children }) => {
   );
   const [phones, setPhones] = useState<Phone[]>([]);
 
-  const saveCartPhones = (value: string) => {
-    const idToCheck = cartPhones.find(cart => cart === value)
-      ? cartPhones.filter(cart => cart !== value)
-      : [...cartPhones, value];
+  const saveCartPhones = (id: string) => {
+    const newCartPhones = cartPhones.find(cart => cart === id)
+      ? cartPhones.filter(cart => cart !== id)
+      : [...cartPhones, id];
 
-    setCartPhones(idToCheck);
+    setCartPhones(newCartPhones);
 
-    localStorage.setItem('cartPhones', JSON.stringify(idToCheck));
+    localStorage.setItem('cartPhones', JSON.stringify(newCartPhones));
   };
 
   const contextValue = {
