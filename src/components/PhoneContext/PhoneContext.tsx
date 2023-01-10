@@ -6,11 +6,11 @@ type Props = {
 };
 
 interface PhoneContextInterface {
-  cartPhones: string[],
-  setCartPhones: React.Dispatch<React.SetStateAction<string[]>>,
+  cartPhones: Phone[],
+  setCartPhones: React.Dispatch<React.SetStateAction<Phone[]>>,
   phones: Phone[],
   setPhones: React.Dispatch<React.SetStateAction<Phone[]>>,
-  saveCartPhones: (value: string) => void,
+  saveCartPhones: (phone: Phone) => void,
 }
 
 export const PhoneContext = React.createContext<PhoneContextInterface>({
@@ -22,15 +22,15 @@ export const PhoneContext = React.createContext<PhoneContextInterface>({
 });
 
 export const PhoneProvider: React.FC<Props> = ({ children }) => {
-  const [cartPhones, setCartPhones] = useState<string[]>(
+  const [cartPhones, setCartPhones] = useState<Phone[]>(
     JSON.parse((localStorage.getItem('cartPhones') || '[]')),
   );
   const [phones, setPhones] = useState<Phone[]>([]);
 
-  const saveCartPhones = (id: string) => {
-    const newCartPhones = cartPhones.find(cart => cart === id)
-      ? cartPhones.filter(cart => cart !== id)
-      : [...cartPhones, id];
+  const saveCartPhones = (phone: Phone) => {
+    const newCartPhones = cartPhones.find(cart => cart.id === phone.id)
+      ? cartPhones.filter(cart => cart.id !== phone.id)
+      : [...cartPhones, phone];
 
     setCartPhones(newCartPhones);
 
