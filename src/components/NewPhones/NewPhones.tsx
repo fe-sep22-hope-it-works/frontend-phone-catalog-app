@@ -22,7 +22,6 @@ export const NewPhones: React.FC = () => {
     getNewPhonesFromServer();
   }, []);
 
-<<<<<<< HEAD
   const visibleItems = phones
     .slice(visiblePhones, visiblePhones + visiblePhonesLength);
 
@@ -112,17 +111,91 @@ export const NewPhones: React.FC = () => {
     </section>
 =======
   const visiblePhones = phones.slice(0, 4);
+=======
+  // const visiblePhonesLength = 4;
+  // const visiblePhones = phones.slice(0, 4);
+
+  // useEffect(() => {
+  //   window.addEventListener('resize', () => {
+  //     setInnerWidth(window.innerWidth);
+  //   });
+
+  //   return () => {
+  //     window.removeEventListener('resize', () => {
+  //       setInnerWidth(window.innerWidth);
+  //     });
+  //   };
+  // }, [innerWidth]);
+
+  // const visiblePhones = phones.slice(
+  //   visiblePhones,
+  //   visiblePhones + visiblePhonesLength,
+  // );
+
+  // const firstPart = visiblePhones < visiblePhonesLength;
+  // const lastPart = visiblePhones + visiblePhonesLength >= phones.length;
+
+  // const rightClick = () => {
+  //   if (visiblePhones < phones.length - 1) {
+  //     setVisiblePhones((prevPart) => prevPart + 1);
+  //   }
+  // };
+
+  // const leftClick = () => {
+  //   if (visiblePhones > 1) {
+  //     setVisiblePhones((prevPart) => prevPart - 1);
+  //   }
+  // };
+
+  // const handleTouchStart = (event: React.TouchEvent<HTMLImageElement>) => {
+  //   setTouchEnd(0);
+  //   setTouchStart(event.targetTouches[0].clientX);
+  // };
+
+  // const handleTouchMove = (event: React.TouchEvent<HTMLImageElement>) => {
+  //   setTouchEnd(event.targetTouches[0].clientX);
+  // };
+
+  // const handleTouchEnd = () => {
+  //   if (touchStart - touchEnd > 100 && touchEnd !== 0) {
+  //     rightClick();
+  //   }
+
+  //   if (touchStart - touchEnd < -100 && touchEnd !== 0) {
+  //     leftClick();
+  //   }
+  // };
+>>>>>>> 32e33c8 (Phones loaded, started working on styles and carousel)
 
   return (
-    <div className="new-phones">
-      <div className="new-phones__container">
-        <h3>Brand new models</h3>
+    <section className="new-phones">
+      <div className="new-phones__title">
+        <h2>Brand new models</h2>
 
-        {visiblePhones.map((phone) => (
-          <Card key={phone.id} phone={phone} />
-        ))}
+        <button type="button" className="new-phones__button">
+          {'<'}
+        </button>
+
+        <button type="button" className="new-phones__button">
+          {'>'}
+        </button>
       </div>
+<<<<<<< HEAD
     </div>
 >>>>>>> 2351f75 (Merged with Hot Prices)
+=======
+      <div className="newPhones__carousel carousel__container">
+        <div className="carousel__wrapper">
+          <div className="carousel__content-wrapper">
+            <div className="carousel__content">
+              {phones.map((phone) => (
+                <Card key={phone.id} phone={phone} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+>>>>>>> 32e33c8 (Phones loaded, started working on styles and carousel)
   );
 };
