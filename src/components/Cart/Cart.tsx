@@ -1,8 +1,42 @@
-import React from 'react';
+import React, { useContext, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { CartItem } from '../CartItem';
+import { Phone } from '../../types/Phone';
+import { PhoneContext } from '../PhoneContext/PhoneContext';
 
 export const Cart: React.FC = () => {
+  const { cartPhones, setCartPhones } = useContext(PhoneContext);
+
+  const ChangeProductQuantity = (productToChange: Phone, newQuantity = 1) => {
+    const newCartProducts = cartPhones.map(product => {
+      if (product.id === productToChange.id) {
+        const changedProduct = {
+          ...productToChange,
+          quantity: newQuantity,
+        };
+
+        return changedProduct;
+      }
+
+      return {
+        ...product,
+        quantity: product.quantity || 1,
+      };
+    });
+
+    setCartPhones(newCartProducts);
+  };
+
+  const removeItem = (id: number) => {
+    setCartPhones(cartPhones
+      .filter(product => product.id !== id));
+  };
+
+  const totalPrice = useMemo(() => cartPhones
+    .map(product => product.price * (product.quantity || 1))
+    .reduce((currentTotal: number, price: number) => currentTotal + price, 0),
+  [cartPhones]);
+
   return (
     <div className="cart__container">
       <div className="cart">
@@ -25,18 +59,29 @@ export const Cart: React.FC = () => {
 
         <div className="cart__content">
           <div className="cart__items">
-            <CartItem />
-            <CartItem />
+            {cartPhones.map(product => (
+              <div key={product.id} className="cart__item">
+                <CartItem
+                  removeItem={removeItem}
+                  product={product}
+                  changeProductQuantity={ChangeProductQuantity}
+                />
+              </div>
+            ))}
           </div>
 
           <div className="cart__total">
-            <p className="cart__total__price">$1998</p>
-            <p className="cart__total__text">Total for 2 items</p>
+            <p className="cart__total__price">{totalPrice}</p>
+            <p className="cart__total__text">
+              {`Total for ${cartPhones.length} items`}
+            </p>
             <div className="cart__total__line" />
 
-            <button type="button" className="cart__total__button">
-              Checkout
-            </button>
+            <Link to="/checkout">
+              <button type="button" className="cart__total__button">
+                Checkout
+              </button>
+            </Link>
           </div>
         </div>
       </div>

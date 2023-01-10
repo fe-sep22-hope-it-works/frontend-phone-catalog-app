@@ -27,7 +27,6 @@ export const ProductsList: React.FC = () => {
   useEffect(() => {
     getPhonesFromServer();
   }, []);
-
   const perPageOptions = [4, 8, 12, 16, 20];
 
   const firstPageItemIndex = currentPage * perPage - perPage;
