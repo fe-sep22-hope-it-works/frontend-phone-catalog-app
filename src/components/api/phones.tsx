@@ -17,3 +17,7 @@ export const getPhoneImage = (id: number) => {
 export const getHotPricesPhones = () => {
   return getPhones<Phone[]>('/phones/discount');
 };
+
+export const getNewPhones = () => {
+  return getPhones<Phone[]>('/new');
+};
