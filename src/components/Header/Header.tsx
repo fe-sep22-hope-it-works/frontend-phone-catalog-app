@@ -65,14 +65,14 @@ export const Header = () => {
 
         <div className="header__content__buttons">
           <NavLink
-            to="/"
+            to="/favourites"
             className="header__content__buttons-right menu-moved"
           >
             <img src={heartIcon} alt="favorites" />
           </NavLink>
 
           <NavLink
-            to="/"
+            to="/cart"
             className="header__content__buttons-right menu-moved"
           >
             <img src={shopIcon} alt="shopCard" />
