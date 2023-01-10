@@ -1,116 +1,86 @@
-@import './utils/vars';
 @import './utils/mixins';
 
 .header {
-  height: $heightHeaderDesk;
-  background: #FFFFFF;
-  box-shadow: 0px 1px 0px #E2E6E9;
+  margin: 0 auto;
+  padding-left: 16px;
+  transition: 0.3s ease all;
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0px 1px 0px #e2e6e9;
 
-  @media (max-width: 1199px) {
-    height: $heightHeaderTab;
+  @include onTablet {
+    padding-left: 24px;
   }
 
-  &__container {
+  @include onDesktop {
+    padding-left: 32px;
+  }
+
+  &__logo {
+    @include onTablet {
+      padding-right: 16px;
+    }
+
+    @include onDesktop {
+      padding-right: 32px;
+    }
+  }
+
+  &__content {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
 
-    &--mob {
-      padding-left: 34px;
-    }
-  }
+    &__nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  &__nav {
-    display: flex;
-    align-items: center;
-    margin-left: 24px;
-  }
-}
+      &__list {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
 
-.nav {
-  margin-left: 48px;
-  display: flex;
-  gap: $heightHeaderDesk - $paddingForNavItem * 2;
+      &__link {
+        color: #89939a;
+        text-decoration: none;
+        display: flex;
+        height: 48px;
+        align-items: center;
+        position: relative;
+        font-family: 'Mont';
+        font-style: normal;
+        font-weight: 800;
 
-  @media (max-width: 1199px) {
-    gap: $heightHeaderTab - $paddingForNavItem * 2;
-    margin-left: 5px;
-  }
+        transition: 0.3s;
 
-  &__link {
-    display: inline-block;
-    height: $heightHeaderDesk;
-    line-height: $heightHeaderDesk;
-    padding: 0 $paddingForNavItem;
-    text-decoration: none;
+        @include onTablet {
+          margin: 0 16px;
+        }
 
-    font-style: normal;
-    font-weight: 800;
-    font-size: 12px;
+        @include onDesktop {
+          height: 64px;
+          margin: 0 32px;
+        }
 
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: #89939A;
-
-    @media (max-width: 1199px) {
-      height: $heightHeaderTab;
-      line-height: $heightHeaderTab;
-    }
-
-    &--active {
-      position: relative;
-      color: #0F0F11;
-
-      &::after {
-        position: absolute;
-        width: calc(100% - 30px);
-        content: "";
-        display: block;
-        height: 3px;
-        background-color: #0F0F11;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        &:hover {
+          color: #0f0f11;
+        }
       }
     }
-  }
-}
 
-.my-purchases {
-  &__nav {
-    display: flex;
-  }
-
-  &__icon {
-    display: flex;
-    justify-content: center;
-    width: $heightHeaderDesk;
-    height: $heightHeaderDesk;
-    box-shadow: -1px 0px 0px #E2E6E9;
-    border-right: 1px solid #E2E6E9;
-
-    @media (max-width: 1199px) {
-      height: $heightHeaderTab;
-      width: $heightHeaderTab;
-      line-height: $heightHeaderTab;
-    }
-  }
-
-  &__img {
-    width: $heightHeaderDesk;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    &--favourites {
-      background-image: url("../img//header/favourites.svg");
+    &__buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    &--cart {
-      background-image: url("../img//header/purchases.svg");
-    }
-
-    &--menu {
+    &__buttons-right {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -121,26 +91,49 @@
 
       height: 48px;
       width: 48px;
+
+      @include onDesktop {
+        height: 64px;
+        width: 64px;
+      }
     }
+  }
 
-    &--active {
-      position: relative;
+  &__is-active {
+    color: #0f0f11;
 
-      &::after {
+    &::after {
+      @include onTablet {
+        content: ' ';
         position: absolute;
-        width: $heightHeaderDesk;
-        content: "";
-        display: block;
-        height: 3px;
-        background-color: #0F0F11;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-
-        @media (max-width: 1199px) {
-          width: $heightHeaderTab;
+        width: 100%;
+        height: 4px;
+        background: #0f0f11;
+        border-radius: 8px;
+        top: 45px;
+        
+        @include onDesktop() {
+          content: ' ';
+          position: absolute;
+          width: 100%;
+          height: 4px;
+          background: #0f0f11;
+          border-radius: 8px;
+          top: 60px;
         }
       }
+    }
+  }
+}
+
+.menu {
+  @include onTablet {
+    display: none;
+  }
+
+  &-moved {
+    @media (max-width: 639px) {
+      display: none;
     }
   }
 }

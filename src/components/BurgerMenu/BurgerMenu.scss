@@ -1,8 +1,4 @@
-@mixin onTablet {
-  @media (min-width: 640px) {
-    @content;
-  }
-}
+@import '../../styles/utils/mixins';
 
 .burger__menu {
   box-sizing: border-box;
@@ -11,6 +7,7 @@
   background-color: #fff;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 2;
 
   position: fixed;
   left: 0;
@@ -107,4 +104,4 @@
       top: 45px;
     }
   }
-}
+ }
