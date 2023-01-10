@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/page-title.scss';
+import { Categories } from '../Categories/Categories';
 import { Slider } from '../Slider/Slider';
 
 export const HomePage = () => {
@@ -10,6 +10,7 @@ export const HomePage = () => {
           Welcome to Nice Gadgets store!
         </h1>
         <Slider />
+        <Categories />
       </div>
     </div>
   );
