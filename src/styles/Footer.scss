@@ -1,20 +1,27 @@
 .footer {
-  padding: 32px 16px;
   display: flex;
-  flex-direction: column;
-  gap: 32px;
+  justify-content: flex-start;
   box-shadow: 0px -1px 0px #E2E6E9;
   background-color: #FFFFFF;
 
   @media (min-width: 640px) {
-    padding: 32px 24px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
   }
 
-  @media (min-width: 1200px) {
-    padding: 32px 152px;
+  &__content {
+    max-width: 1200px;
+    padding: 32px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @media (min-width: 640px) {
+      width: 100%;
+      padding: 32px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   &__topscroll {
@@ -25,6 +32,10 @@
     font-weight: 700;
     color: #89939a;
     font-size: 12px;
+
+    &__text {
+      cursor: pointer;
+    }
 
     &__button {
       width: 32px;
@@ -38,6 +49,10 @@
       background-repeat: no-repeat;
       background-position: center;
       cursor: pointer;
+
+      &:hover {
+        border-color: #0F0F11;
+      }
     }
   }
 

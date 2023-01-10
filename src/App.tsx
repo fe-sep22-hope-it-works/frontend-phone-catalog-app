@@ -22,7 +22,9 @@ export function App() {
   return (
     <div className="app">
       <Header />
-      <RoutesList />
+      <main>
+        <RoutesList />
+      </main>
       <Footer />
     </div>
   );
