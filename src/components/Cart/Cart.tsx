@@ -47,6 +47,12 @@ export const Cart: React.FC = () => {
     ),
   [cartPhones]);
 
+  const clearCart = () => {
+    setCartPhones([]);
+
+    localStorage.setItem('cartPhones', JSON.stringify([]));
+  };
+
   return (
     <div className="cart__container">
       <div className="cart">
@@ -88,7 +94,11 @@ export const Cart: React.FC = () => {
             <div className="cart__total__line" />
 
             <Link to="/checkout">
-              <button type="button" className="cart__total__button">
+              <button
+                type="button"
+                className="cart__total__button"
+                onClick={clearCart}
+              >
                 Checkout
               </button>
             </Link>

@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
 import img from '../../img/card-images/iphone.svg';
 import { Phone } from '../../types/Phone';
@@ -18,6 +19,8 @@ export const CartItem: React.FC<Props> = ({
   useEffect(() => {
     changeProductQuantity(product, productQuantity);
   }, [productQuantity]);
+
+  const decrDisable = productQuantity === 1;
 
   return (
     <>
@@ -45,12 +48,12 @@ export const CartItem: React.FC<Props> = ({
           <button
             type="button"
             aria-label="Save"
-            className="
-              cart__item__price__quantity__button
-              cart__item__price__quantity__button__decrease
-            "
+            className={classNames(
+              'cart__item__price__quantity__button',
+              { 'cart__item__price__quantity__button-isDisabled': decrDisable },
+            )}
             onClick={() => setProductQuantity(prevQty => prevQty - 1)}
-            disabled={productQuantity === 1}
+            disabled={decrDisable}
           >
             -
           </button>
@@ -62,10 +65,7 @@ export const CartItem: React.FC<Props> = ({
           <button
             type="button"
             aria-label="Save"
-            className="
-              cart__item__price__quantity__button
-              cart__item__price__quantity__button__increase
-            "
+            className="cart__item__price__quantity__button"
             onClick={() => setProductQuantity(
               (prevQty: number) => prevQty + 1,
             )}
