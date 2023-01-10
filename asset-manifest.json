@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frontend-phone-catalog-app/static/css/main.e6096a14.css",
-    "main.js": "/frontend-phone-catalog-app/static/js/main.c10d2c33.js",
+    "main.css": "/frontend-phone-catalog-app/static/css/main.7abf0069.css",
+    "main.js": "/frontend-phone-catalog-app/static/js/main.86f5dd94.js",
     "static/media/banner-main-mob.svg": "/frontend-phone-catalog-app/static/media/banner-main-mob.88a4f1480a819a019e4909ece5f3f2d7.svg",
     "static/media/banner-around-mob.jpg": "/frontend-phone-catalog-app/static/media/banner-around-mob.7d85f380831051199c4a.jpg",
     "static/media/404-image.jpg": "/frontend-phone-catalog-app/static/media/404-image.860b94ea26e80d11d2b4.jpg",
@@ -25,11 +25,11 @@
     "static/media/circle-check-solid.svg": "/frontend-phone-catalog-app/static/media/circle-check-solid.de820a7526895ec6013b.svg",
     "static/media/menu.svg": "/frontend-phone-catalog-app/static/media/menu.ed9a69493f1a53f495cb321abb454cd4.svg",
     "static/media/close.svg": "/frontend-phone-catalog-app/static/media/close.b16b98b786927fa985b828c10274df81.svg",
-    "main.e6096a14.css.map": "/frontend-phone-catalog-app/static/css/main.e6096a14.css.map",
-    "main.c10d2c33.js.map": "/frontend-phone-catalog-app/static/js/main.c10d2c33.js.map"
+    "main.7abf0069.css.map": "/frontend-phone-catalog-app/static/css/main.7abf0069.css.map",
+    "main.86f5dd94.js.map": "/frontend-phone-catalog-app/static/js/main.86f5dd94.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6096a14.css",
-    "static/js/main.c10d2c33.js"
+    "static/css/main.7abf0069.css",
+    "static/js/main.86f5dd94.js"
   ]
 }
