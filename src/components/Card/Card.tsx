@@ -15,20 +15,8 @@ type Props = {
 };
 
 export const Card: React.FC<Props> = ({ phone }) => {
-  const [isActiveToCard, setIsActiveToCard] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
-
-  const { setCartPhones } = useContext(PhoneContext);
-
-  const handleCardButton = () => {
-    setIsActiveToCard(!isActiveToCard);
-
-    setCartPhones(prevPhones => [...prevPhones, phone]);
-  };
-
-  const handleFavButton = () => setIsFavorite(!isFavorite);
-
   const {
+    id,
     name,
     fullPrice,
     price,
@@ -36,6 +24,18 @@ export const Card: React.FC<Props> = ({ phone }) => {
     capacity,
     ram,
   } = phone;
+
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const { saveCartPhones, cartPhones } = useContext(PhoneContext);
+
+  const isAdded = cartPhones.find(cart => cart === id);
+
+  const handleCardButton = (phoneTo: Phone) => {
+    saveCartPhones(phoneTo.id);
+  };
+
+  const handleFavButton = () => setIsFavorite(!isFavorite);
 
   return (
     <section className="card grid__item-tablet-1-4">
@@ -77,11 +77,15 @@ export const Card: React.FC<Props> = ({ phone }) => {
       <div className="card__buy">
         <button
           className={classNames('card__buy--add', {
-            'card__buy--add-active': isActiveToCard,
+            'card__buy--add-active': isAdded,
           })}
-          onClick={handleCardButton}
+          onClick={() => handleCardButton(phone)}
         >
-          {!isActiveToCard ? 'Add to cart' : 'Added'}
+          {
+            !isAdded
+              ? 'Add to cart'
+              : 'Added'
+          }
         </button>
 
         <Link

@@ -5,10 +5,12 @@ import { Phone } from '../../types/Phone';
 import { PhoneContext } from '../PhoneContext/PhoneContext';
 
 export const Cart: React.FC = () => {
-  const { cartPhones, setCartPhones } = useContext(PhoneContext);
+  const { phones, cartPhones, setCartPhones } = useContext(PhoneContext);
+
+  const cartPhoneById = phones.filter(phone => cartPhones.includes(phone.id));
 
   const ChangeProductQuantity = (productToChange: Phone, newQuantity = 1) => {
-    const newCartProducts = cartPhones.map(product => {
+    const newCartProducts = cartPhoneById.map(product => {
       if (product.id === productToChange.id) {
         const changedProduct = {
           ...productToChange,
@@ -24,20 +26,20 @@ export const Cart: React.FC = () => {
       };
     });
 
-    setCartPhones(newCartProducts);
+    setCartPhones(newCartProducts.map(phone => phone.id));
   };
 
-  const removeItem = (id: number) => {
-    setCartPhones(cartPhones
-      .filter(product => product.id !== id));
+  const removeItem = (id: string) => {
+    setCartPhones(cartPhoneById
+      .filter(product => product.id !== id).map(phone => phone.id));
   };
 
-  const totalPrice = useMemo(() => cartPhones
+  const totalPrice = useMemo(() => cartPhoneById
     .map(product => product.price * (product.quantity || 1))
     .reduce((currentTotal: number, price: number) => currentTotal + price, 0),
   [cartPhones]);
 
-  const totalQuantity = useMemo(() => cartPhones
+  const totalQuantity = useMemo(() => cartPhoneById
     .map(product => product.quantity || 0)
     .reduce(
       (currentTotal: number, quantity: number) => currentTotal + quantity, 0,
@@ -66,7 +68,7 @@ export const Cart: React.FC = () => {
 
         <div className="cart__content">
           <div className="cart__items">
-            {cartPhones.map(product => (
+            {cartPhoneById.map(product => (
               <div key={product.id} className="cart__item">
                 <CartItem
                   removeItem={removeItem}
