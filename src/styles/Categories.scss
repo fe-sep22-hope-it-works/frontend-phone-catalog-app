@@ -77,13 +77,13 @@
     object-position: right bottom;
     object-fit: none;
 
+    &:hover {
+      transform: scale(1.1);
+    }
+
     @media (max-width: 640px) {
       max-width: 288px;
       max-height: 288px;
-    }
-
-    &:hover {
-      transform: scale(1.1);
     }
 
     @media (max-width: 1200px) {
