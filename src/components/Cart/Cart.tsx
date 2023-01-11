@@ -5,12 +5,12 @@ import { Phone } from '../../types/Phone';
 import { PhoneContext } from '../PhoneContext/PhoneContext';
 
 export const Cart: React.FC = () => {
-  const { phones, cartPhones, setCartPhones } = useContext(PhoneContext);
-
-  const cartPhoneById = phones.filter(phone => cartPhones.includes(phone.id));
+  const {
+    cartPhones, setCartPhones, saveCartPhones,
+  } = useContext(PhoneContext);
 
   const ChangeProductQuantity = (productToChange: Phone, newQuantity = 1) => {
-    const newCartProducts = cartPhoneById.map(product => {
+    const newCartProducts = cartPhones.map(product => {
       if (product.id === productToChange.id) {
         const changedProduct = {
           ...productToChange,
@@ -26,25 +26,32 @@ export const Cart: React.FC = () => {
       };
     });
 
-    setCartPhones(newCartProducts.map(phone => phone.id));
+    setCartPhones(newCartProducts);
+
+    localStorage.setItem('cartPhones', JSON.stringify(newCartProducts));
   };
 
-  const removeItem = (id: string) => {
-    setCartPhones(cartPhoneById
-      .filter(product => product.id !== id).map(phone => phone.id));
+  const removeItem = (product: Phone) => {
+    saveCartPhones(product);
   };
 
-  const totalPrice = useMemo(() => cartPhoneById
+  const totalPrice = useMemo(() => cartPhones
     .map(product => product.price * (product.quantity || 1))
     .reduce((currentTotal: number, price: number) => currentTotal + price, 0),
   [cartPhones]);
 
-  const totalQuantity = useMemo(() => cartPhoneById
+  const totalQuantity = useMemo(() => cartPhones
     .map(product => product.quantity || 0)
     .reduce(
       (currentTotal: number, quantity: number) => currentTotal + quantity, 0,
     ),
   [cartPhones]);
+
+  const clearCart = () => {
+    setCartPhones([]);
+
+    localStorage.setItem('cartPhones', JSON.stringify([]));
+  };
 
   return (
     <div className="cart__container">
@@ -68,7 +75,7 @@ export const Cart: React.FC = () => {
 
         <div className="cart__content">
           <div className="cart__items">
-            {cartPhoneById.map(product => (
+            {cartPhones.map(product => (
               <div key={product.id} className="cart__item">
                 <CartItem
                   removeItem={removeItem}
@@ -87,7 +94,11 @@ export const Cart: React.FC = () => {
             <div className="cart__total__line" />
 
             <Link to="/checkout">
-              <button type="button" className="cart__total__button">
+              <button
+                type="button"
+                className="cart__total__button"
+                onClick={clearCart}
+              >
                 Checkout
               </button>
             </Link>

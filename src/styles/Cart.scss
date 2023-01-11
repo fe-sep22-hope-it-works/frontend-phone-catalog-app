@@ -91,7 +91,7 @@
       @media (min-width: 640px) {
         width: 220px;
       }
-      
+
       &__text {
         font-weight: 800;
         font-size: 22px;
@@ -114,15 +114,20 @@
           border-radius: 48px;
           background-color: white;
           cursor: pointer;
-          border: 1px solid;
+          border: 1px solid #B4BDC4;
 
-          &__increase {
-            border-color: #B4BDC4;
+          &:hover {
+            border-color: #0F0F11;
           }
 
-          &__decrease {
+          &-isDisabled {
             border-color: #E2E6E9;
             color: #B4BDC4;
+            cursor: default;
+
+            &:hover {
+              border-color: #E2E6E9;
+            }
           }
         }
       }
@@ -185,7 +190,7 @@
 
     &__button {
       cursor: pointer;
-      
+
       height: 48px;
       width: 100%;
 

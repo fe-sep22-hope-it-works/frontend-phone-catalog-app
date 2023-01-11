@@ -1,0 +1,59 @@
+.hotPrices {
+  &__container {
+    margin: 0 16px 64px;
+
+    @include onTablet {
+      margin: 0 24px 64px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 80px ;
+    }
+  }
+
+  &__items {
+    overflow-x: hidden;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__text {
+      font-weight: 800;
+      color: #0F0F11;
+    }
+
+    &__buttons {
+      display: flex;
+      gap: 16px;
+
+      &__button {
+        height: 32px;
+        width: 32px;
+        border: 1px solid #B4BDC4;
+        border-radius: 48px;
+
+        color: #0F0F11;
+        background-color: #FFFFFF;
+        border-color: #B4BDC4;
+        cursor: pointer;
+
+        &:hover {
+          border-color: #0F0F11;
+        }
+
+        &-isDisabled {
+          color: #B4BDC4;
+          cursor: default;
+
+          &:hover {
+            border-color: #B4BDC4;
+          }
+        }
+      }
+    }
+  }
+}

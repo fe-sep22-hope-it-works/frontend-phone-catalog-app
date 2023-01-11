@@ -1,5 +1,7 @@
 import React from 'react';
 import { Categories } from '../Categories/Categories';
+import '../../styles/page-title.scss';
+import { HotPrices } from '../HotPrices';
 import { Slider } from '../Slider/Slider';
 
 export const HomePage = () => {
@@ -11,6 +13,7 @@ export const HomePage = () => {
         </h1>
         <Slider />
         <Categories />
+        <HotPrices />
       </div>
     </div>
   );
