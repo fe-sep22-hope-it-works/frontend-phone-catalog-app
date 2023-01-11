@@ -13,10 +13,10 @@ import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
 import { Navigation } from '../Navigation';
 
 const navigationLinks = [
-  { to: '/', text: 'Home' },
-  { to: '/phones', text: 'Phones' },
-  { to: '/tablets', text: 'Tablets' },
-  { to: '/accessories', text: 'Accessories' },
+  { to: '/', text: 'HOME' },
+  { to: '/phones', text: 'PHONES' },
+  { to: '/tablets', text: 'TABLETS' },
+  { to: '/accessories', text: 'ACCESSORIES' },
 ];
 
 export const Header = () => {
