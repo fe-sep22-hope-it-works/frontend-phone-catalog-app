@@ -1,4 +1,5 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import classNames from 'classnames';
 import { getNewPhones } from '../api/phones';
 import { Card } from '../Card';
 import { PhoneContext } from '../PhoneContext/PhoneContext';
@@ -8,9 +9,10 @@ export const NewPhones: React.FC = () => {
   // const [touchStart, setTouchStart] = useState<number>(0);
   // const [touchEnd, setTouchEnd] = useState<number>(0);
   // const [innerWidth, setInnerWidth] = useState(window.innerWidth);
-  // const [currentIndex, setCurrentIndex] = useState<number>(0);
-  // const [length, setLength] = useState(phones.length);
   const { phones, setPhones } = useContext(PhoneContext);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [length, setLength] = useState<number>(phones.length - 1);
+  const [touchPosition, setTouchPosition] = useState(0);
 
   const getNewPhonesFromServer = async () => {
     const newPhonesFromServer = await getNewPhones();
@@ -21,6 +23,49 @@ export const NewPhones: React.FC = () => {
   useEffect(() => {
     getNewPhonesFromServer();
   }, []);
+
+  useEffect(() => {
+    setLength(phones.length - 1);
+  }, [phones]);
+
+  const nextItem = () => {
+    if (currentIndex < length - 1) {
+      setCurrentIndex((prevState) => prevState + 1);
+    }
+  };
+
+  const previousItem = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prevState) => prevState - 1);
+    }
+  };
+
+  const handleTouchStart = (event: React.TouchEvent<HTMLImageElement>) => {
+    const touchDown = event.touches[0].clientX;
+
+    setTouchPosition(touchDown);
+  };
+
+  const handleTouchMove = (event: React.TouchEvent<HTMLImageElement>) => {
+    const touchDown = touchPosition;
+
+    if (touchDown === null) {
+      return;
+    }
+
+    const currentTouch = event.touches[0].clientX;
+    const difference = touchDown - currentTouch;
+
+    if (difference > 5) {
+      nextItem();
+    }
+
+    if (difference < -5) {
+      previousItem();
+    }
+
+    setTouchPosition(0);
+  };
 
   // const visiblePhonesLength = 4;
   // const visiblePhones = phones.slice(0, 4);
@@ -37,10 +82,7 @@ export const NewPhones: React.FC = () => {
   //   };
   // }, [innerWidth]);
 
-  // const visiblePhones = phones.slice(
-  //   visiblePhones,
-  //   visiblePhones + visiblePhonesLength,
-  // );
+  const visiblePhones = phones.slice(0, 4);
 
   // const firstPart = visiblePhones < visiblePhonesLength;
   // const lastPart = visiblePhones + visiblePhonesLength >= phones.length;
@@ -78,24 +120,48 @@ export const NewPhones: React.FC = () => {
 
   return (
     <section className="new-phones">
-      <div className="new-phones__title">
-        <h2 className="new-phones__title-text">Brand new models</h2>
+      <div className="new-phones__container">
+        <div className="new-phones__title">
+          <h2 className="new-phones__title-text">Brand new models</h2>
 
-        <button type="button" className="new-phones__button">
-          {'<'}
-        </button>
+          <div className="new-phones__buttons button">
+            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+            <button
+              type="button"
+              className={classNames('button-left', {
+                'button-left-isDisabled': currentIndex > 0,
+              })}
+              onClick={previousItem}
+            >
+              {'<'}
+            </button>
 
-        <button type="button" className="new-phones__button">
-          {'>'}
-        </button>
-      </div>
-      <div className="newPhones__carousel carousel__container">
-        <div className="carousel__wrapper">
-          <div className="carousel__content-wrapper">
-            <div className="carousel__content">
-              {phones.map((phone) => (
-                <Card key={phone.id} phone={phone} />
-              ))}
+            <button
+              type="button"
+              className={classNames('button-right', {
+                'button-right-isDisabled':
+                  currentIndex < length - 1,
+              })}
+              onClick={nextItem}
+            >
+              {/* {'>'} */}
+            </button>
+          </div>
+        </div>
+        <div className="new-phones__items">
+          <div className="newPhones__carousel carousel__container">
+            <div className="carousel__wrapper">
+              <div
+                className="carousel__content-wrapper"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+              >
+                <div className="carousel__content grid">
+                  {visiblePhones.map((phone) => (
+                    <Card key={phone.id} phone={phone} />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
