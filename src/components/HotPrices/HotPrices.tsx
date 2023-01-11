@@ -9,7 +9,6 @@ export const HotPrices: React.FC = () => {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
-
   const {
     phones,
     setPhones,
