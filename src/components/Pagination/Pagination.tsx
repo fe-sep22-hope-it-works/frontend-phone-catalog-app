@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import classNames from 'classnames';
 import { getNumbers } from '../../utils/getNumbers';
 
@@ -19,9 +19,19 @@ export const Pagination: React.FC<Props> = ({
 
   const pages = getNumbers(1, CountOfPages);
 
-  const isFirstPage = currentPage === 1;
+  const isFirstPage = useMemo(() => currentPage === 1, [currentPage]);
 
-  const isLastPage = currentPage === CountOfPages;
+  const isLastPage = useMemo(
+    () => currentPage === CountOfPages, [currentPage, CountOfPages],
+  );
+
+  const handleClick = (
+    event: React.MouseEvent, page: number,
+  ) => {
+    event?.preventDefault();
+    onPageChange(page);
+    window.scrollTo({ top: 0 });
+  };
 
   return (
     <ul className="pagination">
@@ -33,7 +43,7 @@ export const Pagination: React.FC<Props> = ({
             'pagination__button pagination__link',
             { 'pagination__button-isDisabled': isFirstPage },
           )}
-          onClick={() => onPageChange(currentPage - 1)}
+          onClick={(event) => handleClick(event, currentPage - 1)}
         >
           {'<'}
         </button>
@@ -42,15 +52,13 @@ export const Pagination: React.FC<Props> = ({
       <li className="pagination__links">
         {pages.map(pageNumber => (
           <a
+            key={pageNumber}
             href="/"
             className={classNames(
               'pagination__link',
               { 'pagination__link-isActive': currentPage === pageNumber },
             )}
-            onClick={(event) => {
-              onPageChange(pageNumber);
-              event?.preventDefault();
-            }}
+            onClick={(event) => handleClick(event, pageNumber)}
           >
             {pageNumber}
           </a>
@@ -65,7 +73,7 @@ export const Pagination: React.FC<Props> = ({
             'pagination__button pagination__link',
             { 'pagination__button-isDisabled': isLastPage },
           )}
-          onClick={() => onPageChange(currentPage + 1)}
+          onClick={(event) => handleClick(event, currentPage + 1)}
         >
           {'>'}
         </button>

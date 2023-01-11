@@ -1,0 +1,48 @@
+.sortAndPerPageForm {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+
+  &__container {
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    margin-bottom: 4px;
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: #89939A;
+  }
+
+  &__options {
+    padding: 0 12px;
+    height: 40px;
+    width: 136px;
+
+    border: 1px solid #B4BDC4;
+    border-radius: 8px;
+
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+
+    color: #0F0F11;
+    cursor: pointer;
+
+    &:hover {
+      border-color: #0F0F11;
+    }
+  }
+
+  &__sortByForm__options {
+    @media (min-width: 640px) {
+      width: 187px;
+    }
+  }
+}

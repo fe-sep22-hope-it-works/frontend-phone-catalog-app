@@ -1,5 +1,5 @@
-import classNames from 'classnames';
 import React, { useContext, useEffect, useState } from 'react';
+import classNames from 'classnames';
 import { getHotPricesPhones } from '../api/phones';
 import { Card } from '../Card';
 import { PhoneContext } from '../PhoneContext/PhoneContext';
