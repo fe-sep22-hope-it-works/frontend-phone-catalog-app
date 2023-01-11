@@ -53,8 +53,8 @@ export const Card: React.FC<Props> = ({ phone }) => {
       </Link>
 
       <div className="card__price">
-        <p className="card__price--new">{price}</p>
-        <p className="card__price--old">{fullPrice}</p>
+        <p className="card__price--new">{`$${price}`}</p>
+        <p className="card__price--old">{`$${fullPrice}`}</p>
       </div>
 
       <div className="card__separator" />

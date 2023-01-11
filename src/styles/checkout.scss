@@ -25,9 +25,10 @@
   padding: 20px;
 
   &__img {
+    margin: 0 auto;
+    
     background-image: url(../img/circle-check-solid.svg);
     background-size: 100%;
-    background-position: center;
     background-repeat: no-repeat;
     height: 100px;
     width: 100px;

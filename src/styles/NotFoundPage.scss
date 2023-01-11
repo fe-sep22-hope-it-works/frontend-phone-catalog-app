@@ -1,4 +1,7 @@
 .not-found {
+  margin: 0;
+  padding: 0;
+
   &__container {
     box-sizing: border-box;
 
@@ -26,24 +29,19 @@
     }
 
     @media (min-width: 1900px) {
-      background-size: 70%;
+      background-size: 68%;
       background-repeat: repeat;
     }
   }
 }
 
 .message {
-  padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background: transparent;
+  align-items: stretch;
+  padding: 0;
 
   &__directions {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin: 380px 0 0 0;
 
     @media (min-width: 640px) {
@@ -55,19 +53,18 @@
     }
 
     @media (min-width: 1920px) {
-      margin: 800px 0 0 0;
+      margin: 690px 0 0 0;
     }
   }
 
   &__copyright {
-    margin: 50px 0 0 0;
+    margin-top: 20px;
   }
 }
 
 .directions {
   display: flex;
   justify-content: center;
-  align-items: center;
   text-align: center;
   font-size: 12px;
   font-weight: 800;
@@ -119,6 +116,7 @@
 
 .copyright {
   text-decoration: none;
+  color: #000;
   font-size: 8px;
 
   @media (min-width: 640px) {
