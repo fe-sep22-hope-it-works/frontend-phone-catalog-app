@@ -2,11 +2,11 @@
   &__container {
     margin: 0 16px 64px;
 
-    @include onTablet {
+    @media (min-width: 640px) {
       margin: 0 24px 64px;
     }
 
-    @include onDesktop {
+    @media (min-width: 1200px) {
       margin: 0 0 80px;
     }
   }
