@@ -9,6 +9,9 @@ export const NewPhones: React.FC = () => {
   const [touchStart, setTouchStart] = useState<number>(0);
   const [touchEnd, setTouchEnd] = useState<number>(0);
   const { phones, setPhones } = useContext(PhoneContext);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [length, setLength] = useState<number>(phones.length - 1);
+  const [touchPosition, setTouchPosition] = useState(0);
 
   const visiblePhonesLength = 4;
 
@@ -112,13 +115,23 @@ export const NewPhones: React.FC = () => {
 
   return (
     <section className="new-phones">
-      <div className="new-phones__title">
-        <h2 className="new-phones__title-text">Brand new models</h2>
+      <div className="new-phones__container">
+        <div className="new-phones__title">
+          <h2 className="new-phones__title-text">Brand new models</h2>
 
-        <button type="button" className="new-phones__button">
-          {'<'}
-        </button>
+          <div className="new-phones__buttons button">
+            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+            <button
+              type="button"
+              className={classNames('button-left', {
+                'button-left-isDisabled': currentIndex > 0,
+              })}
+              onClick={previousItem}
+            >
+              {'<'}
+            </button>
 
+<<<<<<< HEAD
         <button type="button" className="new-phones__button">
           {'>'}
         </button>
@@ -134,6 +147,34 @@ export const NewPhones: React.FC = () => {
               {phones.map((phone) => (
                 <Card key={phone.id} phone={phone} />
               ))}
+=======
+            <button
+              type="button"
+              className={classNames('button-right', {
+                'button-right-isDisabled':
+                  currentIndex < length - 1,
+              })}
+              onClick={nextItem}
+            >
+              {/* {'>'} */}
+            </button>
+          </div>
+        </div>
+        <div className="new-phones__items">
+          <div className="newPhones__carousel carousel__container">
+            <div className="carousel__wrapper">
+              <div
+                className="carousel__content-wrapper"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+              >
+                <div className="carousel__content grid">
+                  {visiblePhones.map((phone) => (
+                    <Card key={phone.id} phone={phone} />
+                  ))}
+                </div>
+              </div>
+>>>>>>> 302dceb (Carousel in progress)
             </div>
           </div>
         </div>
