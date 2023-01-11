@@ -19,8 +19,9 @@ export function App() {
   return (
     <div className="app">
       <Header />
-      <img src="" alt="" />
-      <RoutesList />
+      <main>
+        <RoutesList />
+      </main>
       <Footer />
     </div>
   );

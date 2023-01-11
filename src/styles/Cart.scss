@@ -1,7 +1,15 @@
 .cart {
   flex-grow: 1;
-  padding: 26px 16px 56px;
+  padding: 25px 16px 56px;
   max-width: 1200px;
+
+  @media (min-width: 640px) {
+    padding: 41px 24px 64px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 41px 32px 80px;
+  }
 
   &__container {
     display: flex;
@@ -150,6 +158,7 @@
     }
 
     &__text {
+      text-decoration: none;
       cursor: pointer;
       color: #89939A;
       font-weight: 700;
