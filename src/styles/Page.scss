@@ -1,0 +1,20 @@
+.main {
+  background-color: #FAFBFC;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.page {
+  margin: 0 32px;
+
+  @media (max-width: 1200px) {
+    margin: 0 24px;
+  }
+
+  @media (max-width: 640px) {
+    margin: 0 16px;
+  }
+}

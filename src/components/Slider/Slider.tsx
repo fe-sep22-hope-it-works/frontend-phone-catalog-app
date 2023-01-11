@@ -51,6 +51,14 @@ export const Slider = () => {
     }
   };
 
+  useEffect(() => {
+    const sliderTimer = setInterval(rightSwipe, 5000);
+
+    return () => {
+      clearInterval(sliderTimer);
+    };
+  }, [numberOfPhoto]);
+
   return (
     <section className="slider slider--home-page">
       <div className="slider__container">

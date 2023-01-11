@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Logo } from '../Logo';
 import '../../App.scss';
@@ -9,8 +9,10 @@ import burgerOpenIcon from '../../img/header/menu.svg';
 import burgerCloseIcon from '../../img/header/close.svg';
 import heartIcon from '../../img/header/favourites.svg';
 import shopIcon from '../../img/header/purchases.svg';
+// import ellipse from '../../img/header/ellipse.svg';
 import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
 import { Navigation } from '../Navigation';
+import { PhoneContext } from '../PhoneContext/PhoneContext';
 
 const navigationLinks = [
   { to: '/', text: 'Home' },
@@ -21,6 +23,9 @@ const navigationLinks = [
 
 export const Header = () => {
   const [burgerMenuOpen, isBurgerMenuOpen] = useState(false);
+  const { favouritePhones, cartPhones } = useContext(PhoneContext);
+  const favouritesCount = favouritePhones.length;
+  const cartCount = cartPhones.length;
 
   if (burgerMenuOpen) {
     document.body.style.overflow = 'hidden';
@@ -69,6 +74,11 @@ export const Header = () => {
             className="header__content__buttons-right menu-moved"
           >
             <img src={heartIcon} alt="favorites" />
+            {favouritesCount > 0 && (
+              <div className="header__ellips">
+                {favouritesCount}
+              </div>
+            )}
           </NavLink>
 
           <NavLink
@@ -76,6 +86,11 @@ export const Header = () => {
             className="header__content__buttons-right menu-moved"
           >
             <img src={shopIcon} alt="shopCard" />
+            {cartCount > 0 && (
+              <div className="header__ellips">
+                {cartCount}
+              </div>
+            )}
           </NavLink>
 
           {burgerMenuOpen ? (

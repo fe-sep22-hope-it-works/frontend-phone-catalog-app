@@ -8,12 +8,7 @@ export const ProductsList: React.FC = () => {
   const [perPage, setPerPage] = useState(20);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const {
-    // cartPhoneIds,
-    // setCartPhoneIds,
-    phones,
-    setPhones,
-  } = useContext(PhoneContext);
+  const { phones, setPhones } = useContext(PhoneContext);
 
   const getPhonesFromServer = async () => {
     const phonesFromServer = await getAllPhones();

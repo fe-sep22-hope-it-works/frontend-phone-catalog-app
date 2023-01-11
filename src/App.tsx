@@ -19,8 +19,10 @@ export function App() {
   return (
     <div className="app">
       <Header />
-      <main>
-        <RoutesList />
+      <main className="main">
+        <div className="main__container">
+          <RoutesList />
+        </div>
       </main>
       <Footer />
     </div>
