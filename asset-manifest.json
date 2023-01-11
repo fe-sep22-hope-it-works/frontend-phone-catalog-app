@@ -1,9 +1,12 @@
 {
   "files": {
-    "main.css": "/frontend-phone-catalog-app/static/css/main.7bc03df3.css",
-    "main.js": "/frontend-phone-catalog-app/static/js/main.2ec31469.js",
+    "main.css": "/frontend-phone-catalog-app/static/css/main.11b5883e.css",
+    "main.js": "/frontend-phone-catalog-app/static/js/main.b301950e.js",
+    "static/js/787.e7e6b629.chunk.js": "/frontend-phone-catalog-app/static/js/787.e7e6b629.chunk.js",
     "static/media/tablet.svg": "/frontend-phone-catalog-app/static/media/tablet.f9b2d98853f53a9375918128b98ed760.svg",
+    "static/media/banner.svg": "/frontend-phone-catalog-app/static/media/banner.19e658112abfd43acf9c.svg",
     "static/media/banner-main-mob.svg": "/frontend-phone-catalog-app/static/media/banner-main-mob.88a4f1480a819a019e4909ece5f3f2d7.svg",
+    "static/media/banner-three-mob.jpg": "/frontend-phone-catalog-app/static/media/banner-three-mob.859ff9b49005bb3c7a3c.jpg",
     "static/media/banner-around-mob.jpg": "/frontend-phone-catalog-app/static/media/banner-around-mob.7d85f380831051199c4a.jpg",
     "static/media/404-image.jpg": "/frontend-phone-catalog-app/static/media/404-image.860b94ea26e80d11d2b4.jpg",
     "static/media/accessories.svg": "/frontend-phone-catalog-app/static/media/accessories.a1bc9a6b0ae1977e6f16febfb3fe4953.svg",
@@ -16,7 +19,14 @@
     "static/media/Mont-Bold.otf": "/frontend-phone-catalog-app/static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
     "static/media/banner-zoom.jpg": "/frontend-phone-catalog-app/static/media/banner-zoom.53fa84950776d08ae079.jpg",
     "static/media/banner-main.png": "/frontend-phone-catalog-app/static/media/banner-main.71e7e0917555f044d60b.png",
+    "static/media/bannerDouble.jpg": "/frontend-phone-catalog-app/static/media/bannerDouble.821b222ad825b006d72c.jpg",
+    "static/media/01.jpg": "/frontend-phone-catalog-app/static/media/01.0ef6a6762d9cdb256f60.jpg",
+    "static/media/bannerZoom.jpg": "/frontend-phone-catalog-app/static/media/bannerZoom.f0f6ca70d64b766dc983.jpg",
+    "static/media/00.jpg": "/frontend-phone-catalog-app/static/media/00.c41366d349d0ae9419a7.jpg",
+    "static/media/03.jpg": "/frontend-phone-catalog-app/static/media/03.60558962d469beaed756.jpg",
+    "static/media/02.jpg": "/frontend-phone-catalog-app/static/media/02.71bc1b0b908470672de0.jpg",
     "static/media/Mont-Heavy.ttf": "/frontend-phone-catalog-app/static/media/Mont-Heavy.88b5d825471b26f0901e.ttf",
+    "static/media/04.jpg": "/frontend-phone-catalog-app/static/media/04.3c4b6b47c1321f9dce59.jpg",
     "static/media/logo.png": "/frontend-phone-catalog-app/static/media/logo.fdd6d566aee8105d491b.png",
     "static/media/purchases.svg": "/frontend-phone-catalog-app/static/media/purchases.fdbfe01add8add2cf050b5f9a10a9910.svg",
     "static/media/favourites.svg": "/frontend-phone-catalog-app/static/media/favourites.12c132c09ca4cbb24783a8409e029a4b.svg",
@@ -24,16 +34,22 @@
     "static/media/favouriteHeart.svg": "/frontend-phone-catalog-app/static/media/favouriteHeart.3438fbc65f52c97d2fb207f06ec4e916.svg",
     "index.html": "/frontend-phone-catalog-app/index.html",
     "static/media/cross.svg": "/frontend-phone-catalog-app/static/media/cross.6e7f15f7413e962f7549.svg",
+    "static/media/right-arrow-active.svg": "/frontend-phone-catalog-app/static/media/right-arrow-active.bf3a1891ec880be9db05.svg",
+    "static/media/right-arrow-inactive.svg": "/frontend-phone-catalog-app/static/media/right-arrow-inactive.2a072ff1bf1fd396b30e.svg",
+    "static/media/left-arrow-inactive.svg": "/frontend-phone-catalog-app/static/media/left-arrow-inactive.63634098e1e1143d7a7b.svg",
     "static/media/topArrow.svg": "/frontend-phone-catalog-app/static/media/topArrow.20cd6d35f6999bab1a8b.svg",
     "static/media/left-arrow-active.svg": "/frontend-phone-catalog-app/static/media/left-arrow-active.7054fc20b9c0c4527770.svg",
     "static/media/circle-check-solid.svg": "/frontend-phone-catalog-app/static/media/circle-check-solid.de820a7526895ec6013b.svg",
+    "static/media/hover.svg": "/frontend-phone-catalog-app/static/media/hover.c165b603a12c1feb1927.svg",
     "static/media/menu.svg": "/frontend-phone-catalog-app/static/media/menu.ed9a69493f1a53f495cb321abb454cd4.svg",
     "static/media/close.svg": "/frontend-phone-catalog-app/static/media/close.b16b98b786927fa985b828c10274df81.svg",
-    "main.7bc03df3.css.map": "/frontend-phone-catalog-app/static/css/main.7bc03df3.css.map",
-    "main.2ec31469.js.map": "/frontend-phone-catalog-app/static/js/main.2ec31469.js.map"
+    "static/media/ellipse.svg": "/frontend-phone-catalog-app/static/media/ellipse.70596a01f72499691042.svg",
+    "main.11b5883e.css.map": "/frontend-phone-catalog-app/static/css/main.11b5883e.css.map",
+    "main.b301950e.js.map": "/frontend-phone-catalog-app/static/js/main.b301950e.js.map",
+    "787.e7e6b629.chunk.js.map": "/frontend-phone-catalog-app/static/js/787.e7e6b629.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7bc03df3.css",
-    "static/js/main.2ec31469.js"
+    "static/css/main.11b5883e.css",
+    "static/js/main.b301950e.js"
   ]
 }
