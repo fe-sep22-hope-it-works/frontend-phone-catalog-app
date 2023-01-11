@@ -1,4 +1,5 @@
 import React from 'react';
+import { Categories } from '../Categories/Categories';
 import '../../styles/page-title.scss';
 import { HotPrices } from '../HotPrices';
 import { Slider } from '../Slider/Slider';
@@ -11,7 +12,7 @@ export const HomePage = () => {
           Welcome to Nice Gadgets store!
         </h1>
         <Slider />
-
+        <Categories />
         <HotPrices />
       </div>
     </div>

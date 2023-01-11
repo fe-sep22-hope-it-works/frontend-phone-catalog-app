@@ -1,0 +1,120 @@
+.category {
+  &--home-page {
+    margin: 80px 0;
+
+    @media (max-width: 1200px) {
+      margin: 80px 32px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+    letter-spacing: -0.01em;
+    color: #0F0F11;
+
+    @media (max-width: 640px) {
+      font-weight: 800;
+      font-size: 22px;
+      line-height: 140%;
+    }
+  }
+
+  &__pages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  &__description {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    @media (max-width: 640px) {
+      margin: 0 auto;
+      max-width: 368px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+  }
+
+  &__photo {
+    max-width: 368px;
+    max-height: 368px;
+    background-color: #6D6474;
+    overflow: hidden;
+
+    @media (max-width: 1200px) {
+      border-radius: 8px;
+    }
+
+    &--tablet {
+      background-color: #8d8d92;
+    }
+
+    &--accessories {
+      background-color: #973d5f;
+    }
+
+    @media (max-width: 640px) {
+      max-width: 288px;
+      max-height: 288px;
+    }
+  }
+
+  &__image {
+    max-width: 368px;
+    max-height: 368px;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-position: right bottom;
+    object-fit: none;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 640px) {
+      max-width: 288px;
+      max-height: 288px;
+    }
+
+    @media (max-width: 1200px) {
+      object-fit: contain;
+    }
+  }
+
+  &__description {
+    margin-top: 24px;
+  }
+
+  &__link {
+    text-decoration: none;
+    display: block;
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    color: #0F0F11;
+
+    @media (max-width: 640px) {
+          margin-top: 24px;
+    }
+  }
+
+  &__num-of-models {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #89939A;
+  }
+}
