@@ -10,28 +10,28 @@ export const Footer: React.FC = () => {
           <Logo />
         </Link>
 
-      <div className="footer__nav">
-        <Link
-          to="/github"
-          className="footer__nav__link"
-        >
-          github
-        </Link>
+        <div className="footer__nav">
+          <Link
+            to="/github"
+            className="footer__nav__link"
+          >
+            github
+          </Link>
 
-        <Link
-          to="/contacts"
-          className="footer__nav__link"
-        >
-          contacts
-        </Link>
+          <Link
+            to="/contacts"
+            className="footer__nav__link"
+          >
+            contacts
+          </Link>
 
-        <Link
-          to="/rights"
-          className="footer__nav__link"
-        >
-          rights
-        </Link>
-      </div>
+          <Link
+            to="/rights"
+            className="footer__nav__link"
+          >
+            rights
+          </Link>
+        </div>
 
         <div className="footer__topscroll">
           <label
