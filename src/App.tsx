@@ -1,27 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.scss';
-// import { getPhoneImage, getAllPhones } from './components/api/phones';
+import { getPhoneImage } from './components/api/phones';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header/Header';
 import { RoutesList } from './components/RoutesList';
 
 export function App() {
-  // const getPhonesFromServer = async () => {
-  //   const phonesFromServer = await getAllPhones(SortBy.ALPHABETCALLY);
+  const getImageFromServer = async () => {
+    const imageFromServer = await getPhoneImage(14);
 
-  //   const getImageFromServer = async () => {
-  //     const imageFromServer = await getPhoneImage(34, 2);
+    return imageFromServer;
+  };
 
-  //     return imageFromServer?.slice(22);
-  //   };
-
-  // useEffect(() => {
-  //   getImageFromServer();
-  // }, []);
+  useEffect(() => {
+    getImageFromServer();
+  }, []);
 
   return (
     <div className="app">
       <Header />
+      <img src="" alt="" />
       <RoutesList />
       <Footer />
     </div>

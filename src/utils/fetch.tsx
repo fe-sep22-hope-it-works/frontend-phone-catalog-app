@@ -21,18 +21,3 @@ export function getPhones<T>(
       return result;
     });
 }
-
-export function getImages(url: string): Promise<string | ArrayBuffer | null> {
-  return fetch(BASE_URL + url)
-    .then(response => response.blob())
-    .then(blob => new Promise(callback => {
-      const reader = new FileReader();
-
-      // eslint-disable-next-line func-names
-      reader.onload = function () {
-        callback(this.result);
-      };
-
-      reader.readAsDataURL(blob);
-    }));
-}
