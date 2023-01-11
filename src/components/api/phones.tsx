@@ -2,8 +2,12 @@ import { Phone } from '../../types/Phone';
 import { SortBy } from '../../types/SortBy';
 import { getPhones } from '../../utils/fetch';
 
-export const getAllPhones = (sortBy: SortBy = SortBy.ALPHABETCALLY) => {
-  return getPhones<Phone[]>(`/phones?sortedby=${sortBy}&page=1&phonesQuantity=71`);
+export const getAllPhones = (
+  sortBy: SortBy | string = SortBy.ALPHABETCALLY,
+  page = 1,
+  phonesQuantity = 71,
+) => {
+  return getPhones<Phone[]>(`/phones?sortedby=${sortBy}&page=${page}&phonesQuantity=${phonesQuantity}`);
 };
 
 export const getPhoneById = (id: number) => {

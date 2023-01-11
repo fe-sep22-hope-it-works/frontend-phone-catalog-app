@@ -22,8 +22,17 @@
     align-items: center;
 
     &__text {
+      margin-bottom: 24px;
       font-weight: 800;
+      font-size: 22px;
+      line-height: 41px;
+      letter-spacing: -0.01em;
       color: #0F0F11;
+      font-weight: 800;
+
+      @media (min-width: 640px) {
+        font-size: 32px;
+      }
     }
 
     &__buttons {
