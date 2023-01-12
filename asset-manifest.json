@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frontend-phone-catalog-app/static/css/main.491ea303.css",
-    "main.js": "/frontend-phone-catalog-app/static/js/main.484db267.js",
+    "main.css": "/frontend-phone-catalog-app/static/css/main.bcc08f60.css",
+    "main.js": "/frontend-phone-catalog-app/static/js/main.ebcd3aa3.js",
     "static/js/787.e7e6b629.chunk.js": "/frontend-phone-catalog-app/static/js/787.e7e6b629.chunk.js",
     "static/media/tablet.svg": "/frontend-phone-catalog-app/static/media/tablet.f9b2d98853f53a9375918128b98ed760.svg",
     "static/media/banner.svg": "/frontend-phone-catalog-app/static/media/banner.19e658112abfd43acf9c.svg",
@@ -13,16 +13,19 @@
     "static/media/mobile-phone.svg": "/frontend-phone-catalog-app/static/media/mobile-phone.f68e031a3aba82f95c1c40d42b3b3c83.svg",
     "static/media/banner-double.jpg": "/frontend-phone-catalog-app/static/media/banner-double.9895f21ea462b595da60.jpg",
     "static/media/banner-one-mob.jpg": "/frontend-phone-catalog-app/static/media/banner-one-mob.1f70c69e752c78f6ca2a.jpg",
-    "static/media/iphone.svg": "/frontend-phone-catalog-app/static/media/iphone.c72c04617bbed43aed095cd9fe30a77a.svg",
+    "static/media/iphone.svg": "/frontend-phone-catalog-app/static/media/iphone.c72c04617bbed43aed09.svg",
     "static/media/Mont-Regular.otf": "/frontend-phone-catalog-app/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
     "static/media/Mont-SemiBold.otf": "/frontend-phone-catalog-app/static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
     "static/media/Mont-Bold.otf": "/frontend-phone-catalog-app/static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
     "static/media/banner-zoom.jpg": "/frontend-phone-catalog-app/static/media/banner-zoom.53fa84950776d08ae079.jpg",
     "static/media/banner-main.png": "/frontend-phone-catalog-app/static/media/banner-main.71e7e0917555f044d60b.png",
     "static/media/bannerDouble.jpg": "/frontend-phone-catalog-app/static/media/bannerDouble.821b222ad825b006d72c.jpg",
+    "static/media/contacts.webp": "/frontend-phone-catalog-app/static/media/contacts.734415302477990c1acf.webp",
     "static/media/Zhdun.png": "/frontend-phone-catalog-app/static/media/Zhdun.f3f9838d97928d9b3393.png",
+    "static/media/right.jpg": "/frontend-phone-catalog-app/static/media/right.a6c288b36a625f398f1c.jpg",
     "static/media/01.jpg": "/frontend-phone-catalog-app/static/media/01.0ef6a6762d9cdb256f60.jpg",
     "static/media/bannerZoom.jpg": "/frontend-phone-catalog-app/static/media/bannerZoom.f0f6ca70d64b766dc983.jpg",
+    "static/media/rights.jpg": "/frontend-phone-catalog-app/static/media/rights.05ada114ec900e67429b.jpg",
     "static/media/00.jpg": "/frontend-phone-catalog-app/static/media/00.c41366d349d0ae9419a7.jpg",
     "static/media/03.jpg": "/frontend-phone-catalog-app/static/media/03.60558962d469beaed756.jpg",
     "static/media/02.jpg": "/frontend-phone-catalog-app/static/media/02.71bc1b0b908470672de0.jpg",
@@ -48,12 +51,12 @@
     "static/media/menu.svg": "/frontend-phone-catalog-app/static/media/menu.ed9a69493f1a53f495cb321abb454cd4.svg",
     "static/media/close.svg": "/frontend-phone-catalog-app/static/media/close.b16b98b786927fa985b828c10274df81.svg",
     "static/media/ellipse.svg": "/frontend-phone-catalog-app/static/media/ellipse.70596a01f72499691042.svg",
-    "main.491ea303.css.map": "/frontend-phone-catalog-app/static/css/main.491ea303.css.map",
-    "main.484db267.js.map": "/frontend-phone-catalog-app/static/js/main.484db267.js.map",
+    "main.bcc08f60.css.map": "/frontend-phone-catalog-app/static/css/main.bcc08f60.css.map",
+    "main.ebcd3aa3.js.map": "/frontend-phone-catalog-app/static/js/main.ebcd3aa3.js.map",
     "787.e7e6b629.chunk.js.map": "/frontend-phone-catalog-app/static/js/787.e7e6b629.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.491ea303.css",
-    "static/js/main.484db267.js"
+    "static/css/main.bcc08f60.css",
+    "static/js/main.ebcd3aa3.js"
   ]
 }
