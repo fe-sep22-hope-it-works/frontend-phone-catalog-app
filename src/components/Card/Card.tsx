@@ -1,14 +1,17 @@
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable global-require */
 /* eslint-disable react/button-has-type */
 /* eslint-disable max-len */
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import '../../App.scss';
-import img from '../../img/card-images/iphone.svg';
+// import img from '../../img/card-images/iphone.svg';
 import heart from '../../img/card-images/Vector.svg';
 import likeHeart from '../../img/card-images/favouriteHeart.svg';
 import { Phone } from '../../types/Phone';
 import { PhoneContext } from '../PhoneContext/PhoneContext';
+import { getPhoneImage } from '../api/phones';
 
 type Props = {
   phone: Phone,
@@ -25,22 +28,40 @@ export const Card: React.FC<Props> = ({ phone }) => {
     ram,
   } = phone;
 
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [photo, setPhoto] = useState('');
 
-  const { saveCartPhones, cartPhones } = useContext(PhoneContext);
+  const photoFromServer = async () => {
+    const mainPhoto = await getPhoneImage(Number(id));
+
+    setPhoto(mainPhoto[0]);
+  };
+
+  useEffect(() => {
+    photoFromServer();
+  }, []);
+
+  const {
+    saveCartPhones,
+    cartPhones,
+    saveFavouritePhones,
+    favouritePhones,
+  } = useContext(PhoneContext);
 
   const isAdded = cartPhones.find(cart => cart.id === id);
+  const isFavourite = favouritePhones.find(cart => cart.id === id);
 
   const handleCardButton = (phoneTo: Phone) => {
     saveCartPhones(phoneTo);
   };
 
-  const handleFavButton = () => setIsFavorite(!isFavorite);
+  const handleFavButton = (phoneTo: Phone) => {
+    saveFavouritePhones(phoneTo);
+  };
 
   return (
     <section className="card grid__item-tablet-1-4">
       <img
-        src={img}
+        src={require(`../../${photo}`)}
         alt={name}
         className="card__img"
       />
@@ -88,19 +109,18 @@ export const Card: React.FC<Props> = ({ phone }) => {
           }
         </button>
 
-        <Link
-          to="/favourites"
+        <button
           className={classNames('card__buy--heart', {
-            'card__buy--heart-active': isFavorite,
+            'card__buy--heart-active': isFavourite,
           })}
-          onClick={handleFavButton}
+          onClick={() => handleFavButton(phone)}
         >
           <img
-            src={!isFavorite ? heart : likeHeart}
+            src={!isFavourite ? heart : likeHeart}
             alt="Phone logo"
             className="heart"
           />
-        </Link>
+        </button>
       </div>
     </section>
   );

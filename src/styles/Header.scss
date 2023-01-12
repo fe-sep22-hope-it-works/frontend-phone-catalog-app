@@ -8,6 +8,24 @@
   width: 100%;
   box-shadow: 0px 1px 0px #e2e6e9;
 
+  &__ellips {
+    position: absolute;
+    transform: translate(50%, -50%);
+    border-radius: 50%;
+    border: 1px solid #FFFFFF;
+    width: 14px;
+    height: 14px;
+    font-weight: 600;
+    font-size: 9px;
+    line-height: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    background-image: url('../img//header//ellipse.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    text-decoration: none;
+  }
+
   @include onTablet {
     padding-left: 24px;
   }
@@ -88,6 +106,8 @@
       box-shadow: -1px 0px 0px #e2e6e9;
       border: none;
       cursor: pointer;
+      text-decoration: none;
+      position: relative;
 
       height: 48px;
       width: 48px;
@@ -111,7 +131,7 @@
         background: #0f0f11;
         border-radius: 8px;
         top: 45px;
-        
+
         @include onDesktop() {
           content: ' ';
           position: absolute;

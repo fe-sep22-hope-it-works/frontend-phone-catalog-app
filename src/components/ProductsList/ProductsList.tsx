@@ -13,10 +13,7 @@ export const ProductsList: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [sortBy, setSortBy] = useState<SortBy | string>(SortBy.NEWEST);
 
-  const {
-    phones,
-    setPhones,
-  } = useContext(PhoneContext);
+  const { phones, setPhones } = useContext(PhoneContext);
 
   const getAllPhonesLength = async () => {
     const allPhonesFromServer = await getAllPhones();
