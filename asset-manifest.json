@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frontend-phone-catalog-app/static/css/main.85dc9174.css",
-    "main.js": "/frontend-phone-catalog-app/static/js/main.3d51c269.js",
+    "main.css": "/frontend-phone-catalog-app/static/css/main.71319456.css",
+    "main.js": "/frontend-phone-catalog-app/static/js/main.47698844.js",
     "static/js/787.e7e6b629.chunk.js": "/frontend-phone-catalog-app/static/js/787.e7e6b629.chunk.js",
     "static/media/tablet.svg": "/frontend-phone-catalog-app/static/media/tablet.f9b2d98853f53a9375918128b98ed760.svg",
     "static/media/banner.svg": "/frontend-phone-catalog-app/static/media/banner.19e658112abfd43acf9c.svg",
@@ -26,9 +26,12 @@
     "static/media/03.jpg": "/frontend-phone-catalog-app/static/media/03.60558962d469beaed756.jpg",
     "static/media/02.jpg": "/frontend-phone-catalog-app/static/media/02.71bc1b0b908470672de0.jpg",
     "static/media/Mont-Heavy.ttf": "/frontend-phone-catalog-app/static/media/Mont-Heavy.88b5d825471b26f0901e.ttf",
+    "static/media/empty.png": "/frontend-phone-catalog-app/static/media/empty.3c3e89a84ee8be087173.png",
     "static/media/04.jpg": "/frontend-phone-catalog-app/static/media/04.3c4b6b47c1321f9dce59.jpg",
+    "static/media/wishList.png": "/frontend-phone-catalog-app/static/media/wishList.c5535a1f1fdc8b3a1435.png",
     "static/media/logo.png": "/frontend-phone-catalog-app/static/media/logo.fdd6d566aee8105d491b.png",
     "static/media/purchases.svg": "/frontend-phone-catalog-app/static/media/purchases.fdbfe01add8add2cf050b5f9a10a9910.svg",
+    "static/media/sadsmiley.svg": "/frontend-phone-catalog-app/static/media/sadsmiley.25a840bb05234ba940cfd558220be19c.svg",
     "static/media/favourites.svg": "/frontend-phone-catalog-app/static/media/favourites.12c132c09ca4cbb24783a8409e029a4b.svg",
     "static/media/Vector.svg": "/frontend-phone-catalog-app/static/media/Vector.71ec4de7b3140bbf8f5f300bc488d048.svg",
     "static/media/favouriteHeart.svg": "/frontend-phone-catalog-app/static/media/favouriteHeart.3438fbc65f52c97d2fb207f06ec4e916.svg",
@@ -44,12 +47,12 @@
     "static/media/menu.svg": "/frontend-phone-catalog-app/static/media/menu.ed9a69493f1a53f495cb321abb454cd4.svg",
     "static/media/close.svg": "/frontend-phone-catalog-app/static/media/close.b16b98b786927fa985b828c10274df81.svg",
     "static/media/ellipse.svg": "/frontend-phone-catalog-app/static/media/ellipse.70596a01f72499691042.svg",
-    "main.85dc9174.css.map": "/frontend-phone-catalog-app/static/css/main.85dc9174.css.map",
-    "main.3d51c269.js.map": "/frontend-phone-catalog-app/static/js/main.3d51c269.js.map",
+    "main.71319456.css.map": "/frontend-phone-catalog-app/static/css/main.71319456.css.map",
+    "main.47698844.js.map": "/frontend-phone-catalog-app/static/js/main.47698844.js.map",
     "787.e7e6b629.chunk.js.map": "/frontend-phone-catalog-app/static/js/787.e7e6b629.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.85dc9174.css",
-    "static/js/main.3d51c269.js"
+    "static/css/main.71319456.css",
+    "static/js/main.47698844.js"
   ]
 }
