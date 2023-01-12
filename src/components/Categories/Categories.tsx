@@ -3,9 +3,21 @@ import { Link } from 'react-router-dom';
 import phone from '../../img/categories/mobile-phone.svg';
 import tablet from '../../img/categories/tablet.svg';
 import accessories from '../../img/categories/accessories.svg';
+import { getAllPhones } from '../api/phones';
 
 export const Categories = () => {
+  const [countOfPhoneModels, setCountOfPhoneModels] = useState(0);
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+
+  const getAllPhonesLength = async () => {
+    const allPhonesFromServer = await getAllPhones();
+
+    setCountOfPhoneModels(allPhonesFromServer.length);
+  };
+
+  useEffect(() => {
+    getAllPhonesLength();
+  }, []);
 
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -72,7 +84,7 @@ export const Categories = () => {
                 >
                   <h3 className="category__name">Mobile phones</h3>
                 </Link>
-                <p className="category__num-of-models">95 models</p>
+                <p className="category__num-of-models">{`${countOfPhoneModels} models`}</p>
               </div>
               <div className="category__item">
                 <Link
@@ -82,7 +94,7 @@ export const Categories = () => {
                 >
                   <h3 className="category__name">Tablets</h3>
                 </Link>
-                <p className="category__num-of-models">24 models</p>
+                <p className="category__num-of-models">Comming soon</p>
               </div>
               <div className="category__item">
                 <Link
@@ -92,7 +104,7 @@ export const Categories = () => {
                 >
                   <h3 className="category__name">Accessories</h3>
                 </Link>
-                <p className="category__num-of-models">100 models</p>
+                <p className="category__num-of-models">Comming soon</p>
               </div>
             </div>
           </div>
@@ -117,7 +129,7 @@ export const Categories = () => {
                 <Link to="/phones" className="category__link">
                   <h3 className="category__name">Mobile phones</h3>
                 </Link>
-                <p className="category__num-of-models">95 models</p>
+                <p className="category__num-of-models">{`${countOfPhoneModels} models`}</p>
               </div>
               <div className="category__item">
                 <div className="category__photo category__photo--tablet">
@@ -136,7 +148,7 @@ export const Categories = () => {
                 <Link to="/tablets" className="category__link">
                   <h3 className="category__name">Tablets</h3>
                 </Link>
-                <p className="category__num-of-models">24 models</p>
+                <p className="category__num-of-models">Comming soon</p>
               </div>
               <div className="category__item">
                 <div className="category__photo category__photo--accessories">
@@ -155,7 +167,7 @@ export const Categories = () => {
                 <Link to="/accessories" className="category__link">
                   <h3 className="category__name">Accessories</h3>
                 </Link>
-                <p className="category__num-of-models">100 models</p>
+                <p className="category__num-of-models">Comming soon</p>
               </div>
             </div>
           </div>
