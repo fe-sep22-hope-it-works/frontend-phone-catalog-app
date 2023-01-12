@@ -6,12 +6,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import '../../App.scss';
-// import img from '../../img/card-images/iphone.svg';
 import heart from '../../img/card-images/Vector.svg';
 import likeHeart from '../../img/card-images/favouriteHeart.svg';
 import { Phone } from '../../types/Phone';
 import { PhoneContext } from '../PhoneContext/PhoneContext';
 import { getPhoneImage } from '../api/phones';
+import { Loader } from '../Loader.tsx/Loader';
 
 type Props = {
   phone: Phone,
@@ -29,11 +29,19 @@ export const Card: React.FC<Props> = ({ phone }) => {
   } = phone;
 
   const [photo, setPhoto] = useState('');
+  const [loader, setLoader] = useState(false);
 
   const photoFromServer = async () => {
-    const mainPhoto = await getPhoneImage(Number(id));
+    try {
+      setLoader(true);
+      const mainPhoto = await getPhoneImage(Number(id));
 
-    setPhoto(mainPhoto[0]);
+      setPhoto(mainPhoto[0]);
+    } catch {
+      throw new Error();
+    } finally {
+      setLoader(false);
+    }
   };
 
   useEffect(() => {
@@ -60,11 +68,17 @@ export const Card: React.FC<Props> = ({ phone }) => {
 
   return (
     <section className="card grid__item-tablet-1-4">
-      <img
-        src={require(`../../${photo}`)}
-        alt={name}
-        className="card__img"
-      />
+      {!loader
+        ? (
+          <img
+            src={require(`../../${photo}`)}
+            alt={name}
+            className="card__img"
+          />
+        )
+        : (
+          <Loader />
+        )}
 
       <Link
         to="/phones"
