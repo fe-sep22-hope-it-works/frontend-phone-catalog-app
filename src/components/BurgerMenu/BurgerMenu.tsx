@@ -40,7 +40,7 @@ export const BurgerMenu: React.FC<Props> = ({
 
       <div className="burger__menu__buttons">
         <NavLink
-          to="/"
+          to="/favourites"
           onClick={() => isBurgerMenuOpen(false)}
           className="burger__menu__buttons-bottom"
         >
@@ -57,7 +57,7 @@ export const BurgerMenu: React.FC<Props> = ({
         </NavLink>
 
         <NavLink
-          to="/"
+          to="/cart"
           onClick={() => isBurgerMenuOpen(false)}
           className="burger__menu__buttons-bottom"
         >

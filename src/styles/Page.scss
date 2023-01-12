@@ -17,4 +17,13 @@
   @media (max-width: 640px) {
     margin: 0 16px;
   }
+
+  &__awaitPicture {
+    margin: 5% auto;
+    height: 40vh;
+    background-image: url('../img/Zhdun.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
 }
