@@ -1,16 +1,4 @@
 .productList {
-  &__container {
-    margin: 0 16px;
-
-    @media (min-width: 640px) {
-      margin: 0 24px;
-    }
-
-    @media (min-width: 1200px) {
-      margin: 0 32px;
-    }
-  }
-
   &__title {
     margin-bottom: 8px;
     margin-top: 24px;
