@@ -28,4 +28,84 @@
       margin-bottom: 52px;
     }
   }
+
+  &__empty {
+    margin: 5% 16px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__message {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      &__text {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 41px;
+        letter-spacing: -0.01em;
+        color: #0F0F11;
+
+        @media (min-width: 640px) {
+          font-weight: 800;
+          font-size: 48px;
+          line-height: 56px;
+        }
+      }
+
+      &__smile {
+        height: 20px;
+
+        @media (min-width:640px) {
+          height: 50px;
+        }
+      }
+    }
+
+    &__img {
+      margin: 5% 0;
+      background-image: url('../img/wishList/wishList.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 25vh;
+      width: 25vh;
+    }
+
+    &__link {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      text-decoration: none;
+    }
+
+    &__button {
+      margin-bottom: 5%;
+
+      height: 48px;
+      width: 100%;
+
+      font-weight: 700;
+      font-size: 14px;
+
+      border: none;
+      border-radius: 8px;
+
+      color: #FFFFFF;
+      background-color: #216CFF;
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
+      }
+
+      @media (min-width: 640px) {
+        width: 50%;
+      }
+    }
+  }
 }

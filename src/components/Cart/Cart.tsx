@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { CartItem } from '../CartItem';
 import { Phone } from '../../types/Phone';
 import { PhoneContext } from '../PhoneContext/PhoneContext';
-import sadSmile from '../../img/Cart/sadsmiley.svg';
+import sadSmile from '../../img/sadsmiley.svg';
 
 export const Cart: React.FC = () => {
   const {
