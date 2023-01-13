@@ -112,7 +112,7 @@ export const HotPrices: React.FC = () => {
         </div>
 
         <div
-          className="hotPrices__items grid"
+          className="hotPrices__items grid grid--four-items"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}

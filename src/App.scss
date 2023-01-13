@@ -3,6 +3,7 @@
 @import "./styles/utils/vars";
 @import "./styles/utils/extends";
 @import "./styles/Page.scss";
+@import "./styles/Loader.scss";
 @import "./styles/HomePage.scss";
 @import "./styles/page-title.scss";
 @import "./styles/Header.scss";
@@ -24,3 +25,5 @@
 @import "./styles/ProductList.scss";
 @import "./styles/NewPhones.scss";
 @import "./components/ProductInfo/ProductLayout.module.scss";
+@import "./styles/Contacts.scss";
+@import "./styles/Rights.scss";

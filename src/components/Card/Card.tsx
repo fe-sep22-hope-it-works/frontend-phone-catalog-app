@@ -11,6 +11,7 @@ import likeHeart from '../../img/card-images/favouriteHeart.svg';
 import { Phone } from '../../types/Phone';
 import { PhoneContext } from '../PhoneContext/PhoneContext';
 import { getPhoneImage } from '../api/phones';
+import { Loader } from '../Loader.tsx/Loader';
 
 type Props = {
   phone: Phone,
@@ -28,11 +29,22 @@ export const Card: React.FC<Props> = ({ phone }) => {
   } = phone;
 
   const [photo, setPhoto] = useState('');
+  const [loader, setLoader] = useState(false);
 
   const photoFromServer = async () => {
     const mainPhoto = await getPhoneImage(+id);
 
     setPhoto(mainPhoto[0]);
+    try {
+      setLoader(true);
+      const mainPhoto = await getPhoneImage(Number(id));
+
+      setPhoto(mainPhoto[0]);
+    } catch {
+      throw new Error();
+    } finally {
+      setLoader(false);
+    }
   };
 
   useEffect(() => {
@@ -66,6 +78,17 @@ export const Card: React.FC<Props> = ({ phone }) => {
           className="card__img"
         />
       </Link>
+      {!loader
+        ? (
+          <img
+            src={require(`../../${photo}`)}
+            alt={name}
+            className="card__img"
+          />
+        )
+        : (
+          <Loader />
+        )}
 
       <Link
         to={`/phones/${id}`}
