@@ -7,7 +7,6 @@
     "import/order": 2,
     "react/prop-types": "off",
     "import/no-cycle": [2, { "maxDepth": 2 }],
-    "@typescript-eslint/no-explicit-any": ["off"],
-    "import/ignore": ["node_modules/react-native/index\\.js$"]
+    "@typescript-eslint/no-explicit-any": ["off"]
   }
 }
