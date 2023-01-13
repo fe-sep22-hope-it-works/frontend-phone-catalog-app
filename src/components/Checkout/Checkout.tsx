@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const Checkout: React.FC = () => {
   const navigate = useNavigate();
-  const [seconds, setSeconds] = useState<number>(10);
+  const [seconds, setSeconds] = useState<number>(5);
 
   useEffect(() => {
     const timer = setInterval(() => {
