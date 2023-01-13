@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { CartItem } from '../CartItem';
 import { Phone } from '../../types/Phone';
 import { PhoneContext } from '../PhoneContext/PhoneContext';
-import { Breadcrumbs } from '../Breadcrumbs';
 import sadSmile from '../../img/sadsmiley.svg';
 
 export const Cart: React.FC = () => {
@@ -56,39 +55,6 @@ export const Cart: React.FC = () => {
   };
 
   return (
-    <div className="cart__container">
-      <div className="cart">
-        <Breadcrumbs
-          breads={[
-            { title: 'home', path: '/' },
-            { title: 'Cart', path: '/cart' },
-          ]}
-        />
-        <Link to="/">
-          <div className="cart__back">
-            <button
-              type="button"
-              id="back__button"
-              className="cart__back__button"
-              aria-label="Save"
-            />
-
-            <label htmlFor="back__button" className="cart__back__text">
-              Back
-            </label>
-          </div>
-        </Link>
-
-        <h1 className="cart__title">Cart</h1>
-
-        <div className="cart__content">
-          <div className="cart__items">
-            {cartPhones.map(product => (
-              <div key={product.id} className="cart__item">
-                <CartItem
-                  removeItem={removeItem}
-                  product={product}
-                  changeProductQuantity={ChangeProductQuantity}
     <div>
       {cartPhones.length > 0 ? (
         <div className="cart__container">

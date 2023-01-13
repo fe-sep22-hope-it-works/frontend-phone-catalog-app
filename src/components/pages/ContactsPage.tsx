@@ -2,22 +2,15 @@ import React from 'react';
 import '../../styles/page-title.scss';
 import { Breadcrumbs } from '../Breadcrumbs';
 
-export const ContactsPage = () => {
-  return (
-    <>
+export const ContactsPage = () => (
+  <div className="contacts-page">
+    <div className="contacts-page__container">
       <Breadcrumbs
         breads={[
           { title: 'home', path: '/' },
           { title: 'Contacts', path: '/contacts' },
         ]}
       />
-      <h1 className="page-title">Contacts Page</h1>
-    </>
-  );
-};
-export const ContactsPage = () => (
-  <div className="contacts-page">
-    <div className="contacts-page__container">
       <h1 className="page-title contacts-page__title">Our contacts</h1>
       <div className="contacts-page__content">
         <div className="contacts-page__item">
