@@ -1,0 +1,67 @@
+.contacts-page {
+  margin: 0 32px;
+
+  @media (max-width: 1200px) {
+    margin: 0 24px;
+  }
+
+  @media (max-width: 640px) {
+    margin: 0 16px;
+  }
+
+
+  &__title {
+    margin: 40px 0;
+  }
+
+  &__person {
+    font-size: 32px;
+    line-height: 41px;
+
+    @media (max-width: 640px) {
+      font-size: 20px;
+      line-height: 25px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    margin-bottom: 40px;
+
+    @media (max-width: 640px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__linkedin {
+    color: #216CFF;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 20px;
+
+    @media (max-width: 640px) {
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+
+  &__email {
+    color: #0f0f11;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @media (max-width: 640px) {
+    margin-bottom: 14px;
+    line-height: 16px;
+  }
+}

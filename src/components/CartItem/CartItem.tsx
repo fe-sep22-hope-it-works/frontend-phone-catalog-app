@@ -1,7 +1,10 @@
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable global-require */
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
-import img from '../../img/card-images/iphone.svg';
 import { Phone } from '../../types/Phone';
+import { getPhoneImage } from '../api/phones';
+import { Loader } from '../Loader.tsx/Loader';
 
 interface Props {
   product: Phone,
@@ -15,6 +18,24 @@ export const CartItem: React.FC<Props> = ({
   const [
     productQuantity, setProductQuantity,
   ] = useState(product.quantity ? product.quantity : 1);
+  const [photo, setPhoto] = useState('');
+  const [loader, setLoader] = useState(false);
+  const photoFromServer = async () => {
+    try {
+      setLoader(true);
+      const mainPhoto = await getPhoneImage(Number(product.id));
+
+      setPhoto(mainPhoto[0]);
+    } catch {
+      throw new Error();
+    } finally {
+      setLoader(false);
+    }
+  };
+
+  useEffect(() => {
+    photoFromServer();
+  }, []);
 
   useEffect(() => {
     changeProductQuantity(product, productQuantity);
@@ -32,11 +53,17 @@ export const CartItem: React.FC<Props> = ({
           onClick={() => removeItem(product)}
         />
 
-        <img
-          src={img}
-          alt="iPhone 11 Pro Max"
-          className="cart__item__title__image"
-        />
+        {!loader
+          ? (
+            <img
+              src={require(`../../${photo}`)}
+              alt="iPhone 11 Pro Max"
+              className="cart__item__title__image"
+            />
+          )
+          : (
+            <Loader classToAdd="loader--cart__item" />
+          )}
 
         <div className="cart__item__title__text">
           {product.name}
