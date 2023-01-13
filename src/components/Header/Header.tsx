@@ -3,6 +3,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useContext, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import classNames from 'classnames';
 import { Logo } from '../Logo';
 import '../../App.scss';
 import burgerOpenIcon from '../../img/header/menu.svg';
@@ -71,7 +72,11 @@ export const Header = () => {
         <div className="header__content__buttons">
           <NavLink
             to="/favourites"
-            className="header__content__buttons-right menu-moved"
+            className={({ isActive }) => classNames(
+              'header__content__buttons-right menu-moved', {
+                'header__content__buttons-right--active': isActive,
+              },
+            )}
           >
             <img src={heartIcon} alt="favorites" />
             {favouritesCount > 0 && (
@@ -83,7 +88,11 @@ export const Header = () => {
 
           <NavLink
             to="/cart"
-            className="header__content__buttons-right menu-moved"
+            className={({ isActive }) => classNames(
+              'header__content__buttons-right menu-moved', {
+                'header__content__buttons-right--active': isActive,
+              },
+            )}
           >
             <img src={shopIcon} alt="shopCard" />
             {cartCount > 0 && (

@@ -129,6 +129,18 @@
         height: 64px;
         width: 64px;
       }
+
+      &--active {
+        &::after {
+          position: absolute;
+          width: 100%;
+          content: "";
+          display: block;
+          height: 3px;
+          background-color: #0F0F11;
+          bottom: 0;
+        }
+      }
     }
   }
 
