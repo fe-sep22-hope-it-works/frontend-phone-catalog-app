@@ -2,7 +2,6 @@
 /* eslint-disable global-require */
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import { Phone } from '../../types/Phone';
 import { getPhoneImage } from '../api/phones';
@@ -47,8 +46,7 @@ export const CartItem: React.FC<Props> = ({
 
   return (
     <>
-      <Link
-        to={`/phones/${product.id}`}
+      <div
         className="cart__item__title"
       >
         <button
@@ -73,7 +71,7 @@ export const CartItem: React.FC<Props> = ({
         <div className="cart__item__title__text">
           {product.name}
         </div>
-      </Link>
+      </div>
 
       <div className="cart__item__price">
         <div className="cart__item__price__quantity">
