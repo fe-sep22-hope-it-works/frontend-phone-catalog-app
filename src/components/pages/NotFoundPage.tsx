@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable react/button-has-type */
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -11,7 +12,7 @@ export const NotFoundPage: React.FC = () => {
       <div className="not-found__message message">
         <div className="message__directions directions">
           <p className="directions">
-            There are no phones here. You should&nbsp;
+            To get rid of Elon:&nbsp;
             <button
               className="directions__button-back"
               onClick={() => navigate(-1)}
@@ -25,7 +26,6 @@ export const NotFoundPage: React.FC = () => {
             >
               Go home
             </button>
-            &nbsp;to get out of this sticky situation!
           </p>
         </div>
       </div>
