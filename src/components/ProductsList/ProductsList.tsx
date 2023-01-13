@@ -6,6 +6,8 @@ import { PhoneContext } from '../PhoneContext/PhoneContext';
 import { SortBy } from '../../types/SortBy';
 import { sortOptions } from '../../utils/SortOptions';
 import { perPageOptions } from '../../utils/perPageOptions';
+import { Breadcrumbs } from '../Breadcrumbs';
+// import { ProductInfo } from '../ProductInfo';
 import { Loader } from '../Loader.tsx/Loader';
 
 export const ProductsList: React.FC = () => {
@@ -50,6 +52,12 @@ export const ProductsList: React.FC = () => {
   return (
     <div className="productList">
       <div className="productList__container">
+        <Breadcrumbs
+          breads={[
+            { title: 'home', path: '/' },
+            { title: 'Phones', path: '/phones' },
+          ]}
+        />
         <h1 className="page-title productList__title">Mobile phones</h1>
         <p className="productList__modelCountText">
           {loader

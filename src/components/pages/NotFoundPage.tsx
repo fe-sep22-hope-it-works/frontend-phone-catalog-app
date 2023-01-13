@@ -3,6 +3,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../styles/page-title.scss';
+import { Breadcrumbs } from '../Breadcrumbs';
 
 export const NotFoundPage: React.FC = () => {
   const navigate = useNavigate();
@@ -11,6 +12,12 @@ export const NotFoundPage: React.FC = () => {
     <div className="not-found__container">
       <div className="not-found__message message">
         <div className="message__directions directions">
+          <Breadcrumbs
+            breads={[
+              { title: 'home', path: '/' },
+              { title: 'Not found page', path: '/NotFoundPage' },
+            ]}
+          />
           <p className="directions">
             To get rid of Elon:&nbsp;
             <button

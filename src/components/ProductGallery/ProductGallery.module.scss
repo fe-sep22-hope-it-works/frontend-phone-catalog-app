@@ -1,0 +1,95 @@
+@import '../../styles/utils/vars';
+@import '../../styles/utils/mixins';
+
+.gallery {
+  max-width: 360px;
+
+  @include onTablet {
+    display: flex;
+    max-width: 350px;
+  }
+
+  @include onLaptop {
+    max-width: 450px;
+  }
+
+  @include onDesktop {
+    max-width: 560px;
+  }
+}
+
+.product__image_slider {
+  width: 288px;
+  height: 288px;
+  margin-bottom: 16px;
+
+  @include onTablet {
+    width: 287px;
+    height: 287px;
+    order: 2;
+  }
+
+  @include onDesktop {
+    width: 464px;
+    height: 464px;
+  }
+
+  :global(.swiper-slide) {
+    .product__image_img {
+      display: block;
+      margin-bottom: 24px;
+      object-fit: contain;
+      height: 288px;
+      width: 288px;
+
+      @include onTablet {
+        width: 287px;
+        height: 287px;
+      }
+
+      @include onDesktop {
+        width: 442px;
+        height: 442px;
+      }
+    }
+  }
+}
+
+.product__image_slider_thumbs {
+  :global(.swiper-wrapper) {
+    justify-content: space-between;
+
+    @include onTablet {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+
+  :global(.swiper-slide-thumb-active) {
+    border-color: $primary-color;
+  }
+}
+
+.product__slider_thumb {
+  width: 50px !important;
+  height: 50px;
+  border: 1px solid $elements-color;
+  padding: 5px 0;
+  border-radius: 4px;
+  cursor: pointer;
+
+  display: block;
+  margin-bottom: 8px;
+
+  @include onTablet {
+    width: 35px !important;
+    height: 35px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 16px;
+    border-radius: 8px;
+    width: 79px !important;
+    height: 79px;
+  }
+}
