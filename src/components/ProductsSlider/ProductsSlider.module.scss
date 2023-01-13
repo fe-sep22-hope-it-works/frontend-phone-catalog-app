@@ -1,0 +1,117 @@
+@import '../../styles/utils/mixins';
+@import '../../styles/utils/vars';
+@import '../../styles/utils/extends';
+
+.slider {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0 0 $mob-side-padding;
+
+  transform: translate(0, 0);
+
+  @include onTablet {
+    padding: 0 0 0 $tab-side-padding;
+  }
+
+  @include onDesktop {
+    padding: 0 $desk-side-padding;
+  }
+
+  :global(.swiper-button-prev),
+  :global(.swiper-button-next) {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover::after {
+      border-color: $black-color;
+    }
+  }
+
+  :global(.swiper-button-prev::after),
+  :global(.swiper-button-next::after) {
+    position: fixed;
+
+    transform: translateY(#{-($slider-mob-height / 1.7)});
+
+    width: $slider-button-width;
+    height: $slider-button-width;
+    border: 1px solid $secondary-color;
+    border-radius: 50%;
+
+    font-size: 14px;
+    line-height: $slider-button-width;
+    color: $black-color;
+    text-align: center;
+
+    transition: border-color 0.2s ease;
+
+    @include onTablet {
+      transform: translateY(#{-($slider-tab-height / 1.7)});
+    }
+  }
+
+  :global(.swiper-button-prev::after) {
+    right: #{$mob-side-padding * 2 + $slider-button-width};
+
+    @include onTablet {
+      right: #{$tab-side-padding * 2 + $slider-button-width};
+    }
+
+    @include onDesktop {
+      right: #{$desk-side-padding * 2 + $slider-button-width};
+    }
+  }
+
+  :global(.swiper-button-next::after) {
+    right: $mob-side-padding;
+
+    @include onTablet {
+      right: $tab-side-padding;
+    }
+
+    @include onDesktop {
+      right: $desk-side-padding;
+    }
+  }
+
+  &__title {
+    @extend %main-subtitle-text;
+    
+    margin-bottom: 24px;
+  }
+
+  &__swiper {
+    height: #{$slider-mob-height + 30};
+
+    @include onTablet {
+      height: #{$slider-tab-height + 20};
+    }
+
+    @include onDesktop {
+      width: #{1200 - $desk-side-padding * 2};
+    }
+  }
+
+  &__item {
+    width: 230px !important;
+    padding: 10px;
+
+    @include onTablet {
+      width: 250px !important;
+    }
+
+    @include onDesktop {
+      width: 274px !important;
+    }
+  }
+}

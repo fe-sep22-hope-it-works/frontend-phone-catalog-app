@@ -6,7 +6,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import '../../App.scss';
-// import img from '../../img/card-images/iphone.svg';
 import heart from '../../img/card-images/Vector.svg';
 import likeHeart from '../../img/card-images/favouriteHeart.svg';
 import { Phone } from '../../types/Phone';
@@ -31,7 +30,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
   const [photo, setPhoto] = useState('');
 
   const photoFromServer = async () => {
-    const mainPhoto = await getPhoneImage(Number(id));
+    const mainPhoto = await getPhoneImage(+id);
 
     setPhoto(mainPhoto[0]);
   };
@@ -60,14 +59,16 @@ export const Card: React.FC<Props> = ({ phone }) => {
 
   return (
     <section className="card grid__item-tablet-1-4">
-      <img
-        src={require(`../../${photo}`)}
-        alt={name}
-        className="card__img"
-      />
+      <Link to={`/phones/${id}`}>
+        <img
+          src={require(`../../${photo}`)}
+          alt={name}
+          className="card__img"
+        />
+      </Link>
 
       <Link
-        to="/phones"
+        to={`/phones/${id}`}
         className="card__name"
       >
         {name}

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { CartItem } from '../CartItem';
 import { Phone } from '../../types/Phone';
 import { PhoneContext } from '../PhoneContext/PhoneContext';
+import { Breadcrumbs } from '../Breadcrumbs';
 
 export const Cart: React.FC = () => {
   const {
@@ -56,6 +57,12 @@ export const Cart: React.FC = () => {
   return (
     <div className="cart__container">
       <div className="cart">
+        <Breadcrumbs
+          breads={[
+            { title: 'home', path: '/' },
+            { title: 'Cart', path: '/cart' },
+          ]}
+        />
         <Link to="/">
           <div className="cart__back">
             <button

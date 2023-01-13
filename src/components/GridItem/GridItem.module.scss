@@ -1,0 +1,11 @@
+@import "../../styles/utils/mixins";
+
+.grid__item {
+  @for $start from 1 through 25 {
+    @for $end from 1 through 25 {
+      &_#{$start}_#{$end} {
+        grid-column: #{$start} / #{$end};
+      }
+    }
+  }
+}

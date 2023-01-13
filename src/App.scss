@@ -1,5 +1,7 @@
 @import "./styles/utils/mixins";
 @import "./styles/utils/normalize";
+@import "./styles/utils/vars";
+@import "./styles/utils/extends";
 @import "./styles/Page.scss";
 @import "./styles/HomePage.scss";
 @import "./styles/page-title.scss";
@@ -21,3 +23,4 @@
 @import "./styles/SortAndPerPageForm.scss";
 @import "./styles/ProductList.scss";
 @import "./styles/NewPhones.scss";
+@import "./components/ProductInfo/ProductLayout.module.scss";

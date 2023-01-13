@@ -1,0 +1,38 @@
+@import '../../styles/utils/vars';
+@import '../../styles/utils/extends';
+
+.btn {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  color: $white-color;
+  background-color: $accent-color;
+  cursor: pointer;
+
+  @include onTablet {
+    padding: 10px 20px 12px;
+  }
+
+  @include onDesktop {
+    max-width: 263px;
+    padding: 10px 30px 12px;
+  }
+
+  @extend %button-text;
+  text-align: center;
+
+  border: 1px solid transparent;
+  border-radius: $radius;
+
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
+  }
+
+  &_selected {
+    color: $accent-color;
+    background-color: $white-color;
+    border: 1px solid $elements-color;
+  }
+}

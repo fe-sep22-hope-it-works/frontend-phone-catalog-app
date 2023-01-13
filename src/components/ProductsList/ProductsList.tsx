@@ -6,6 +6,8 @@ import { PhoneContext } from '../PhoneContext/PhoneContext';
 import { SortBy } from '../../types/SortBy';
 import { sortOptions } from '../../utils/SortOptions';
 import { perPageOptions } from '../../utils/perPageOptions';
+import { Breadcrumbs } from '../Breadcrumbs';
+// import { ProductInfo } from '../ProductInfo';
 
 export const ProductsList: React.FC = () => {
   const [countOfModels, setCountOfModels] = useState(0);
@@ -49,6 +51,12 @@ export const ProductsList: React.FC = () => {
   return (
     <div className="productList">
       <div className="productList__container">
+        <Breadcrumbs
+          breads={[
+            { title: 'home', path: '/' },
+            { title: 'Phones', path: '/phones' },
+          ]}
+        />
         <h1 className="page-title productList__title">Mobile phones</h1>
         <p className="productList__modelCountText">{`${countOfModels} models`}</p>
 
@@ -119,7 +127,6 @@ export const ProductsList: React.FC = () => {
               phone={phone}
             />
           ))}
-
         </div>
 
         <Pagination

@@ -1,0 +1,16 @@
+.action {
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__btn {
+    flex-grow: 1;
+    margin-right: 8px;
+  }
+
+  &__favorite {
+    flex-shrink: 0;
+  }
+}
