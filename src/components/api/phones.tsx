@@ -1,4 +1,5 @@
 import { Phone } from '../../types/Phone';
+import { PhoneFullInfo } from '../../types/PhoneFullInfo';
 import { SortBy } from '../../types/SortBy';
 import { getPhones } from '../../utils/fetch';
 
@@ -24,4 +25,16 @@ export const getHotPricesPhones = () => {
 
 export const getNewPhones = () => {
   return getPhones<Phone[]>('/new');
+};
+
+export const getSimilarPhones = (id: number) => {
+  return getPhones<Phone[]>(`/phones/recommended/${id}`);
+};
+
+export const getCurrentPhone = (id: number) => {
+  return getPhones<Phone>(`/phones/ext/${id}`);
+};
+
+export const getPhoneFull = (id: number) => {
+  return getPhones<PhoneFullInfo>(`/phones/ext/${id}`);
 };
