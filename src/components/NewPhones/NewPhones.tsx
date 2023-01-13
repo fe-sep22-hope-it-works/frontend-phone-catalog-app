@@ -98,7 +98,7 @@ export const NewPhones: React.FC = () => {
           </div>
         </div>
         <div
-          className="new-phones__items grid"
+          className="new-phones__items grid grid--four-items"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}

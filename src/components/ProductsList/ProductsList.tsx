@@ -6,30 +6,31 @@ import { PhoneContext } from '../PhoneContext/PhoneContext';
 import { SortBy } from '../../types/SortBy';
 import { sortOptions } from '../../utils/SortOptions';
 import { perPageOptions } from '../../utils/perPageOptions';
+import { Loader } from '../Loader.tsx/Loader';
 
 export const ProductsList: React.FC = () => {
   const [countOfModels, setCountOfModels] = useState(0);
   const [perPage, setPerPage] = useState(20);
   const [currentPage, setCurrentPage] = useState(1);
   const [sortBy, setSortBy] = useState<SortBy | string>(SortBy.NEWEST);
-
   const { phones, setPhones } = useContext(PhoneContext);
-
-  const getAllPhonesLength = async () => {
-    const allPhonesFromServer = await getAllPhones();
-
-    setCountOfModels(allPhonesFromServer.length);
-  };
-
-  useEffect(() => {
-    getAllPhonesLength();
-  }, []);
+  const [loader, setLoader] = useState(false);
 
   const getPhonesFromServer = async () => {
-    const phonesFromServer = await
-    getAllPhones(sortBy, currentPage, perPage);
+    try {
+      setLoader(true);
+      const phonesFromServer = await
+      getAllPhones(sortBy, currentPage, perPage);
 
-    setPhones(phonesFromServer);
+      const getAllPhonesFromServer = await getAllPhones();
+
+      setCountOfModels(getAllPhonesFromServer.length);
+      setPhones(phonesFromServer);
+    } catch {
+      throw new Error();
+    } finally {
+      setLoader(false);
+    }
   };
 
   useEffect(() => {
@@ -49,8 +50,12 @@ export const ProductsList: React.FC = () => {
   return (
     <div className="productList">
       <div className="productList__container">
-        <h1 className="productList__title">Mobile phones</h1>
-        <p className="productList__modelCountText">{`${countOfModels} models`}</p>
+        <h1 className="page-title productList__title">Mobile phones</h1>
+        <p className="productList__modelCountText">
+          {loader
+            ? ('Loading...')
+            : (`${countOfModels} models`)}
+        </p>
 
         <div className="sortAndPerPageForm sortAndPerPageForm__container">
           <div className="sortAndPerPageForm__sortByForm">
@@ -112,15 +117,19 @@ export const ProductsList: React.FC = () => {
             </select>
           </div>
         </div>
-        <div className="grid">
-          {phones.map((phone) => (
-            <Card
-              key={phone.id}
-              phone={phone}
-            />
-          ))}
+        {loader
+          ? (<Loader classToAdd="loader--phones" />)
+          : (
+            <div className="grid">
+              {phones.map((phone) => (
+                <Card
+                  key={phone.id}
+                  phone={phone}
+                />
+              ))}
 
-        </div>
+            </div>
+          )}
 
         <Pagination
           countOfItems={countOfModels}
