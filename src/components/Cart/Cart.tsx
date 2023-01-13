@@ -4,6 +4,7 @@ import { CartItem } from '../CartItem';
 import { Phone } from '../../types/Phone';
 import { PhoneContext } from '../PhoneContext/PhoneContext';
 import { Breadcrumbs } from '../Breadcrumbs';
+import sadSmile from '../../img/sadsmiley.svg';
 
 export const Cart: React.FC = () => {
   const {
@@ -88,30 +89,84 @@ export const Cart: React.FC = () => {
                   removeItem={removeItem}
                   product={product}
                   changeProductQuantity={ChangeProductQuantity}
+    <div>
+      {cartPhones.length > 0 ? (
+        <div className="cart__container">
+          <div className="cart">
+            <Link to="/">
+              <div className="cart__back">
+                <button
+                  type="button"
+                  id="back__button"
+                  className="cart__back__button"
+                  aria-label="Save"
                 />
+
+                <label htmlFor="back__button" className="cart__back__text">
+                  Back
+                </label>
               </div>
-            ))}
-          </div>
-
-          <div className="cart__total">
-            <p className="cart__total__price">{`$${totalPrice}`}</p>
-            <p className="cart__total__text">
-              {`Total for ${totalQuantity} items`}
-            </p>
-            <div className="cart__total__line" />
-
-            <Link to="/checkout">
-              <button
-                type="button"
-                className="cart__total__button"
-                onClick={clearCart}
-              >
-                Checkout
-              </button>
             </Link>
+
+            <h1 className="cart__title">Cart</h1>
+
+            <div className="cart__content">
+              <div className="cart__items">
+                {cartPhones.map(product => (
+                  <div key={product.id} className="cart__item">
+                    <CartItem
+                      removeItem={removeItem}
+                      product={product}
+                      changeProductQuantity={ChangeProductQuantity}
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <div className="cart__total">
+                <p className="cart__total__price">{`$${totalPrice}`}</p>
+                <p className="cart__total__text">
+                  {`Total for ${totalQuantity} items`}
+                </p>
+                <div className="cart__total__line" />
+
+                <Link to="/checkout">
+                  <button
+                    type="button"
+                    className="cart__total__button"
+                    onClick={clearCart}
+                  >
+                    Checkout
+                  </button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div className="cart__empty">
+          <div className="cart__empty__message">
+            <p className="cart__empty__message__text">
+              Your cart is empty
+            </p>
+            <img
+              className="cart__empty__message__smile"
+              src={sadSmile}
+              alt="sadsmileIcon"
+            />
+          </div>
+
+          <div className="cart__empty__img" />
+          <Link className="cart__empty__link" to="/phones">
+            <button
+              className="cart__empty__button"
+              type="button"
+            >
+              Continue shopping
+            </button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

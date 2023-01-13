@@ -58,6 +58,7 @@ export const ProductsList: React.FC = () => {
           ]}
         />
         <h1 className="page-title productList__title">Mobile phones</h1>
+        <h1 className="productList__title">Mobile phones</h1>
         <p className="productList__modelCountText">{`${countOfModels} models`}</p>
 
         <div className="sortAndPerPageForm sortAndPerPageForm__container">
