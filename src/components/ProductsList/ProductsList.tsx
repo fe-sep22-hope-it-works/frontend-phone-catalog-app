@@ -125,14 +125,6 @@ export const ProductsList: React.FC = () => {
             </select>
           </div>
         </div>
-        <div className="grid">
-          {phones.map((phone) => (
-            <Card
-              key={phone.id}
-              phone={phone}
-            />
-          ))}
-        </div>
         {loader
           ? (<Loader classToAdd="loader--phones" />)
           : (
