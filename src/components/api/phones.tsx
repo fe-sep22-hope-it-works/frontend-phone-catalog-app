@@ -24,7 +24,7 @@ export const getHotPricesPhones = () => {
 };
 
 export const getNewPhones = () => {
-  return getPhones<Phone[]>('/new');
+  return getPhones<Phone[]>('/phones/new');
 };
 
 export const getSimilarPhones = (id: number) => {
