@@ -1,0 +1,208 @@
+@import '../../styles/utils/vars';
+@import '../../styles/utils/extends';
+@import '../../styles/utils/mixins';
+
+.product {
+  &__back_btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+
+    gap: 10px;
+    margin: 20px 0 16px 5px;
+
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 9px;
+    color: $secondary-color;
+  }
+
+  &__title {
+    @extend %product-title;
+    max-width: fit-content;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      max-width: 1136px;
+    }
+  }
+
+  &__promo {
+    margin-bottom: 56px;
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__gallery {
+    margin-bottom: 40px;
+    width: 288px;
+
+    @include onTablet {
+      margin-right: 16px;
+      width: 320px;
+    }
+
+    @include onDesktop {
+      margin-right: 64px;
+      width: 544px;
+    }
+  }
+
+  &__info {
+    flex-grow: 1;
+    max-width: fit-content;
+  }
+
+  &__controls {
+    margin-bottom: 32px;
+    margin-right: 0;
+    width: 288px;
+
+    @include onTablet {
+      width: 237px;
+    }
+
+    @include onDesktop {
+      width: 320px;
+    }
+  }
+
+  &__price {
+    margin-bottom: 16px;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+
+    &_old {
+      margin-left: 8px;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 28px;
+      color: $secondary-color;
+      text-decoration-line: line-through;
+    }
+  }
+
+  &__action {
+    margin-bottom: 32px;
+    gap: 8px;
+  }
+
+  &__params {
+    &_item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+
+    &_name {
+      @extend %small-text;
+      color: $secondary-color;
+    }
+
+    &_value {
+      @extend %small-text;
+      font-weight: 700;
+    }
+  }
+
+  &__about {
+    width: 287px;
+    margin-bottom: 56px;
+    justify-content: space-between;
+
+    @include onTablet {
+      width: 592px;
+      margin-bottom: 64px;
+    }
+
+    @include onDesktop {
+      width: 1136px;
+      display: flex;
+      margin-bottom: 0;
+    }
+
+    &_title {
+      @extend %product-title;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid $elements-color;
+    }
+
+    @include onTablet {
+      margin-bottom: 64px;
+    }
+
+    &_item {
+      &:not(:last-child) {
+        margin-bottom: 32px;
+      }
+
+      &_title {
+        @extend %about-title;
+        margin-bottom: 16px;
+      }
+
+      &_text {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  &__description {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 64px;
+    }
+
+    @include onDesktop {
+      max-width: 560px;
+      margin-right: 64px;
+    }
+  }
+
+  &__specs {
+    @include onDesktop {
+      flex-grow: 1;
+    }
+
+    &_list {
+      padding-left: 0;
+    }
+
+    &_name {
+      font-weight: 500;
+      color: $secondary-color;
+    }
+
+    &_item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    &_value {
+      font-weight: 600;
+      text-align: right;
+    }
+  }
+}

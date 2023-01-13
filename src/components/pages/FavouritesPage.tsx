@@ -1,5 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+
+import '../../styles/page-title.scss';
+import { Breadcrumbs } from '../Breadcrumbs';
 import { Card } from '../Card';
 import { PhoneContext } from '../PhoneContext/PhoneContext';
 import sadSmile from '../../img/sadsmiley.svg';
@@ -11,7 +14,13 @@ export const FavouritesPage = () => {
     <>
       {favouritePhones.length > 0 ? (
         <div className="favourites page">
-          <h1 className="page-title favourites__title">Favourites Page</h1>
+          <Breadcrumbs
+            breads={[
+              { title: 'home', path: '/' },
+              { title: 'Favourites', path: '/favourites' },
+            ]}
+          />
+          <h1 className="favourites__title page-title">Favourites Page</h1>
           <p className="favourites__description">
             {`${favouritePhones.length} items`}
           </p>

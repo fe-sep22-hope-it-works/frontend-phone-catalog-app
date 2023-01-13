@@ -32,9 +32,11 @@ export const Card: React.FC<Props> = ({ phone }) => {
   const [loader, setLoader] = useState(false);
 
   const photoFromServer = async () => {
+    const mainPhoto = await getPhoneImage(Number(id));
+
+    setPhoto(mainPhoto[0]);
     try {
       setLoader(true);
-      const mainPhoto = await getPhoneImage(Number(id));
 
       setPhoto(mainPhoto[0]);
     } catch {
@@ -70,18 +72,20 @@ export const Card: React.FC<Props> = ({ phone }) => {
     <section className="card grid__item-tablet-1-4">
       {!loader
         ? (
-          <img
-            src={require(`../../${photo}`)}
-            alt={name}
-            className="card__img"
-          />
+          <Link to={`/phones/${id}`}>
+            <img
+              src={require(`../../${photo}`)}
+              alt={name}
+              className="card__img"
+            />
+          </Link>
         )
         : (
           <Loader />
         )}
 
       <Link
-        to="/phones"
+        to={`/phones/${id}`}
         className="card__name"
       >
         {name}

@@ -1,4 +1,5 @@
 @import './fonts/fonts.scss';
+@import './utils/vars';
 
 .card {
   display: flex;
@@ -12,8 +13,6 @@
 
   background-color: #ffffff;
   border-color: #E2E6E9;
-
-  font-family: 'Mont', Helvetica, sans-serif;
 
   &__img {
     display: block;
@@ -32,6 +31,7 @@
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
+    height: 42px;
 
     &:hover {
       text-decoration: underline;

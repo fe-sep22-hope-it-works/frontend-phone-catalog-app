@@ -1,0 +1,63 @@
+@import '/src/styles/utils/mixins';
+
+%main-title-text {
+  font-size: 32px;
+  line-height: 41px;
+  letter-spacing: -0.01em;
+  font-weight: 800;
+
+  @include onTablet {
+    font-size: 48px;
+    line-height: 56px;
+  }
+}
+
+%product-title {
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 140%;
+
+  @include onTablet {
+    font-size: 32px;
+    line-height: 41px;
+    letter-spacing: -0.01em;
+  }
+}
+
+%about-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+%main-subtitle-text {
+  font-size: 22px;
+  line-height: 31px;
+  letter-spacing: -0.01em;
+  font-weight: 800;
+
+  @include onTablet {
+    font-size: 32px;
+    line-height: 41px;
+  }
+}
+
+%upper-text {
+  font-size: 12px;
+  line-height: 11px;
+  letter-spacing: 0.04em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+%button-text {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 600;
+}
+
+%small-text {
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 600;
+}
