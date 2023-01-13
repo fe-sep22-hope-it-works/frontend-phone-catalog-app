@@ -1,18 +1,16 @@
+@import '../styles/utils/mixins';
+
 .new-phones {
   &__container {
     margin: 0 16px 64px;
 
-    @media (min-width: 640px) {
+    @include onTablet {
       margin: 0 24px 64px;
     }
 
-    @media (min-width: 1200px) {
-      margin: 0 0 80px;
+    @include onDesktop {
+      margin: 0 0 80px ;
     }
-  }
-
-  &__items {
-    overflow-x: hidden;
   }
 
   &__title {
@@ -25,61 +23,107 @@
       font-weight: 800;
       color: #0f0f11;
       font-size: 32px;
+      line-height: 41px;
+      letter-spacing: -0.01em;
+    }
+
+    &-buttons {
+      display: flex;
+      gap: 16px;
+
+      &-swiper-button-next {
+        transition: border-color 0.3s;
+        color: #0f0f11;
+        height: 32px;
+        width: 32px;
+        border: 1px solid #b4bdc4;
+        border-radius: 48px;
+        background-image: url('../img/right-arrow-active.svg');
+        background-color: #ffffff;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+      }
+
+      &-swiper-button-prev {
+        transition: border-color 0.3s;
+        color: #0f0f11;
+        height: 32px;
+        width: 32px;
+        border: 1px solid #b4bdc4;
+        border-radius: 48px;
+        background-image: url('../img/left-arrow-active.svg');
+        background-color: #ffffff;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__items {
+    display: grid;
+    gap: 16px;
+    padding-left: 16px;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(1, 1fr);
+      padding-left: 24px;
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr);
+      padding-left: 0;
     }
   }
 }
 
-.button {
-  display: flex;
-  gap: 16px;
+.new-phones__title-buttons-swiper-button-next:hover,
+.new-phones__title-buttons-swiper-button-prev:hover {
+  border-color: #0f0f11;
+}
 
-  &-right {
-    height: 32px;
-    width: 32px;
-    border: 1px solid #B4BDC4;
-    border-radius: 48px;
+.new-phones__title-buttons-swiper-button-next.swiper-button-disabled,
+.new-phones__title-buttons-swiper-button-prev.swiper-button-disabled {
+  opacity: 0.5;
+}
 
-    color: #0F0F11;
-    background-color: #FFFFFF;
-    border-color: #B4BDC4;
-    cursor: pointer;
+.new-phones__title-buttons-swiper-button-next.swiper-button-disabled:hover,
+.new-phones__title-buttons-swiper-button-prev.swiper-button-disabled:hover {
+  opacity: 0.5;
+  border-color: #b4bdc4;
+}
 
-    &:hover {
-      border-color: #0f0f11;
-    }
+.new-phones__swiper-container .swiper-slide {
+  width: 212px;
+  height: 439px;
 
-    &-isDisabled {
-      color: #b4bdc4;
-      cursor: default;
-
-      &:hover {
-        border-color: #b4bdc4;
-      }
-    }
+  @media (min-width: 640px) {
+    width: 237px;
+    height: 512px;
   }
 
-  &-left {
-    height: 32px;
-    width: 32px;
-    border: 1px solid #B4BDC4;
-    border-radius: 48px;
+  @media (min-width: 1200px) {
+    width: 272px;
+    height: 570px;
+  }
+}
 
-    color: #0F0F11;
-    background-color: #FFFFFF;
-    border-color: #B4BDC4;
-    cursor: pointer;
+.new-phones__swiper-container .swiper-wrapper {
+  margin-bottom: 64px;
+  padding-top: 5px;
 
-    &:hover {
-      border-color: #0f0f11;
-    }
+  &::after {
+    margin-right: 16px;
+  }
 
-    &-isDisabled {
-      color: #b4bdc4;
-      cursor: default;
+  @include onTablet {
+    margin-bottom: 5px;
+  }
+}
 
-      &:hover {
-        border-color: #b4bdc4;
-      }
-    }
+.last-item {
+  @media (min-width: 1200px) {
+    margin-right: 16px;
   }
 }

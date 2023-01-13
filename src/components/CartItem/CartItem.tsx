@@ -2,6 +2,7 @@
 /* eslint-disable global-require */
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
+// import { Link } from 'react-router-dom';
 import { Phone } from '../../types/Phone';
 import { getPhoneImage } from '../api/phones';
 import { Loader } from '../Loader.tsx/Loader';
@@ -45,7 +46,9 @@ export const CartItem: React.FC<Props> = ({
 
   return (
     <>
-      <div className="cart__item__title">
+      <div
+        className="cart__item__title"
+      >
         <button
           type="button"
           className="cart__item__title__button"
@@ -77,7 +80,9 @@ export const CartItem: React.FC<Props> = ({
             aria-label="Save"
             className={classNames(
               'cart__item__price__quantity__button',
-              { 'cart__item__price__quantity__button-isDisabled': decrDisable },
+              {
+                'cart__item__price__quantity__button-isDisabled': decrDisable,
+              },
             )}
             onClick={() => setProductQuantity(prevQty => prevQty - 1)}
             disabled={decrDisable}

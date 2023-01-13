@@ -1,20 +1,28 @@
-import React, { useContext, useEffect, useState } from 'react';
-import classNames from 'classnames';
+/* eslint-disable jsx-a11y/control-has-associated-label */
+import React, { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
+
 import { getHotPricesPhones } from '../api/phones';
 import { Card } from '../Card';
-import { PhoneContext } from '../PhoneContext/PhoneContext';
+import { Phone } from '../../types/Phone';
+
+import 'swiper/scss';
+import 'swiper/css/navigation';
 
 export const HotPrices: React.FC = () => {
-  const [visiblePart, setVisiblePart] = useState(0);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
+  const [discountedPhones, setDiscountedPhones] = useState<Phone[]>([]);
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
-  const {
-    phones,
-    setPhones,
-  } = useContext(PhoneContext);
 
-  const visiblePartLength = 4;
+  const getPhonesWithDiscountFromServer = async () => {
+    const phonesFromServer = await getHotPricesPhones();
+
+    setDiscountedPhones(phonesFromServer);
+  };
+
+  useEffect(() => {
+    getPhonesWithDiscountFromServer();
+  }, []);
 
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -28,101 +36,69 @@ export const HotPrices: React.FC = () => {
     };
   }, [innerWidth]);
 
-  const getPhonesWithDiscountFromServer = async () => {
-    const phonesFromServer = await getHotPricesPhones();
-
-    setPhones(phonesFromServer);
-  };
-
-  useEffect(() => {
-    getPhonesWithDiscountFromServer();
-  }, []);
-
-  const visibleItems = phones
-    .slice(visiblePart, visiblePart + visiblePartLength);
-
-  const firstPart = visiblePart < visiblePartLength;
-
-  const lastPart = visiblePart + visiblePartLength >= phones.length;
-
-  const rightSwipe = () => {
-    if (visiblePart < phones.length - 1) {
-      setVisiblePart((prevPart) => (prevPart + 1));
-    }
-  };
-
-  const leftSwipe = () => {
-    if (visiblePart > 1) {
-      setVisiblePart((prevPart) => (prevPart - 1));
-    }
-  };
-
-  const handleTouchStart = (event: React.TouchEvent<HTMLImageElement>) => {
-    setTouchEnd(0);
-    setTouchStart(event.targetTouches[0].clientX);
-  };
-
-  const handleTouchMove = (event: React.TouchEvent<HTMLImageElement>) => {
-    setTouchEnd(event.targetTouches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (touchStart - touchEnd > 100 && touchEnd !== 0) {
-      rightSwipe();
-    }
-
-    if (touchStart - touchEnd < -100 && touchEnd !== 0) {
-      leftSwipe();
-    }
-  };
-
   return (
-    <section className="hotPrices">
-      <div className="hotPrices__container">
-        <div className="hotPrices__title">
-          <h2 className="hotPrices__title__text">
-            Hot prices
-          </h2>
+    <section className="hot-prices">
+      <div className="hot-prices__container">
+        <div className="hot-prices__title">
+          <h2 className="hot-prices__title-text">Hot prices</h2>
 
-          <div className="hotPrices__title__buttons">
+          <div className="hot-prices__title-buttons">
             <button
               type="button"
-              className={classNames(
-                'hotPrices__title__buttons__button',
-                { 'hotPrices__title__buttons__button-isDisabled': firstPart },
-              )}
-              disabled={firstPart}
-              onClick={() => setVisiblePart(part => part - visiblePartLength)}
-            >
-              {'<'}
-            </button>
-
+              className="hot-prices__title-buttons-swiper-button-prev"
+              aria-label="Save"
+            />
             <button
               type="button"
-              className={classNames(
-                'hotPrices__title__buttons__button',
-                { 'hotPrices__title__buttons__button-isDisabled': lastPart },
-              )}
-              disabled={lastPart}
-              onClick={() => setVisiblePart(part => part + visiblePartLength)}
-            >
-              {'>'}
-            </button>
+              className="hot-prices__title-buttons-swiper-button-next"
+              aria-label="Save"
+            />
           </div>
         </div>
 
-        <div
-          className="hotPrices__items grid grid--four-items"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-          {visibleItems.map(phone => (
-            <div key={phone.id} className="hotPrices__items__item">
-              <Card phone={phone} />
-            </div>
-          ))}
-        </div>
+        {innerWidth >= 1200 ? (
+          <div className="hot-prices__swiper-container">
+            <Swiper
+              slidesPerView={4}
+              autoHeight
+              navigation={{
+                nextEl: '.hot-prices__title-buttons-swiper-button-next',
+                prevEl: '.hot-prices__title-buttons-swiper-button-prev',
+              }}
+              spaceBetween={16}
+              modules={[Navigation]}
+            >
+              <div className="hot-prices__items">
+                {discountedPhones.map((phone) => (
+                  <SwiperSlide key={phone.id}>
+                    <Card phone={phone} />
+                  </SwiperSlide>
+                ))}
+              </div>
+            </Swiper>
+          </div>
+        ) : (
+          <div className="hot-prices__swiper-container">
+            <Swiper
+              slidesPerView={3}
+              autoHeight
+              navigation={{
+                nextEl: '.hot-prices__title-buttons-swiper-button-next',
+                prevEl: '.hot-prices__title-buttons-swiper-button-prev',
+              }}
+              spaceBetween={16}
+              modules={[Navigation]}
+            >
+              <div className="hot-prices__items">
+                {discountedPhones.map((phone) => (
+                  <SwiperSlide key={phone.id}>
+                    <Card phone={phone} />
+                  </SwiperSlide>
+                ))}
+              </div>
+            </Swiper>
+          </div>
+        )}
       </div>
     </section>
   );

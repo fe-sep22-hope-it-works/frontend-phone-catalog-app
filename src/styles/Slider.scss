@@ -57,17 +57,44 @@
   }
 
   &__swipe {
-    border: 1px solid #B4BDC4;
-    border-radius: 48px;
-    background-color: #fff;
-    cursor: pointer;
+    &-left {
+      transition: border-color 0.3s;
+      color: #0f0f11;
+      border: 1px solid #b4bdc4;
+      border-radius: 48px;
+      background-image: url('../img/left-arrow-active.svg');
+      background-color: #ffffff;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
 
-    @media (max-width: 640px) {
-      display: none;
+      @media (max-width: 640px) {
+        display: none;
+      }
+
+      &:hover {
+        border: 1px solid #0F0F11;
+      }
     }
 
-    &:hover {
-      border: 1px solid #0F0F11;
+    &-right {
+      transition: border-color 0.3s;
+      color: #0f0f11;
+      border: 1px solid #b4bdc4;
+      border-radius: 48px;
+      background-image: url('../img/right-arrow-active.svg');
+      background-color: #ffffff;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+
+      @media (max-width: 640px) {
+        display: none;
+      }
+
+      &:hover {
+        border: 1px solid #0F0F11;
+      }
     }
   }
 
