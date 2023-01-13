@@ -3,7 +3,6 @@ import { useLocation, useParams } from 'react-router-dom';
 import { Loader } from '../Loader';
 import { ProductLayout } from './ProductLayout';
 import {
-  getCurrentPhone,
   getPhoneById,
   getPhoneFull,
   getSimilarPhones,
@@ -22,7 +21,6 @@ export const ProductInfo = () => {
   const [phone, setPhone] = useState<Phone | null>(null);
   const [currentPhoneFull, setCurrentPhoneFull] = useState<PhoneFullInfo>();
   const [similarPhones, setSimilarPhones] = useState<Phone[]>();
-  const [currentPhone, setCurrentPhone] = useState<Phone>();
   const [loading, setLoading] = useState(false);
   const [url, setUrl] = useState(location.pathname);
 
@@ -54,20 +52,6 @@ export const ProductInfo = () => {
     }
   }, [phone]);
 
-  const getCurrentPhoneFromServer = useCallback(async (id: number) => {
-    try {
-      setLoading(true);
-      const phoneFromServer = await getCurrentPhone(id);
-
-      setCurrentPhone(phoneFromServer);
-      // eslint-disable-next-line
-    } catch (error: any) {
-      window.console.log(error.message);
-    } finally {
-      setLoading(false);
-    }
-  }, [phone]);
-
   const getPhoneFullFromServer = useCallback(async (id: number) => {
     try {
       setLoading(true);
@@ -87,7 +71,6 @@ export const ProductInfo = () => {
       getPhoneFromServer(+phoneID.phoneId);
       getPhoneFullFromServer(+phoneID.phoneId);
       getSimilarPhonesFromServer(+phoneID.phoneId);
-      getCurrentPhoneFromServer(+phoneID.phoneId);
     }
   }, []);
 
@@ -95,7 +78,6 @@ export const ProductInfo = () => {
     if (phone) {
       setCurrentPhoneFull(currentPhoneFull);
       setSimilarPhones(similarPhones);
-      setCurrentPhone(currentPhone);
     }
   }, [phone]);
 
@@ -112,12 +94,12 @@ export const ProductInfo = () => {
   }
 
   return (
-    currentPhoneFull && similarPhones && currentPhone
+    currentPhoneFull && similarPhones && phone
       ? (
         <>
           <ProductLayout
             phoneFullInfo={currentPhoneFull}
-            currentPhone={currentPhone}
+            currentPhone={phone}
           />
           <ProductsSlider
             products={similarPhones}
