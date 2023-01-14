@@ -2,7 +2,6 @@
 
 .burger__menu {
   box-sizing: border-box;
-  height: calc(100vh - 48px);
   display: flex;
   background-color: #fff;
   flex-direction: column;
@@ -85,10 +84,6 @@
       box-shadow: -1px 0px 0px #e2e6e9;
       border: none;
       border-top: 1px solid #e2e6e9;
-    }
-
-    &-images {
-      height: 27px;
     }
   }
 

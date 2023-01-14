@@ -32,11 +32,9 @@ export const Card: React.FC<Props> = ({ phone }) => {
   const [loader, setLoader] = useState(false);
 
   const photoFromServer = async () => {
-    const mainPhoto = await getPhoneImage(Number(id));
-
-    setPhoto(mainPhoto[0]);
     try {
       setLoader(true);
+      const mainPhoto = await getPhoneImage(Number(id));
 
       setPhoto(mainPhoto[0]);
     } catch {

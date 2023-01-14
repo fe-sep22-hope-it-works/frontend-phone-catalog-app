@@ -1,7 +1,5 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-
-import '../../styles/page-title.scss';
 import { Breadcrumbs } from '../Breadcrumbs';
 import { Card } from '../Card';
 import { PhoneContext } from '../PhoneContext/PhoneContext';

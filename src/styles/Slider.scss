@@ -3,14 +3,13 @@
     margin: 56px 0 90px;
 
     @media (max-width: 1200px) {
-      margin: 32px 24px 74px;
+      margin: 32px 0 74px;
     }
 
     @media (max-width: 640px) {
-      margin: 24px 0 56px;
+      margin: 24px -16px 56px;
     }
   }
-  
 
   &__container {
     margin: 0 auto;
@@ -33,7 +32,17 @@
     max-height: 400px;
 
     @media (max-width: 640px) {
-      max-height: unset;
+      display: none;
+    }
+
+    &--mob {
+      display: none;
+
+      @media (max-width: 640px) {
+        display: block;
+        width: 100%;
+        max-height: unset;
+      }
     }
   }
 

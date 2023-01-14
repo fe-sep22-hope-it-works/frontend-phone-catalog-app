@@ -10,7 +10,6 @@ import burgerOpenIcon from '../../img/header/menu.svg';
 import burgerCloseIcon from '../../img/header/close.svg';
 import heartIcon from '../../img/header/favourites.svg';
 import shopIcon from '../../img/header/purchases.svg';
-// import ellipse from '../../img/header/ellipse.svg';
 import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
 import { Navigation } from '../Navigation';
 import { PhoneContext } from '../PhoneContext/PhoneContext';

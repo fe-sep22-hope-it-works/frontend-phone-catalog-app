@@ -1,6 +1,5 @@
 import React from 'react';
 import { Categories } from '../Categories/Categories';
-import '../../styles/page-title.scss';
 import { NewPhones } from '../NewPhones';
 import { HotPrices } from '../HotPrices';
 import { Slider } from '../Slider/Slider';
