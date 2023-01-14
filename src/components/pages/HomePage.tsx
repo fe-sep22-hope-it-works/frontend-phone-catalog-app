@@ -1,7 +1,7 @@
 import React from 'react';
 import { Categories } from '../Categories/Categories';
 import { NewPhones } from '../NewPhones';
-import { HotPrices } from '../HotPrices';
+// import { HotPrices } from '../HotPrices';
 import { Slider } from '../Slider/Slider';
 
 export const HomePage = () => {
@@ -14,7 +14,7 @@ export const HomePage = () => {
         <Slider />
         <NewPhones />
         <Categories />
-        <HotPrices />
+        {/* <HotPrices /> */}
       </div>
     </div>
   );
