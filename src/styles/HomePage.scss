@@ -9,14 +9,14 @@
   }
 
   &__title {
-    margin: 56px auto;
+    margin: 56px 0;
 
     @media (max-width: 1200px) {
-      margin: 32px 24px;
+      margin: 32px 0;
     }
 
     @media (max-width: 640px) {
-      margin: 24px 16px;
+      margin: 24px 0;
     }
   }
 }

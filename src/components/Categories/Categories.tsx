@@ -7,7 +7,9 @@ import { getAllPhones } from '../api/phones';
 
 export const Categories = () => {
   const [countOfPhoneModels, setCountOfPhoneModels] = useState(0);
-  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+  const [mobileVersion, setMobileVersion] = useState(
+    !(window.innerWidth > 641),
+  );
 
   const getAllPhonesLength = async () => {
     const allPhonesFromServer = await getAllPhones();
@@ -20,21 +22,27 @@ export const Categories = () => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener('resize', () => {
-      setInnerWidth(window.innerWidth);
-    });
+    const handleWindowResize = () => {
+      if (window.matchMedia('(max-width: 640px)').matches) {
+        setMobileVersion(true);
+      }
+
+      if (window.matchMedia('(min-width: 641px)').matches) {
+        setMobileVersion(false);
+      }
+    };
+
+    window.addEventListener('resize', handleWindowResize);
 
     return () => {
-      window.removeEventListener('resize', () => {
-        setInnerWidth(window.innerWidth);
-      });
+      window.removeEventListener('resize', handleWindowResize);
     };
-  }, [innerWidth]);
+  }, []);
 
   return (
     <section className="category category--home-page">
       <h2 className="category__title">Shop by category</h2>
-      {innerWidth > 640
+      {!mobileVersion
         ? (
           <div className="category__box">
             <div className="category__pages">

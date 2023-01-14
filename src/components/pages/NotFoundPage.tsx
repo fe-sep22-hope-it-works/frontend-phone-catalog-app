@@ -2,7 +2,6 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../../styles/page-title.scss';
 
 export const NotFoundPage: React.FC = () => {
   const navigate = useNavigate();
