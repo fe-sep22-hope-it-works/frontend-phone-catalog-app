@@ -55,48 +55,27 @@ export const NewPhones: React.FC = () => {
             />
           </div>
         </div>
-
-        {innerWidth >= 1200 ? (
-          <div className="new-phones__swiper-container">
-            <Swiper
-              slidesPerView={4}
-              autoHeight
-              navigation={{
-                nextEl: '.new-phones__title-buttons-swiper-button-next',
-                prevEl: '.new-phones__title-buttons-swiper-button-prev',
-              }}
-              modules={[Navigation]}
-            >
-              <div className="new-phones__items">
-                {phones.map((phone) => (
-                  <SwiperSlide key={phone.id}>
-                    <Card phone={phone} />
-                  </SwiperSlide>
-                ))}
-              </div>
-            </Swiper>
-          </div>
-        ) : (
-          <div className="new-phones__swiper-container">
-            <Swiper
-              slidesPerView={3}
-              autoHeight
-              navigation={{
-                nextEl: '.new-phones__title-buttons-swiper-button-next',
-                prevEl: '.new-phones__title-buttons-swiper-button-prev',
-              }}
-              modules={[Navigation]}
-            >
-              <div className="new-phones__items">
-                {phones.map((phone) => (
-                  <SwiperSlide key={phone.id}>
-                    <Card phone={phone} />
-                  </SwiperSlide>
-                ))}
-              </div>
-            </Swiper>
-          </div>
-        )}
+        <div className="new-phones__swiper-container">
+          <Swiper
+            autoHeight
+            navigation={{
+              nextEl: '.new-phones__title-buttons-swiper-button-next',
+              prevEl: '.new-phones__title-buttons-swiper-button-prev',
+            }}
+            modules={[Navigation]}
+            spaceBetween={16}
+            slidesPerView="auto"
+            scrollbar={{ draggable: true }}
+          >
+            <div className="new-phones__items">
+              {phones.map((phone) => (
+                <SwiperSlide key={phone.id}>
+                  <Card phone={phone} />
+                </SwiperSlide>
+              ))}
+            </div>
+          </Swiper>
+        </div>
       </div>
     </section>
   );

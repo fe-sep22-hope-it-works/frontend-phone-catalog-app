@@ -5,7 +5,7 @@
     margin: 0 16px 64px;
 
     @include onTablet {
-      margin: 0 0 64px;
+      margin: 0 16px 64px;
     }
 
     @include onDesktop {
@@ -64,16 +64,17 @@
   &__items {
     display: grid;
     gap: 16px;
-    padding-left: 16px;
 
-    @media (min-width: 640px) {
-      grid-template-columns: repeat(1, 1fr);
-      padding-left: 24px;
+    @media (max-width: 639px) {
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 640px) and (max-width: 1199px) {
+      grid-template-columns: repeat(2, 1fr);
     }
 
     @media (min-width: 1200px) {
       grid-template-columns: repeat(4, 1fr);
-      padding-left: 0;
     }
   }
 }
@@ -96,21 +97,17 @@
 
 .hot-prices__swiper-container .swiper-slide {
   width: 212px;
-  height: 439px;
 
   @media (min-width: 640px) {
     width: 237px;
-    height: 512px;
   }
 
   @media (min-width: 1200px) {
     width: 272px;
-    height: 570px;
   }
 }
 
 .hot-prices__swiper-container .swiper-wrapper {
-  margin-bottom: 64px;
   padding-top: 5px;
 
   &::after {

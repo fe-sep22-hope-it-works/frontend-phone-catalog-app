@@ -10,6 +10,7 @@ import {
 import { PhoneFullInfo } from '../../types/PhoneFullInfo';
 import { ProductsSlider } from '../ProductsSlider';
 import { Phone } from '../../types/Phone';
+import { NotFoundPage } from '../pages/NotFoundPage';
 
 export const ProductInfo = () => {
   const phoneID = useParams();
@@ -107,6 +108,6 @@ export const ProductInfo = () => {
           />
         </>
       )
-      : <h1>Some error</h1>
+      : <NotFoundPage />
   );
 };

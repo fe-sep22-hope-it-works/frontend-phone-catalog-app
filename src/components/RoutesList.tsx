@@ -3,7 +3,6 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { AccessoriesPage } from './pages/AccessoriesPage';
 import { ContactsPage } from './pages/ContactsPage';
 import { FavouritesPage } from './pages/FavouritesPage';
-import { GitHubPage } from './pages/GitHubPage';
 import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { PhoneItemPage } from './pages/PhoneItemPage';
@@ -38,10 +37,6 @@ export const RoutesList = () => (
     <Route
       path="accessories"
       element={<AccessoriesPage />}
-    />
-    <Route
-      path="github"
-      element={<GitHubPage />}
     />
     <Route
       path="contacts"
