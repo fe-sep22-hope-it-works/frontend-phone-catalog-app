@@ -51,10 +51,10 @@ export const ContactsPage = () => (
             LinkedIn
           </a>
           <a
-            href="mailto:crazy106ras@gmail.com"
+            href="mailto:andrii.olin@gmail.com"
             className="contacts-page__email"
           >
-            crazy106ras@gmail.com
+            andrii.olin@gmail.com
           </a>
         </div>
         <div className="contacts-page__item">
