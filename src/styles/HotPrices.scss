@@ -5,7 +5,7 @@
     margin: 0 16px 64px;
 
     @include onTablet {
-      margin: 0 0 64px;
+      margin: 0 16px 64px;
     }
 
     @include onDesktop {
@@ -97,16 +97,13 @@
 
 .hot-prices__swiper-container .swiper-slide {
   width: 212px;
-  height: 439px;
 
   @media (min-width: 640px) {
     width: 237px;
-    height: 512px;
   }
 
   @media (min-width: 1200px) {
     width: 272px;
-    height: 570px;
   }
 }
 
