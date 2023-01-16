@@ -11,14 +11,14 @@ export const Footer: React.FC = () => {
         </Link>
 
         <div className="footer__nav">
-          <Link
-            to="https://github.com/fe-sep22-hope-it-works"
+          <a
+            href="https://github.com/fe-sep22-hope-it-works"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="footer__nav__link"
           >
             github
-          </Link>
+          </a>
 
           <Link to="/contacts" className="footer__nav__link">
             contacts

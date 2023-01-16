@@ -15,10 +15,10 @@ import { Navigation } from '../Navigation';
 import { PhoneContext } from '../PhoneContext/PhoneContext';
 
 const navigationLinks = [
-  { to: '/', text: 'HOME' },
-  { to: '/phones', text: 'PHONES' },
-  { to: '/tablets', text: 'TABLETS' },
-  { to: '/accessories', text: 'ACCESSORIES' },
+  { to: '/', text: 'Home' },
+  { to: '/phones', text: 'Phones' },
+  { to: '/tablets', text: 'Tablets' },
+  { to: '/accessories', text: 'Accessories' },
 ];
 
 export const Header = () => {
