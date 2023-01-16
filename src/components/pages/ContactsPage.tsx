@@ -24,7 +24,7 @@ export const ContactsPage = () => (
             href="mailto:vadym.baranov@gmail.com"
             className="contacts-page__email"
           >
-            vadym.baranov@hotmail.com
+            vadym.baranov@gmail.com
           </a>
         </div>
         <div className="contacts-page__item">
