@@ -1,9 +1,13 @@
 .category {
   &--home-page {
-    margin: 80px 0;
+    margin-bottom: 57px;
 
-    @media (max-width: 1200px) {
-      margin: 80px 0;
+    @media (min-width: 640px) {
+      margin-bottom: 64px;
+    }
+
+    @media (min-width: 1200px) {
+      margin-bottom: 80px;
     }
   }
 

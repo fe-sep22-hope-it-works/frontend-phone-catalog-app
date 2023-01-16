@@ -2,10 +2,10 @@
 
 .new-phones {
   &__container {
-    margin: 0 16px 64px;
+    margin: 0 16px 57px;
 
     @include onTablet {
-      margin: 0 0 64px;
+      margin: 0 16px 64px;
     }
 
     @include onDesktop {
@@ -95,18 +95,15 @@
   border-color: #b4bdc4;
 }
 
-.new-phones__swiper-container .swiper-slide {
+.new-phones__swiper-container .swiper-wrapper .swiper-slide {
   width: 212px;
-  height: 439px;
 
   @media (min-width: 640px) {
     width: 237px;
-    height: 512px;
   }
 
   @media (min-width: 1200px) {
     width: 272px;
-    height: 570px;
   }
 }
 

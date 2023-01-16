@@ -55,94 +55,27 @@ export const HotPrices: React.FC = () => {
             />
           </div>
         </div>
-        {innerWidth <= 320 && (
-          <div className="hot-prices__swiper-container">
-            <Swiper
-              slidesPerView={1}
-              autoHeight
-              navigation={{
-                nextEl: '.hot-prices__title-buttons-swiper-button-next',
-                prevEl: '.hot-prices__title-buttons-swiper-button-prev',
-              }}
-              spaceBetween={16}
-              modules={[Navigation]}
-            >
-              <div className="hot-prices__items">
-                {discountedPhones.map((phone) => (
-                  <SwiperSlide key={phone.id}>
-                    <Card phone={phone} />
-                  </SwiperSlide>
-                ))}
-              </div>
-            </Swiper>
-          </div>
-        )}
-        {innerWidth < 640 && (
-          <div className="hot-prices__swiper-container">
-            <Swiper
-              slidesPerView={1}
-              autoHeight
-              navigation={{
-                nextEl: '.hot-prices__title-buttons-swiper-button-next',
-                prevEl: '.hot-prices__title-buttons-swiper-button-prev',
-              }}
-              spaceBetween={16}
-              modules={[Navigation]}
-            >
-              <div className="hot-prices__items">
-                {discountedPhones.map((phone) => (
-                  <SwiperSlide key={phone.id}>
-                    <Card phone={phone} />
-                  </SwiperSlide>
-                ))}
-              </div>
-            </Swiper>
-          </div>
-        )}
-
-        {innerWidth >= 1200 ? (
-          <div className="hot-prices__swiper-container">
-            <Swiper
-              slidesPerView={4}
-              autoHeight
-              navigation={{
-                nextEl: '.hot-prices__title-buttons-swiper-button-next',
-                prevEl: '.hot-prices__title-buttons-swiper-button-prev',
-              }}
-              spaceBetween={16}
-              modules={[Navigation]}
-            >
-              <div className="hot-prices__items">
-                {discountedPhones.map((phone) => (
-                  <SwiperSlide key={phone.id}>
-                    <Card phone={phone} />
-                  </SwiperSlide>
-                ))}
-              </div>
-            </Swiper>
-          </div>
-        ) : (
-          <div className="hot-prices__swiper-container">
-            <Swiper
-              slidesPerView={3}
-              autoHeight
-              navigation={{
-                nextEl: '.hot-prices__title-buttons-swiper-button-next',
-                prevEl: '.hot-prices__title-buttons-swiper-button-prev',
-              }}
-              spaceBetween={16}
-              modules={[Navigation]}
-            >
-              <div className="hot-prices__items">
-                {discountedPhones.map((phone) => (
-                  <SwiperSlide key={phone.id}>
-                    <Card phone={phone} />
-                  </SwiperSlide>
-                ))}
-              </div>
-            </Swiper>
-          </div>
-        )}
+        <div className="hot-prices__swiper-container">
+          <Swiper
+            slidesPerView="auto"
+            autoHeight
+            navigation={{
+              nextEl: '.hot-prices__title-buttons-swiper-button-next',
+              prevEl: '.hot-prices__title-buttons-swiper-button-prev',
+            }}
+            scrollbar={{ draggable: true }}
+            spaceBetween={16}
+            modules={[Navigation]}
+          >
+            <div className="hot-prices__items">
+              {discountedPhones.map((phone) => (
+                <SwiperSlide key={phone.id}>
+                  <Card phone={phone} />
+                </SwiperSlide>
+              ))}
+            </div>
+          </Swiper>
+        </div>
       </div>
     </section>
   );

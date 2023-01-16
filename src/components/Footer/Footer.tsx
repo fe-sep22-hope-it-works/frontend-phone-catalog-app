@@ -11,24 +11,20 @@ export const Footer: React.FC = () => {
         </Link>
 
         <div className="footer__nav">
-          <a
-            href="https://github.com/fe-sep22-hope-it-works"
+          <Link
+            to="https://github.com/fe-sep22-hope-it-works"
+            target="_blank"
+            rel="noreferrer"
             className="footer__nav__link"
           >
             github
-          </a>
+          </Link>
 
-          <Link
-            to="/contacts"
-            className="footer__nav__link"
-          >
+          <Link to="/contacts" className="footer__nav__link">
             contacts
           </Link>
 
-          <Link
-            to="/rights"
-            className="footer__nav__link"
-          >
+          <Link to="/rights" className="footer__nav__link">
             rights
           </Link>
         </div>

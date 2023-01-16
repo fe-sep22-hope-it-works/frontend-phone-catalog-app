@@ -64,11 +64,8 @@ export const NewPhones: React.FC = () => {
             }}
             modules={[Navigation]}
             spaceBetween={16}
-            slidesPerView={1.4}
-            breakpoints={{
-              640: { slidesPerView: 2.5 },
-              1200: { slidesPerView: 4 },
-            }}
+            slidesPerView="auto"
+            scrollbar={{ draggable: true }}
           >
             <div className="new-phones__items">
               {phones.map((phone) => (
