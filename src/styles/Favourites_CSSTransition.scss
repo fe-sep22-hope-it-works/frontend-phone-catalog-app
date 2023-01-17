@@ -1,0 +1,43 @@
+.favourite-item-enter {
+  opacity: 0.1;
+  max-width: 0;
+}
+
+.favourite-item-enter-active {
+  opacity: 1;
+  overflow: hidden;
+  max-width: 272px;
+  transition: max-width opacity 0.3s ease-in-out;
+}
+
+.favourite-item-exit {
+  opacity: 1;
+}
+
+.favourite-item-exit-active {
+  transform: translateX(-22px);
+  opacity: 0.01;
+  transition: transform opacity 200ms;
+}
+
+.temp-favourite-item-enter {
+  max-width: 0;
+}
+
+.temp-favourite-item-enter-active {
+  overflow: hidden;
+  max-width: 272px;
+  transition: max-width 0.10s ease-in-out;
+}
+
+.temp-favourite-item-exit {
+  max-width: 272px;
+}
+
+.temp-favourite-item-exit-active {
+  transform: translateX(-272px);
+  max-width: 0;
+  opacity: 0;
+  transition: 0.10s ease-in-out;
+  transition-property: opacity, max-width, transform;
+}

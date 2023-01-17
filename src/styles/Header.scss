@@ -75,7 +75,7 @@
       &__link {
         color: #89939a;
         text-decoration: none;
-        display: flex;
+        display: inline-flex;
         padding: 0 10px;
         height: 48px;
         align-items: center;
@@ -87,12 +87,14 @@
         transition: 0.3s;
 
         @include onTablet {
+          display: flex;
           padding: 0 6px;
           font-size: 12px;
           letter-spacing: 0.04em;
         }
 
         @include onDesktop {
+          display: flex;
           height: 64px;
           padding: 0 10px;
           font-size: 12px;

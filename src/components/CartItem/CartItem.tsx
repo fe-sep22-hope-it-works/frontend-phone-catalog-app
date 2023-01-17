@@ -45,7 +45,7 @@ export const CartItem: React.FC<Props> = ({
   const decrDisable = productQuantity === 1;
 
   return (
-    <>
+    <div className="cart__item">
       <div
         className="cart__item__title"
       >
@@ -115,6 +115,6 @@ export const CartItem: React.FC<Props> = ({
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };

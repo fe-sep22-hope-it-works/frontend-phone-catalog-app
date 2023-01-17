@@ -1,0 +1,44 @@
+.cart-item-enter {
+  max-height: 0;
+}
+
+.cart-item-enter-active {
+  overflow: hidden;
+  max-height: 100px;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.cart-item-exit {
+  opacity: 1;
+  max-height: 100px;
+}
+
+.cart-item-exit-active {
+  transform: translateX(-22px);
+  opacity: 0.01;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height transform opacity 0.3s linear;
+}
+
+.temp-cart-item-enter {
+  max-height: 0;
+}
+
+.temp-cart-item-enter-active {
+  overflow: hidden;
+  max-height: 100px;
+  transition: max-height 0.10s ease-in-out;
+}
+
+.temp-cart-item-exit {
+  max-height: 100px;
+}
+
+.temp-cart-item-exit-active {
+  transform: translateY(-100px);
+  max-height: 0;
+  opacity: 0;
+  transition: 0.10s ease-in-out;
+  transition-property: opacity, max-height, transform;
+}

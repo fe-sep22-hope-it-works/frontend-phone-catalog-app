@@ -9,25 +9,6 @@ export const Slider = () => {
   const [numberOfPhoto, setNumberOfPhoto] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
-  // const [mobileVersion, setMobileVersion] = useState(false);
-
-  // useEffect(() => {
-  //   const handleWindowResize = () => {
-  //     if (window.matchMedia('(max-width: 640px)').matches) {
-  //       setMobileVersion(true);
-  //     }
-
-  //     if (window.matchMedia('(min-width: 640px)').matches) {
-  //       setMobileVersion(false);
-  //     }
-  //   };
-
-  //   window.addEventListener('resize', handleWindowResize);
-
-  //   return () => {
-  //     window.removeEventListener('resize', handleWindowResize);
-  //   };
-  // }, []);
 
   const rightSwipe = () => {
     setNumberOfPhoto((prevPhoto) => (prevPhoto + 1) % 3);
