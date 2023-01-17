@@ -1,4 +1,8 @@
 import React, { useContext, useMemo } from 'react';
+import {
+  CSSTransition,
+  TransitionGroup,
+} from 'react-transition-group';
 import { Link } from 'react-router-dom';
 import { CartItem } from '../CartItem';
 import { Phone } from '../../types/Phone';
@@ -77,16 +81,22 @@ export const Cart: React.FC = () => {
             <h1 className="cart__title">Cart</h1>
 
             <div className="cart__content">
-              <div className="cart__items">
-                {cartPhones.map(product => (
-                  <div key={product.id} className="cart__item">
-                    <CartItem
-                      removeItem={removeItem}
-                      product={product}
-                      changeProductQuantity={ChangeProductQuantity}
-                    />
-                  </div>
-                ))}
+              <div>
+                <TransitionGroup className="cart__items">
+                  {cartPhones.map(product => (
+                    <CSSTransition
+                      key={product.id}
+                      timeout={200}
+                      classNames="cart-item"
+                    >
+                      <CartItem
+                        removeItem={removeItem}
+                        product={product}
+                        changeProductQuantity={ChangeProductQuantity}
+                      />
+                    </CSSTransition>
+                  ))}
+                </TransitionGroup>
               </div>
 
               <div className="cart__total">

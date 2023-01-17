@@ -1,4 +1,8 @@
 import React, { useContext } from 'react';
+import {
+  CSSTransition,
+  TransitionGroup,
+} from 'react-transition-group';
 import { Link } from 'react-router-dom';
 import { Breadcrumbs } from '../Breadcrumbs';
 import { Card } from '../Card';
@@ -22,10 +26,18 @@ export const FavouritesPage = () => {
           <p className="favourites__description">
             {`${favouritePhones.length} items`}
           </p>
-          <div className="favourites__box grid">
-            {favouritePhones.map(phone => (
-              <Card key={phone.id} phone={phone} />
-            ))}
+          <div>
+            <TransitionGroup className="favourites__box grid">
+              {favouritePhones.map(phone => (
+                <CSSTransition
+                  key={phone.id}
+                  timeout={300}
+                  classNames="favourite-item"
+                >
+                  <Card phone={phone} />
+                </CSSTransition>
+              ))}
+            </TransitionGroup>
           </div>
         </div>
       ) : (
