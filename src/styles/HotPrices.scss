@@ -108,19 +108,5 @@
 }
 
 .hot-prices__swiper-container .swiper-wrapper {
-  padding-top: 5px;
-
-  &::after {
-    margin-right: 16px;
-  }
-
-  @include onTablet {
-    margin-bottom: 5px;
-  }
-}
-
-.last-item {
-  @media (min-width: 1200px) {
-    margin-right: 16px;
-  }
+  padding: 10px 0;
 }

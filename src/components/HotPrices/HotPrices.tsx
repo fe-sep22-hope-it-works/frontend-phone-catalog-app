@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
@@ -12,7 +11,6 @@ import 'swiper/css/navigation';
 
 export const HotPrices: React.FC = () => {
   const [discountedPhones, setDiscountedPhones] = useState<Phone[]>([]);
-  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
 
   const getPhonesWithDiscountFromServer = async () => {
     const phonesFromServer = await getHotPricesPhones();
@@ -23,18 +21,6 @@ export const HotPrices: React.FC = () => {
   useEffect(() => {
     getPhonesWithDiscountFromServer();
   }, []);
-
-  useEffect(() => {
-    window.addEventListener('resize', () => {
-      setInnerWidth(window.innerWidth);
-    });
-
-    return () => {
-      window.removeEventListener('resize', () => {
-        setInnerWidth(window.innerWidth);
-      });
-    };
-  }, [innerWidth]);
 
   return (
     <section className="hot-prices">

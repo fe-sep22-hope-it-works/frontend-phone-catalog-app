@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
@@ -12,7 +11,6 @@ import 'swiper/css/navigation';
 
 export const NewPhones: React.FC = () => {
   const { phones, setPhones } = useContext(PhoneContext);
-  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
 
   const getNewPhonesFromServer = async () => {
     const newPhonesFromServer = await getNewPhones();
@@ -23,18 +21,6 @@ export const NewPhones: React.FC = () => {
   useEffect(() => {
     getNewPhonesFromServer();
   }, []);
-
-  useEffect(() => {
-    window.addEventListener('resize', () => {
-      setInnerWidth(window.innerWidth);
-    });
-
-    return () => {
-      window.removeEventListener('resize', () => {
-        setInnerWidth(window.innerWidth);
-      });
-    };
-  }, [innerWidth]);
 
   return (
     <section className="new-phones">

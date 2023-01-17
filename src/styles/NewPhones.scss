@@ -9,7 +9,7 @@
     }
 
     @include onDesktop {
-      margin: 0 0 80px ;
+      margin: 0 0 80px;
     }
   }
 
@@ -75,6 +75,7 @@
 
     @media (min-width: 1200px) {
       grid-template-columns: repeat(4, 1fr);
+      padding-left: 16px;
     }
   }
 }
@@ -108,20 +109,5 @@
 }
 
 .new-phones__swiper-container .swiper-wrapper {
-  margin-bottom: 64px;
-  padding-top: 5px;
-
-  &::after {
-    margin-right: 16px;
-  }
-
-  @include onTablet {
-    margin-bottom: 5px;
-  }
-}
-
-.last-item {
-  @media (min-width: 1200px) {
-    margin-right: 16px;
-  }
+  padding: 10px 0;
 }

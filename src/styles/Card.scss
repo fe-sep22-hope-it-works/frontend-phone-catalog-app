@@ -13,6 +13,13 @@
 
   background-color: #ffffff;
   border-color: #E2E6E9;
+  transition: transform 0.5s ease-out;
+
+  &:hover {
+    transform: scale(1.02);
+    border-color: #216CFF;
+    box-shadow: 1px 1px 1px 1px #E2E6E9;
+  }
 
   @media (min-width: 640px) {
     width: 237px;
