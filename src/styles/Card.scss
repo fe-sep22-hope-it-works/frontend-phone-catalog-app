@@ -6,13 +6,21 @@
   justify-content: center;
   flex-direction: column;
   box-sizing: border-box;
-  width: 272px;
+  width: 212px;
   padding: 32px;
   border: 1px solid #E2E6E9;
   border-radius: 8px;
 
   background-color: #ffffff;
   border-color: #E2E6E9;
+
+  @media (min-width: 640px) {
+    width: 237px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 272px;
+  }
 
   &__img {
     display: block;

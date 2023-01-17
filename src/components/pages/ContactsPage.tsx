@@ -21,10 +21,10 @@ export const ContactsPage = () => (
             LinkedIn
           </a>
           <a
-            href="mailto:vadym.baranov@hotmail.com"
+            href="mailto:vadym.baranov@gmail.com"
             className="contacts-page__email"
           >
-            vadym.baranov@hotmail.com
+            vadym.baranov@gmail.com
           </a>
         </div>
         <div className="contacts-page__item">
@@ -51,10 +51,10 @@ export const ContactsPage = () => (
             LinkedIn
           </a>
           <a
-            href="mailto:crazy106ras@gmail.com"
+            href="mailto:andrii.olin@gmail.com"
             className="contacts-page__email"
           >
-            crazy106ras@gmail.com
+            andrii.olin@gmail.com
           </a>
         </div>
         <div className="contacts-page__item">
