@@ -95,6 +95,20 @@
   border-color: #b4bdc4;
 }
 
+.hot-prices__swiper-container {
+  width: 100%;
+
+  @media (min-width: 640px) and (max-width: 1199px) {
+    width: 100%;
+    padding-right: 15px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 1200px;
+    padding-right: 45px;
+  }
+}
+
 .hot-prices__swiper-container .swiper-slide {
   width: 212px;
 
@@ -108,5 +122,5 @@
 }
 
 .hot-prices__swiper-container .swiper-wrapper {
-  padding: 10px 0;
+  padding: 10px 5px;
 }
